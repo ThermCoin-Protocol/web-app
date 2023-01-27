@@ -1,40 +1,41 @@
-# Tailwind CSS + TypeScript + Next.js Starter
+# Thermcoin Web Application
 
-This is a lightweight starterkit / boilerplate to get up and running with Tailwind CSS, TypeScript and Next.js.
+This repo is used for storage and documentation of the thermcoin web application source code.
 
-## Why make this boilerplate?
+## Tools Used
 
-Tailwind, Next.js, and TypeScript is an excellent stack for building web apps. The most annoying part of using the stack
-is setting it up every time, so I made an easy to use template that I and many others can use.
+- Next.js
+  - A framework for react that encourages rapid development with simplified workflows
+  - Typescript for type setting
+- TailwindCSS
+  - Used for simple and intuitive, inline styling
+- DaisyUI
+  - Used side by side TailwindCSS with predefined classes and themes
 
 ## Usage
 
 ### 1. Clone Repo
 
-Github released [Github Templates](https://github.blog/2019-06-06-generate-new-repositories-with-repository-templates/) which allows users to generate a new repo from a template repo that will have the exact same files and structure. You can generate your own repo from this template by using [this link](https://github.com/kyrelldixon/next-tailwind-typescript-starter/generate).
-
-From there, you can clone your own repo and modify it however you like.
-
-If you would rather clone this repo, go to the command line and run:
+Go to the command line and run:
 
 ```bash
-git clone https://github.com/kyrelldixon/next-tailwind-typescript-starter <your-project-name>
+git clone https://github.com/ThermCoin-Protocol/web-app <your-project-name>
 cd <your-project-name>
 ```
 
 ### 2. Install Dependencies
 
 ```bash
-pnpm install # npm i
+yarn install
 ```
 
 ### 3. Run Development Environment
 
 ```bash
-pnpm dev # npm run dev
+yarn dev
 ```
 
-### Test Production Environment
+<!-- ### Test Production Environment
 
 I also included a `stage` script that will build and start a production server. You can run it with:
 
@@ -47,4 +48,4 @@ Alternatively you can run:
 ```bash
 pnpm build # npm run build
 pnpm start # npm start
-```
+``` -->
