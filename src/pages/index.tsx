@@ -4,39 +4,7 @@ import Navbar from "../components/navbar";
 import Footer from "../components/footer"
 import Hero from "@/components/hero";
 import Hook from "@/components/hook";
-
-
-const THEMES = [
-  "light",
-  "dark",
-  "cupcake",
-  "bumblebee",
-  "emerald",
-  "corporate",
-  "synthwave",
-  "retro",
-  "cyberpunk",
-  "valentine",
-  "halloween",
-  "garden",
-  "forest",
-  "aqua",
-  "lofi",
-  "pastel",
-  "fantasy",
-  "wireframe",
-  "black",
-  "luxury",
-  "dracula",
-  "cmyk",
-  "autumn",
-  "business",
-  "acid",
-  "lemonade",
-  "night",
-  "coffee",
-  "winter",
-]
+import Action from "@/components/action";
 
 export default function TopPageView() {
   const { theme, setTheme } = useTheme();
@@ -57,6 +25,7 @@ export default function TopPageView() {
       <Navbar />
       <Hero />
       <Hook />
+      <Action />
       <Footer />
     </main>
   )

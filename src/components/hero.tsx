@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Hero() {
   return (
-    <div className="hero min-h-screen bg-base-200">
+    <div className="hero min-h-screen bg-secondary">
       <div className="hero-content text-center">
         <div className="max-w-lg">
           <h1 className="text-4xl font-bold">A digital currency backed by energy</h1>
