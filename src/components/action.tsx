@@ -24,8 +24,8 @@ export default function Action() {
         </div>
         
       </div>
-      <div className="p-4 border-2 border-primary rounded-sm max-w-lg mx-2">
-        <div tabIndex={0} className="collapse collapse-arrow border border-base-300 bg-base-100">
+      <div className="p-4 border-2 border-primary rounded-xl max-w-lg mx-2">
+        <div tabIndex={0} className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-t-xl">
           <div className="collapse-title text-xl font-medium">
             Running a node
           </div>
@@ -34,7 +34,7 @@ export default function Action() {
             <p>Running a node is easy and free. You can run a node on your home computer, or you can rent a server from a hosting provider.</p>
           </div>
         </div>
-        <div tabIndex={0} className="collapse collapse-arrow border border-base-300 bg-base-100">
+        <div tabIndex={0} className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-b-xl">
           <div className="collapse-title text-xl font-medium">
             Using the network
           </div>

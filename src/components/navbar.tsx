@@ -20,15 +20,15 @@ const THEMES = [
 
 export default function Navbar() {
   return (
-    <div className="navbar fixed z-20 bg-neutral">
+    <div className="navbar fixed z-20 bg-neutral text-neutral-content">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn-ghost btn-circle btn">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
-              fill="none"
               viewBox="0 0 24 24"
+              fill="none"
               stroke="currentColor"
             >
               <path
@@ -41,7 +41,7 @@ export default function Navbar() {
           </label>
           <ul
             tabIndex={0}
-            className="dropdown-content menu rounded-box menu-compact mt-3 w-52 bg-base-100 p-2 shadow"
+            className="dropdown-content menu rounded-box menu-compact mt-3 w-52 bg-base-100 p-2 shadow-md text-base-content"
           >
             <li>
               <a href="https://github.com/ThermCoin-Protocol">GitHub</a>
@@ -56,14 +56,14 @@ export default function Navbar() {
         </div>
       </div>
       <div className="navbar-center">
-        <a className="btn-ghost btn text-4xl normal-case text-neutral-content">
+        <a className="btn-ghost btn text-4xl normal-case">
           ThermCoin
         </a>
       </div>
-      <div className="navbar-end invisible sm:visible">
+      <div className="navbar-end invisible sm:visible text-base-content">
         <select className="select-bordered select w-2/5">
           <option defaultValue="light" selected>
-            theme
+            Theme
           </option>
           {THEMES.map((themeName) => (
             <option key={themeName}>{themeName}</option>

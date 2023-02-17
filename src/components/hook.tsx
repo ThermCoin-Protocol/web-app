@@ -27,7 +27,7 @@ export default function hook() {
             {/* <div className="indicator-item indicator-bottom">
           <button className="btn btn-primary">Learn More</button>
         </div>  */}
-            <div className="card cursor-pointer border hover:bg-neutral-focus">
+            <div className="card cursor-pointer border hover:bg-secondary-focus">
               <div className="card-body">
                 <h2 className="card-title">{feature.title}</h2>
                 <p>{feature.description}</p>
