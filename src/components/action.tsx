@@ -3,7 +3,7 @@ import React from "react";
 export default function Action() {
   return (
     <div className="flex flex-col min-h-screen w-full justify-center bg-secondary items-center">
-      <div className="stats bg-primary max-w-lg text-primary-content m-10 flex flex-col sm:flex-row">
+      <div className="stats bg-primary w-xl text-primary-content m-10 flex flex-col sm:flex-row">
     
         <div className="stat">
           <div className="stat-title text-lg">Run a node</div>
@@ -24,7 +24,7 @@ export default function Action() {
         </div>
         
       </div>
-      <div className="p-4 border-2 border-primary rounded-xl max-w-lg mx-2">
+      <div className="p-4 rounded-xl max-w-lg mx-2">
         <div tabIndex={0} className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-t-xl">
           <div className="collapse-title text-xl font-medium">
             Running a node

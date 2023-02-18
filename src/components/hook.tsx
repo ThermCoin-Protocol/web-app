@@ -24,9 +24,6 @@ export default function hook() {
       {features &&
         features.map((feature) => (
           <div className="indicator m-5 w-3/4 self-center">
-            {/* <div className="indicator-item indicator-bottom">
-          <button className="btn btn-primary">Learn More</button>
-        </div>  */}
             <div className="card cursor-pointer border hover:bg-secondary-focus">
               <div className="card-body">
                 <h2 className="card-title">{feature.title}</h2>
