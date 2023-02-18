@@ -1,5 +1,4 @@
 import { useTheme } from "next-themes"
-import { useEffect } from "react";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer"
 import Hero from "@/components/hero";
@@ -9,12 +8,9 @@ import Action from "@/components/action";
 export default function TopPageView() {
   const { theme, setTheme } = useTheme();
 
-  // useEffect(() => {
-  //   setTheme(THEMES[0]);
-  // }, []);
-
   const handleChange: React.ChangeEventHandler<HTMLSelectElement> = (event) => {
     setTheme(event.target.value);
+    console.log(theme);
   }
 
   return (
@@ -30,5 +26,3 @@ export default function TopPageView() {
     </main>
   )
 }
-
-// export default TopPageView;
