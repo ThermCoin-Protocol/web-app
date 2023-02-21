@@ -1,22 +1,22 @@
 import React from 'react';
 
-const THEMES = [
-  'cupcake',
-  'bumblebee',
-  'corporate',
-  'synthwave',
-  'retro',
-  'cyberpunk',
-  'lofi',
-  'pastel',
-  'fantasy',
-  'cmyk',
-  'autumn',
-  'business',
-  'coffee',
-  'winter',
-  'night',
-];
+// const THEMES = [
+//   'cupcake',
+//   'bumblebee',
+//   'corporate',
+//   'synthwave',
+//   'retro',
+//   'cyberpunk',
+//   'lofi',
+//   'pastel',
+//   'fantasy',
+//   'cmyk',
+//   'autumn',
+//   'business',
+//   'coffee',
+//   'winter',
+//   'night',
+// ];
 
 export default function Navbar() {
   const navbarNarrow = () => {
