@@ -20,11 +20,11 @@ const features = [
 
 export default function hook() {
   return (
-    <div className="flex min-h-screen flex-col justify-center">
+    <div className="flex min-h-screen flex-col justify-center text-primary-content">
       {features &&
         features.map((feature) => (
-          <div className="indicator m-5 w-3/4 self-center">
-            <div className="card cursor-pointer border hover:bg-secondary-focus">
+          <div className="indicator m-5 w-5/6 self-center">
+            <div className="card cursor-pointer border hover:bg-base-300">
               <div className="card-body">
                 <h2 className="card-title">{feature.title}</h2>
                 <p>{feature.description}</p>
