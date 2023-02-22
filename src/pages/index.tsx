@@ -1,10 +1,10 @@
-import { useTheme } from "next-themes"
-import Navbar from "../components/navbar";
-import Footer from "../components/footer"
-import Hero from "@/components/hero";
-import Hook from "@/components/hook";
-import Action from "@/components/action";
-import { useEffect } from "react";
+import { useTheme } from 'next-themes';
+import Navbar from '../components/navbar';
+import Footer from '../components/footer';
+import Hero from '@/components/hero';
+import Hook from '@/components/hook';
+import Action from '@/components/action';
+import { useEffect } from 'react';
 
 export default function TopPageView() {
   const { theme, setTheme } = useTheme();
@@ -12,15 +12,15 @@ export default function TopPageView() {
   const handleChange: React.ChangeEventHandler<HTMLSelectElement> = (event) => {
     setTheme(event.target.value);
     console.log(theme);
-  }
+  };
 
   useEffect(() => {
-    setTheme("dark");
+    setTheme('dark');
   }, []);
 
   return (
     <main
-      className="flex flex-col items-center h-screen"
+      className="flex h-screen flex-col items-center"
       onChange={handleChange}
     >
       <Navbar />
@@ -29,5 +29,5 @@ export default function TopPageView() {
       <Action />
       <Footer />
     </main>
-  )
+  );
 }
