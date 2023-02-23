@@ -1,5 +1,9 @@
 import React from 'react';
 
+import VerginaSun from './VerginaSun.png';
+
+import Image from 'next/image';
+
 // const THEMES = [
 //   'cupcake',
 //   'bumblebee',
@@ -70,23 +74,31 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="navbar fixed z-20 flex hidden justify-between bg-neutral text-primary-content sm:flex">
-        <div className="navbar-start mx-2 p-4">
-          <span className="text-xl font-bold">ThermCoin</span>
+      <div className="navbar z-20 my-8 flex hidden justify-between text-primary-content sm:flex">
+        <div className="navbar-start mx-8 p-10">
+          <Image
+            src={VerginaSun}
+            alt="Picture of the author"
+            width={50}
+            height={50}
+          />
+          <span className="px-3 text-xl font-bold tracking-wide">
+            Thermcoin
+          </span>
         </div>
-        <div className="hover mx-2 sm:flex">
-          <div className="flex justify-between">
+        <div className="hover mx-12 sm:flex">
+          <div className="x-10 flex justify-between">
             {['Discord', 'GitHub', 'Docs', 'Blog'].map((item) => (
-              <a className="rounded-btn btn-md btn text-xl text-primary-content hover:border-neutral hover:bg-neutral hover:text-info">
+              <a className="btn-ghost btn-md btn bg-base-100 text-xl tracking-wide text-base-content hover:bg-neutral hover:text-secondary">
                 {item}
               </a>
             ))}
           </div>
         </div>
       </div>
-      <div className="navbar fixed z-20 flex flex justify-between bg-neutral text-primary-content sm:hidden">
+      <div className="navbar z-20 mx-8 flex justify-between text-base-content sm:hidden">
         <div className="navbar-start mx-2 p-4">
-          <span className="text-4xl font-bold">ThermCoin</span>
+          <span className="text-xl font-bold tracking-wide">Thermcoin</span>
         </div>
         {navbarNarrow()}
       </div>

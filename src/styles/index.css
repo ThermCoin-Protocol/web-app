@@ -11,3 +11,27 @@
     font-family: 'Roboto', sans-serif;
   }
 }
+
+@layer components {
+  .vergina-sun {
+    filter: invert(60%) sepia(100%) saturate(100%) hue-rotate(15deg);
+  }
+  .circle {
+    transform: rotateX(51deg) rotateZ(43deg);
+    background-color: #fffef6;
+    background-size: contain;
+    transform-style: preserve-3d;
+    box-shadow: 10px 0px black;
+    height: 200px;
+    border-radius: 50%;
+    width: 200px;
+    box-shadow: 8px 8px 0 1px #e0d58f, -1px 0 28px 0 rgba(34, 33, 81, 0.01),
+      28px 28px 28px 0 rgba(34, 33, 81, 0.25);
+    transition: 0.4s ease-in-out transform, 0.4s ease-in-out box-shadow;
+  }
+  .circle:hover {
+    transform: translate3d(0px, -16px, 0px) rotateX(51deg) rotateZ(43deg);
+    box-shadow: 8px 8px 0 1px #e0d58f, -1px 0 28px 0 rgba(34, 33, 81, 0.01),
+      54px 54px 28px -10px rgba(34, 33, 81, 0.15);
+  }
+}

@@ -15,12 +15,12 @@ export default function TopPageView() {
   };
 
   useEffect(() => {
-    setTheme('dark');
+    setTheme('mytheme');
   }, []);
 
   return (
     <main
-      className="flex h-screen flex-col items-center"
+      className="flex h-screen flex-col items-center text-primary-content"
       onChange={handleChange}
     >
       <Navbar />

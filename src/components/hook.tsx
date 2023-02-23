@@ -2,19 +2,19 @@ import React from 'react';
 
 const features = [
   {
-    title: 'Secure and Private',
+    title: 'Private and Untraceable',
     description:
-      'ThermCoin is a uses the same cryptographic technology as monero, gaurenteeing your privacy.',
+      'ThermCoin uses ring signatures and advanced cryptography to provide anonymity by default.',
   },
   {
-    title: 'Low Fees',
+    title: 'Fair and Equitable Mining',
     description:
-      'ThermCoin has a low transaction fee, allowing you to send money to anyone, anywhere in the world.',
+      'Thermcoin is distributed to all miners equally, no matter their hash rate, to promote both fairness and decentralization.',
   },
   {
-    title: 'Easy to Use',
+    title: 'Pegged to Energy Production',
     description:
-      'ThermCoin is easy to use, and can be used to buy goods and services from any merchant.',
+      'The supply of Thermcoin is pegged to total global energy production at a 1:1 ratio, providing a one-of-a-kind tokenomic structure.',
   },
 ];
 
@@ -23,10 +23,10 @@ export default function hook() {
     <div className="flex min-h-screen flex-col justify-center text-primary-content">
       {features &&
         features.map((feature) => (
-          <div className="indicator m-5 w-5/6 self-center">
-            <div className="card cursor-pointer border hover:bg-base-300">
-              <div className="card-body">
-                <h2 className="card-title">{feature.title}</h2>
+          <div className=" m-5 w-11/12 self-center text-xl">
+            <div className="card w-full cursor-pointer border bg-neutral text-neutral-content hover:bg-base-300">
+              <div className="card-body ">
+                <h2 className="card-title text-2xl">{feature.title}</h2>
                 <p>{feature.description}</p>
               </div>
             </div>
