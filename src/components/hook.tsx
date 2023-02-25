@@ -23,10 +23,10 @@ export default function hook() {
     <div className="flex min-h-screen flex-col justify-center text-primary-content">
       {features &&
         features.map((feature) => (
-          <div className=" m-5 w-11/12 self-center text-xl">
-            <div className="card w-full cursor-pointer border bg-neutral text-neutral-content hover:bg-base-300">
+          <div className=" m-5 mt-10 w-11/12 self-center text-lg">
+            <div className="card cursor-pointer bg-neutral text-neutral-content hover:bg-accent hover:border-accent">
               <div className="card-body ">
-                <h2 className="card-title text-2xl">{feature.title}</h2>
+                <h2 className="card-title text-xl">{feature.title}</h2>
                 <p>{feature.description}</p>
               </div>
             </div>

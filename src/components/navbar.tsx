@@ -3,6 +3,7 @@ import React from 'react';
 import VerginaSun from './VerginaSun.png';
 
 import Image from 'next/image';
+import Link from 'next/link';
 
 // const THEMES = [
 //   'cupcake',
@@ -45,7 +46,7 @@ export default function Navbar() {
           </label>
           <ul
             tabIndex={0}
-            className="dropdown-content menu rounded-box mt-7 w-40 bg-primary-content text-neutral shadow-xl"
+            className="dropdown-content menu rounded-box mt-7 w-40 bg-primary shadow-xl"
           >
             <li>
               <a
@@ -61,7 +62,9 @@ export default function Navbar() {
               </a>
             </li>
             <li>
-              <a className="text-lg">Primer</a>
+              <Link href="/docs">
+                <a className="text-lg">Docs</a>
+              </Link>
             </li>
             <li>
               <a className="text-lg">Blog</a>
@@ -89,7 +92,7 @@ export default function Navbar() {
         <div className="hover mx-12 sm:flex">
           <div className="x-10 flex justify-between">
             {['Discord', 'GitHub', 'Docs', 'Blog'].map((item) => (
-              <a className="btn-ghost btn-md btn bg-base-100 text-xl tracking-wide text-base-content hover:bg-neutral hover:text-secondary">
+              <a className="btn-ghost hover:bg-base-100 btn-sm btn bg-base-100 text-lg text-base-content hover:bg-neutral relative before:content-[''] before:absolute before:block before:w-3/4 before:h-[2px] before:bottom-0 before:left-50 before:bg-base-content before:hover:scale-x-100 before:scale-x-0 before:origin-top-left before:transition before:ease-in-out before:duration-300">
                 {item}
               </a>
             ))}

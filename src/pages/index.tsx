@@ -3,8 +3,9 @@ import Navbar from '../components/navbar';
 import Footer from '../components/footer';
 import Hero from '@/components/hero';
 import Hook from '@/components/hook';
-import Action from '@/components/action';
+// import Action from '@/components/action';
 import { useEffect } from 'react';
+import Stats from '@/components/stats';
 
 export default function TopPageView() {
   const { theme, setTheme } = useTheme();
@@ -15,7 +16,7 @@ export default function TopPageView() {
   };
 
   useEffect(() => {
-    setTheme('mytheme');
+    setTheme('dark');
   }, []);
 
   return (
@@ -25,8 +26,9 @@ export default function TopPageView() {
     >
       <Navbar />
       <Hero />
+      <Stats />
       <Hook />
-      <Action />
+      {/* <Action /> */}
       <Footer />
     </main>
   );
