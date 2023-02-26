@@ -27,7 +27,7 @@ export default function TopPageView() {
       <Navbar />
       <Hero />
       <Stats />
-      <Hook />
+      {/* <Hook /> */}
       {/* <Action /> */}
       <Footer />
     </main>

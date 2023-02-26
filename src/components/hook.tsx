@@ -20,7 +20,7 @@ const features = [
 
 export default function hook() {
   return (
-    <div className="flex min-h-screen flex-col justify-center text-primary-content">
+    <div className="flex flex-col justify-center text-primary-content">
       {features &&
         features.map((feature) => (
           <div className=" m-5 mt-10 w-11/12 self-center text-lg">

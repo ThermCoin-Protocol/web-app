@@ -46,28 +46,27 @@ export default function Navbar() {
           </label>
           <ul
             tabIndex={0}
-            className="dropdown-content menu rounded-box mt-7 w-40 bg-primary shadow-xl"
+            className="dropdown-content menu rounded-box mt-7 w-60 bg-base-100 border border-black shadow-xl"
           >
             <li>
               <a
-                className="text-lg"
-                href="https://github.com/ThermCoin-Protocol"
+                className="text-xl"
               >
-                GitHub
+                Docs
               </a>
             </li>
             <li>
-              <a className="text-lg" href="https://discord.gg/evAR9ng8WR">
-                Discord
+              <a className="text-xl" href="https://github.com/ThermCoin-Protocol">
+                Codebase
               </a>
             </li>
             <li>
-              <Link href="/docs">
-                <a className="text-lg">Docs</a>
+              <Link href="/">
+                <a className="text-xl">Blog</a>
               </Link>
             </li>
             <li>
-              <a className="text-lg">Blog</a>
+              <a className="text-xl" href="https://discord.gg/evAR9ng8WR">Forum</a>
             </li>
           </ul>
         </div>
@@ -85,14 +84,14 @@ export default function Navbar() {
             width={50}
             height={50}
           />
-          <span className="px-3 text-xl font-bold tracking-wide">
+          <span className="px-3 text-xl font-bold">
             Thermcoin
           </span>
         </div>
         <div className="hover mx-12 sm:flex">
           <div className="x-10 flex justify-between">
-            {['Discord', 'GitHub', 'Docs', 'Blog'].map((item) => (
-              <a className="btn-ghost hover:bg-base-100 btn-sm btn bg-base-100 text-lg text-base-content hover:bg-neutral relative before:content-[''] before:absolute before:block before:w-3/4 before:h-[2px] before:bottom-0 before:left-50 before:bg-base-content before:hover:scale-x-100 before:scale-x-0 before:origin-top-left before:transition before:ease-in-out before:duration-300">
+            {['Docs', 'Codebase', 'Blog', 'Forum'].map((item) => (
+              <a className="btn-ghost hover:bg-base-100 btn-sm btn bg-base-100 text-lg text-base-content relative before:content-[''] before:absolute before:block before:w-3/4 before:h-[2px] before:bottom-0 before:left-50 before:bg-base-content before:hover:scale-x-100 before:scale-x-0 before:origin-top-left before:transition before:ease-in-out before:duration-300">
                 {item}
               </a>
             ))}
