@@ -14,9 +14,8 @@ import {
   InstancedRigidBodies,
 } from '@react-three/rapier';
 import { useTexture } from '@react-three/drei';
-import { Suspense } from 'react';
 
-export default function Coin() {
+export default function Coins() {
   return (
     <>
       {/* Lighting, environment and colors */}
@@ -36,8 +35,8 @@ export default function Coin() {
         <Lightformer position={[-10, -10, -10]} scale={10} intensity={2} />
       </Environment>
       {/* Moon physics */}
-      <Physics gravity={[0, -1, 0]}>
-        <Hats />
+      <Physics gravity={[0, -0.6, 0]}>
+        <Cylinders />
         <RigidBody position={[0, -1, 0]} type="fixed" colliders="false">
           <CuboidCollider restitution={0.2} args={[1000, 1, 1000]} />
         </RigidBody>
@@ -79,44 +78,28 @@ export default function Coin() {
   );
 }
 
-function Hats({ count = 7, rand = MathUtils.randFloatSpread }) {
+function Cylinders({ count = 7, rand = MathUtils.randFloatSpread }) {
   const colorMap = useTexture('https://i.ibb.co/4P9ttHZ/TEXTUREGOLD2.png');
-  // rand(6) - 1.5,
-  // 10 + i / 2,
-  // rand(6) + 3,
-  const positions1 = Array.from({ length: count }, (_, i) => [
-    rand(15) - 1.5,
-    4 + i / 2,
-    rand(15) + 3,
-  ]);
+  // const positions = Array.from({ length: count }, (_, i) => [
+  //   rand(2) - 1.5,
+  //   10 + i / 2,
+  //   rand(2) + 3,
+  // ]);
   const positions = [
     [-1.5, 8, 7],
     [-3, 11, 6],
     [-5, 13, 6],
     [-4, 16, -1],
-    [0, 10, 2],
-    [7, 12, -3],
-    [7, 14, 3],
-    [-3, 17, 0],
+    [0, 19, 2],
+    [7, 21, -3],
+    [7, 22, 3],
+    [-3, 25, 0],
   ];
   const rotations = Array.from({ length: count }, () => [
     Math.random(),
     Math.random(),
     Math.random(),
   ]);
-
-  //   const instances = useMemo(() => {
-  //     const instances: InstancedRigidBodyProps[] = [];
-
-  //     for (let i = 0; i < count; i++) {
-  //       instances.push({
-  //         position: [rand(10) + 1, 10 + i / 2, rand(10) - 2],
-  //         rotation: [Math.random(), Math.random(), Math.random()],
-  //       });
-  //     }
-
-  //     return instances;
-  //   }, []);
 
   return (
     <InstancedRigidBodies
