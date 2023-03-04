@@ -34,4 +34,9 @@
     box-shadow: 8px 8px 0 1px #e0d58f, -1px 0 28px 0 rgba(34, 33, 81, 0.01),
       54px 54px 28px -10px rgba(34, 33, 81, 0.15);
   }
+
+  .animatedbackground {
+    width: 100vw !important;
+    height: 121vh !important;
+  }
 }
