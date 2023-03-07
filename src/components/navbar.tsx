@@ -1,6 +1,6 @@
 import React from 'react';
 
-import VerginaSun from './VerginaSun.png';
+import VerginaSun from './img/VerginaSun.png';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -46,17 +46,16 @@ export default function Navbar() {
           </label>
           <ul
             tabIndex={0}
-            className="dropdown-content menu rounded-box mt-7 w-60 bg-base-100 border border-black shadow-xl"
+            className="dropdown-content menu rounded-box mt-7 w-60 border border-black bg-base-100 shadow-xl"
           >
+            <li>
+              <a className="text-xl">Docs</a>
+            </li>
             <li>
               <a
                 className="text-xl"
+                href="https://github.com/ThermCoin-Protocol"
               >
-                Docs
-              </a>
-            </li>
-            <li>
-              <a className="text-xl" href="https://github.com/ThermCoin-Protocol">
                 Codebase
               </a>
             </li>
@@ -66,7 +65,9 @@ export default function Navbar() {
               </Link>
             </li>
             <li>
-              <a className="text-xl" href="https://discord.gg/evAR9ng8WR">Forum</a>
+              <a className="text-xl" href="https://discord.gg/evAR9ng8WR">
+                Forum
+              </a>
             </li>
           </ul>
         </div>
@@ -76,22 +77,21 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="navbar z-20 my-8 flex hidden justify-between text-primary-content sm:flex">
-        <div className="navbar-start mx-8 p-10">
+      <div className="navbar z-20 my-8 flex hidden justify-between text-base-content sm:flex">
+        <div className="navbar-start mx-8 p-10 ">
           <Image
             src={VerginaSun}
             alt="Picture of the author"
             width={50}
             height={50}
+            className="m-0"
           />
-          <span className="px-3 text-xl font-bold">
-            Thermcoin
-          </span>
+          <span className="px-3 text-xl font-bold">Thermcoin</span>
         </div>
         <div className="hover mx-12 sm:flex">
           <div className="x-10 flex justify-between">
             {['Docs', 'Codebase', 'Blog', 'Forum'].map((item) => (
-              <a className="btn-ghost hover:bg-base-100 btn-sm btn bg-base-100 text-lg text-base-content relative before:content-[''] before:absolute before:block before:w-3/4 before:h-[2px] before:bottom-0 before:left-50 before:bg-base-content before:hover:scale-x-100 before:scale-x-0 before:origin-top-left before:transition before:ease-in-out before:duration-300">
+              <a className="before:left-50 btn-ghost btn-sm btn relative bg-base-100 text-lg text-base-content before:absolute before:bottom-0 before:block before:h-[2px] before:w-3/4 before:origin-top-left before:scale-x-0 before:bg-base-content before:transition before:duration-300 before:ease-in-out before:content-[''] hover:bg-base-100 before:hover:scale-x-100">
                 {item}
               </a>
             ))}

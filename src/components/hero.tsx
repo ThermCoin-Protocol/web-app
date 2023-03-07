@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import VerginaSun from './VerginaSun.png';
+import VerginaSun from './img/VerginaSun.png';
 import AnimatedBackground from './animatedbackground';
 
 export default function Hero() {
@@ -53,4 +53,3 @@ export default function Hero() {
     </div>
   );
 }
-//h-screen w-screen

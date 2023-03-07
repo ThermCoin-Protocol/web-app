@@ -6,7 +6,11 @@ import {
   Environment,
   Lightformer,
 } from '@react-three/drei';
-import { EffectComposer, DepthOfField } from '@react-three/postprocessing';
+import {
+  EffectComposer,
+  DepthOfField,
+  Bloom,
+} from '@react-three/postprocessing';
 import {
   Physics,
   RigidBody,
@@ -22,10 +26,11 @@ export default function Coins() {
       <color attach="background" args={['#FFFDF7']} />
       <ambientLight intensity={0.1} />
       <directionalLight
-        position={[-10, 10, 5]}
+        position={[-10, 10, 10]}
         shadow-mapSize={[256, 256]}
         shadow-bias={-0.0001}
         castShadow
+        intensity={0.5}
       >
         <orthographicCamera attach="shadow-camera" args={[-10, 10, -10, 10]} />
       </directionalLight>
@@ -33,9 +38,10 @@ export default function Coins() {
         <Lightformer position={[10, 10, 10]} scale={10} intensity={2} />
         <Lightformer position={[10, 0, -10]} scale={10} intensity={3} />
         <Lightformer position={[-10, -10, -10]} scale={10} intensity={2} />
+        <Lightformer position={[0, 10, 0]} scale={10} intensity={2} />
       </Environment>
       {/* Moon physics */}
-      <Physics gravity={[0, -0.6, 0]}>
+      <Physics gravity={[0, -1, 0]}>
         <Cylinders />
         <RigidBody position={[0, -1, 0]} type="fixed" colliders="false">
           <CuboidCollider restitution={0.2} args={[1000, 1, 1000]} />
@@ -67,7 +73,7 @@ export default function Coins() {
       {/* Controls */}
       <OrbitControls
         autoRotate
-        autoRotateSpeed={0.01}
+        autoRotateSpeed={0.2}
         enabled={true}
         enablePan={false}
         enableZoom={false}
