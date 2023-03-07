@@ -91,7 +91,10 @@ export default function Navbar() {
         <div className="hover mx-12 sm:flex">
           <div className="x-10 flex justify-between">
             {['Docs', 'Codebase', 'Blog', 'Forum'].map((item) => (
-              <a className="before:left-50 btn-ghost btn-sm btn relative bg-base-100 text-lg text-base-content before:absolute before:bottom-0 before:block before:h-[2px] before:w-3/4 before:origin-top-left before:scale-x-0 before:bg-base-content before:transition before:duration-300 before:ease-in-out before:content-[''] hover:bg-base-100 before:hover:scale-x-100">
+              <a
+                key={item}
+                className="before:left-50 btn-ghost btn-sm btn relative bg-base-100 text-lg text-base-content before:absolute before:bottom-0 before:block before:h-[2px] before:w-3/4 before:origin-top-left before:scale-x-0 before:bg-base-content before:transition before:duration-300 before:ease-in-out before:content-[''] hover:bg-base-100 before:hover:scale-x-100"
+              >
                 {item}
               </a>
             ))}
