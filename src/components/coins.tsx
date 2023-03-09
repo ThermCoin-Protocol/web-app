@@ -42,7 +42,7 @@ export default function Coins() {
       {/* Moon physics */}
       <Physics gravity={[0, -1, 0]}>
         <Cylinders />
-        <RigidBody position={[0, -1, 0]} type="fixed" colliders="false">
+        <RigidBody position={[0, -1, 0]} type="fixed" colliders={false}>
           <CuboidCollider restitution={0.2} args={[1000, 1, 1000]} />
         </RigidBody>
       </Physics>
