@@ -7,15 +7,15 @@ export default function Hero() {
   return (
     <div className="min-h-screen">
       <div className="text-base-content">
-        <div className="flex flex-col m-8 md:m-20">
+        <div className="pt-10 md:pt-0 flex flex-col m-8 md:m-20">
           <div className="col-span-1 mb-10">
             <h1 className="text-4xl tracking-wide sm:text-5xl md:text-6xl xl:text-7xl">
               The Future's Energy-Based <br/>Digital Currency
             </h1>
           </div>
           
-          <div className="mb-48">
-            <p className="text-md sm:w-3/4 lg:text-xl">
+          <div className="bg-base-100 rounded-3xl p-5 border-2 border-black bg-opacity-90 mb-10 sm:mb-48 md:w-3/5">
+            <p className="text-md lg:text-xl">
               ThermCoin solves problems related to energy economics and tackles
               our future of energy and transactions. We are a community of
               people who are passionate about fair and decentralized solutions
@@ -31,7 +31,7 @@ export default function Hero() {
               className="vergina-sun"
             />
           </div> */}
-          <div className="col-span-1 mb-10 mb-20">
+          <div className="col-span-1 mb-10 mb-20 sm:-my-20">
             <button className="btn-md mr-4 btn my-0 mb-3 rounded-full border-2 border-black bg-black text-white hover:border-black hover:bg-base-100 hover:text-black lg:btn-lg">
               Start Mining
             </button>

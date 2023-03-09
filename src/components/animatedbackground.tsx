@@ -11,7 +11,7 @@ export default function AnimatedBackground() {
           antialias: true,
         }}
         camera={{ position: [-30, 35, -15], near: 30, far: 55, fov: 12 }}
-        dpr={0.9}
+        dpr={1.2}
       >
         {/* <PerformanceMonitor
           onIncline={() => dpr < 1.2 && setDpr(dpr + 0.1)}
