@@ -67,7 +67,7 @@ export default function Coins() {
       </AccumulativeShadows>
       {/* Effects */}
       <EffectComposer>
-        <DepthOfField target={[0, 0, 0]} focusRange={0.15} bokehScale={8} />
+        <DepthOfField target={[0, 0, 0]} bokehScale={8} />
       </EffectComposer>
       {/* Controls */}
       <OrbitControls
