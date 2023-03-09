@@ -22,14 +22,12 @@ export default function TopPageView() {
 
   return (
     <main
-      className="flex h-screen flex-col items-center text-base-content"
+      className="flex h-screen flex-col items-center text-gray-800"
       onChange={handleChange}
     >
       <Navbar />
-
       <Hero />
       <Stats />
-
       <Features />
       {/* <Action /> */}
       <Faq />

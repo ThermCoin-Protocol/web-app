@@ -28,7 +28,7 @@ export default function Navbar() {
     return (
       <div>
         <div className="dropdown-end dropdown visible md:invisible">
-          <label tabIndex={0} className="btn-ghost bg-circle btn mx-2">
+          <label tabIndex={0} className="btn-ghost btn mx-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-8 w-8"
@@ -77,7 +77,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="p-20 navbar z-20 hidden text-base-content md:flex">
+      <div className="p-20 navbar z-20 hidden text-gray-800 md:flex">
         <div className="navbar-start flex-shrink-0">
           <Image
             src={VerginaSun}
@@ -93,7 +93,7 @@ export default function Navbar() {
             {['Docs', 'Codebase', 'Blog', 'Forum'].map((item) => (
               <a
                 key={item}
-                className="before:left-50 btn-ghost btn relative hover:bg-transparent text-lg text-base-content before:absolute before:bottom-0 before:block before:h-[2px] before:w-3/4 before:origin-top-left before:scale-x-0 before:bg-base-content before:transition before:duration-300 before:ease-in-out before:content-[''] hover:bg-base-100 before:hover:scale-x-100"
+                className="before:left-50 btn-ghost btn relative hover:bg-transparent text-lg text-gray-800 before:absolute before:bottom-0 before:block before:h-[1px] before:w-3/4 before:origin-top-left before:scale-x-0 before:bg-base-content before:transition before:duration-300 before:ease-in-out before:content-[''] hover:bg-base-100 before:hover:scale-x-100"
               >
                 {item}
               </a>
@@ -101,7 +101,7 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-      <div className="navbar pt-10 mx-10 z-20 flex justify-between text-base-content md:hidden">
+      <div className="navbar pt-10 mx-10 z-20 flex justify-between text-gray-800 md:hidden">
         <div className="navbar-start mx-2 p-4">
           <span className="text-xl font-bold tracking-wide">Thermcoin</span>
         </div>

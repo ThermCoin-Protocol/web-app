@@ -1,10 +1,13 @@
 export default function Faq() {
   return (
-    <div className="border-t border-black bg-base-100 pt-20 sm:mx-10 md:mx-20 xl:mx-40">
+    <div>
+    <div className="border-t border-gray-800 bg-base-100 mx-10 sm:mx-20">
+      </div>
+    <div className="pt-20 sm:mx-10 md:mx-20 xl:mx-40">
       <div className="mb-32 text-gray-800">
-        <div className="grid gap-4 md:grid-cols-2">
-          <div className="mx-10 mb-6 self-center justify-self-center md:mb-0">
-            <h2 className="mb-6 text-9xl font-bold tracking-widest">FAQ</h2>
+        <div className="grid gap-4 lg:grid-cols-2">
+          <div className="mx-10 mb-0 self-center justify-self-center md:mb-0">
+            <h2 className="mb-6 text-5xl font-bold text-gray-800 md:text-6xl lg:text-7xl tracking-wide">Frequently Asked Questions</h2>
 
             <p className="text-gray-500">
               Didn't find your answer in the FAQ? <br />
@@ -19,7 +22,7 @@ export default function Faq() {
           </div>
 
           <div className="mb-6 md:mb-0">
-            <div className="my-10 rounded-3xl p-10 transition-all hover:scale-105 hover:bg-[#FFFFFF] hover:shadow-xl">
+            <div className="my-10 rounded-3xl p-10 transition-all sm:hover:scale-105 sm:hover:bg-[#FFFFFF] sm:hover:shadow-xl">
               <p className="mb-4 font-bold">
                 Anim pariatur cliche reprehenderit?
               </p>
@@ -30,7 +33,7 @@ export default function Faq() {
                 dolorem, doloremque rem aliquid perferendis.
               </p>
             </div>
-            <div className="my-10 rounded-3xl p-10 transition-all hover:scale-105 hover:bg-[#FFFFFF] hover:shadow-xl">
+            <div className="my-10 rounded-3xl p-10 transition-all sm:hover:scale-105 sm:hover:bg-[#FFFFFF] sm:hover:shadow-xl">
               <p className="mb-4 font-bold">
                 Non cupidatat skateboard dolor brunch?
               </p>
@@ -43,7 +46,7 @@ export default function Faq() {
                 odit
               </p>
             </div>
-            <div className="my-10 rounded-3xl p-10 transition-all hover:scale-105 hover:bg-[#FFFFFF] hover:shadow-xl">
+            <div className="my-10 rounded-3xl p-10 transition-all sm:hover:scale-105 sm:hover:bg-[#FFFFFF] sm:hover:shadow-xl">
               <p className="mb-4 font-bold">
                 Praesentium voluptatibus temporibus consequatur non aspernatur?
               </p>
@@ -56,6 +59,7 @@ export default function Faq() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }

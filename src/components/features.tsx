@@ -2,21 +2,21 @@ import React from 'react';
 
 export default function Features() {
   return (
-    <div className="-mt-40 py-24 sm:py-32">
+    <div className="-mt-40 py-24 sm:py-32 sm:mx-10 md:mx-20 xl:mx-40">
       <div className="mx-2 max-w-full px-6 sm:px-8">
-        <div className="mx-auto max-w-3xl md:text-center">
+        <div className="mx-auto max-w-3xl lg:text-center">
           {/* <h2 className="font-semibold leading-7 text-info">Lorem Ipsum</h2> */}
-          <p className="mt-2 text-6xl tracking-wide sm:text-8xl">Features</p>
-          <p className="text-md mt-6 leading-8">
+          <p className="mt-2 text-5xl font-bold text-gray-800 md:text-6xl lg:text-7xl tracking-wide">ThermCoin Features</p>
+          <p className="text-lg mt-6 leading-8">
             Quis tellus eget adipiscing convallis sit sit eget aliquet quis.
             Suspendisse eget egestas a elementum pulvinar et feugiat blandit at.
             In mi viverra elit nunc.
           </p>
         </div>
-        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl text-lg">
           <dl className="grid max-w-xl grid-cols-1 gap-y-10 gap-x-8 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
             <div className="relative pl-16">
-              <dt className="font-semibold leading-7 text-gray-900">
+              <dt className="font-semibold leading-7 text-gray-800">
                 <div className="absolute top-0 left-0 flex h-10 w-10 items-center justify-center rounded-lg bg-neutral">
                   <svg
                     className="h-6 w-6 text-white"
@@ -35,14 +35,14 @@ export default function Features() {
                 </div>
                 Privacy and Anonymity
               </dt>
-              <dd className="mt-2 text-base leading-7 text-gray-600">
+              <dd className="mt-2 text-base leading-7 text-gray-500">
                 Morbi viverra dui mi arcu sed. Tellus semper adipiscing
                 suspendisse semper morbi. Odio urna massa nunc massa.
               </dd>
             </div>
 
             <div className="relative pl-16">
-              <dt className="text-base font-semibold leading-7 text-gray-900">
+              <dt className="text-base font-semibold leading-7 text-gray-800">
                 <div className="absolute top-0 left-0 flex h-10 w-10 items-center justify-center rounded-lg bg-neutral">
                   <svg
                     className="h-6 w-6 text-white"
@@ -61,14 +61,14 @@ export default function Features() {
                 </div>
                 Pegged to Energetic Value
               </dt>
-              <dd className="mt-2 text-base leading-7 text-gray-600">
+              <dd className="mt-2 text-base leading-7 text-gray-500">
                 Sit quis amet rutrum tellus ullamcorper ultricies libero dolor
                 eget. Sem sodales gravida quam turpis enim lacus amet.
               </dd>
             </div>
 
             <div className="relative pl-16">
-              <dt className="text-base font-semibold leading-7 text-gray-900">
+              <dt className="text-base font-semibold leading-7 text-gray-800">
                 <div className="absolute top-0 left-0 flex h-10 w-10 items-center justify-center rounded-lg bg-neutral">
                   <svg
                     className="h-6 w-6 text-white"
@@ -87,14 +87,14 @@ export default function Features() {
                 </div>
                 Open Source
               </dt>
-              <dd className="mt-2 text-base leading-7 text-gray-600">
+              <dd className="mt-2 text-base leading-7 text-gray-500">
                 Quisque est vel vulputate cursus. Risus proin diam nunc commodo.
                 Lobortis auctor congue commodo diam neque.
               </dd>
             </div>
 
             <div className="relative pl-16">
-              <dt className="text-base font-semibold leading-7 text-gray-900">
+              <dt className="text-base font-semibold leading-7 text-gray-800">
                 <div className="absolute top-0 left-0 flex h-10 w-10 items-center justify-center rounded-lg bg-neutral">
                   <svg
                     className="h-6 w-6 text-white"
@@ -113,7 +113,7 @@ export default function Features() {
                 </div>
                 Advanced Security
               </dt>
-              <dd className="mt-2 text-base leading-7 text-gray-600">
+              <dd className="mt-2 text-base leading-7 text-gray-500">
                 Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis
                 aliquet hac quis. Id hac maecenas ac donec pharetra eget.
               </dd>
