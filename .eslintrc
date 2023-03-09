@@ -8,8 +8,7 @@
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "prettier",
-    "eslint-plugin-prettier"
+    "prettier"
   ],
   "rules": {
     "no-console": 1,
