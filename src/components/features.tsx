@@ -3,10 +3,10 @@ import React from 'react';
 export default function Features() {
   return (
     <div className="-mt-40 py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="font-semibold leading-7 text-info">Lorem Ipsum</h2>
-          <p className="mt-2 text-9xl sm:text-4xl">ThermCoin Features</p>
+      <div className="mx-2 max-w-full px-6 sm:px-8">
+        <div className="mx-auto max-w-3xl md:text-center">
+          {/* <h2 className="font-semibold leading-7 text-info">Lorem Ipsum</h2> */}
+          <p className="mt-2 text-6xl tracking-wide sm:text-8xl">Features</p>
           <p className="text-md mt-6 leading-8">
             Quis tellus eget adipiscing convallis sit sit eget aliquet quis.
             Suspendisse eget egestas a elementum pulvinar et feugiat blandit at.
