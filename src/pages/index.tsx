@@ -2,7 +2,6 @@ import { useTheme } from 'next-themes';
 import Navbar from '../components/navbar';
 import Footer from '../components/footer';
 import Hero from '@/components/hero';
-import Action from '@/components/action';
 import Features from '@/components/features';
 import Faq from '@/components/faq';
 

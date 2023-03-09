@@ -1,7 +1,4 @@
 import React from 'react';
-import DesktopWallet from './img/desktopwallet.png';
-import MobileWallet from './img/mobilewallet.png';
-import Image from 'next/image';
 
 export default function Features() {
   return (

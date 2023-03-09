@@ -1,4 +1,4 @@
-import { MathUtils } from 'three';
+// import { MathUtils } from 'three';
 import {
   AccumulativeShadows,
   RandomizedLight,
@@ -9,7 +9,6 @@ import {
 import {
   EffectComposer,
   DepthOfField,
-  Bloom,
 } from '@react-three/postprocessing';
 import {
   Physics,
@@ -84,7 +83,7 @@ export default function Coins() {
   );
 }
 
-function Cylinders({ count = 7, rand = MathUtils.randFloatSpread }) {
+function Cylinders({ count = 7 }) {
   const colorMap = useTexture('https://i.ibb.co/4P9ttHZ/TEXTUREGOLD2.png');
   // const positions = Array.from({ length: count }, (_, i) => [
   //   rand(2) - 1.5,
