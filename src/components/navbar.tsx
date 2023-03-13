@@ -46,7 +46,7 @@ export default function Navbar() {
           </label>
           <ul
             tabIndex={0}
-            className="dropdown-content menu rounded-box mt-7 w-60 border border-black bg-base-100 shadow-xl"
+            className="dropdown-content menu rounded-box mt-7 w-60 border border-gray-800 bg-base-100 shadow-xl"
           >
             <li>
               <a className="text-xl">Docs</a>
@@ -77,7 +77,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="p-20 navbar z-20 hidden text-gray-800 md:flex">
+      <div className="navbar z-20 hidden p-20 text-gray-800 md:flex">
         <div className="navbar-start flex-shrink-0">
           <Image
             src={VerginaSun}
@@ -86,14 +86,14 @@ export default function Navbar() {
             height={50}
             className="m-0"
           />
-          <span className="px-3 text-xl font-bold">Thermcoin</span>
+          <span className="px-3 text-xl font-bold">ThermCoin</span>
         </div>
-        <div className="sm:flex navbar-end">
+        <div className="navbar-end sm:flex">
           <div className="x-10 flex justify-between">
             {['Docs', 'Codebase', 'Blog', 'Forum'].map((item) => (
               <a
                 key={item}
-                className="before:left-50 btn-ghost btn relative hover:bg-transparent text-lg text-gray-800 before:absolute before:bottom-0 before:block before:h-[1px] before:w-3/4 before:origin-top-left before:scale-x-0 before:bg-base-content before:transition before:duration-300 before:ease-in-out before:content-[''] hover:bg-base-100 before:hover:scale-x-100"
+                className="before:left-50 btn-ghost btn relative text-lg text-gray-800 before:absolute before:bottom-0 before:block before:h-[1px] before:w-3/4 before:origin-top-left before:scale-x-0 before:bg-gray-800 before:transition before:duration-300 before:ease-in-out before:content-[''] hover:bg-transparent hover:bg-base-100 before:hover:scale-x-100"
               >
                 {item}
               </a>
@@ -101,11 +101,20 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-      <div className="navbar pt-10 mx-10 z-20 flex justify-between text-gray-800 md:hidden">
+      <div className="navbar z-20 mt-5 text-gray-800 md:hidden">
         <div className="navbar-start mx-2 p-4">
-          <span className="text-xl font-bold tracking-wide">Thermcoin</span>
+          <span className="text-xl font-bold tracking-wide">ThermCoin</span>
         </div>
-        {navbarNarrow()}
+        <div className="navbar-center">
+          <Image
+            src={VerginaSun}
+            alt="Picture of the author"
+            width={50}
+            height={50}
+            className="flex-shrink-0"
+          />
+        </div>
+        <div className="navbar-end">{navbarNarrow()}</div>
       </div>
     </>
 

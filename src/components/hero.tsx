@@ -17,23 +17,26 @@ export default function Hero() {
               </div>
             </div>
             <div className="lg:text-center">
-              <h1 className="text-5xl font-bold text-gray-800 md:text-6xl lg:text-7xl tracking-wide">
+              <h1 className="text-5xl font-bold tracking-wide text-gray-800 md:text-6xl lg:text-7xl">
                 The Future's Energy-Based Digital Currency
               </h1>
               <p className="mt-6 text-lg leading-8 text-gray-800 ">
-              ThermCoin solves problems related to energy economics and tackles
-              our future of energy and transactions. We are a community of
-              people who are passionate about fair and decentralized solutions
-              to the problems of our time.
+                ThermCoin solves problems related to energy economics and
+                tackles our future of energy and transactions. We are a
+                community of people who are passionate about fair and
+                decentralized solutions to the problems of our time.
               </p>
-              <div className="mt-10 flex items-center lg:justify-center gap-x-6">
+              <div className="mt-10 flex items-center gap-x-6 lg:justify-center">
                 <a
                   href="#"
-                  className="btn-md btn rounded-full border-2 border-gray-800 bg-gray-800 text-white hover:border-gray-800 hover:bg-base-100 hover:text-black"
+                  className="btn-md btn rounded-full border-2 border-gray-800 bg-gray-800 text-white hover:border-gray-800 hover:bg-base-100 hover:text-gray-800"
                 >
                   Get started
                 </a>
-                <a href="#" className="text-md font-semibold leading-6 text-gray-900">
+                <a
+                  href="#"
+                  className="text-md font-semibold leading-6 text-gray-900"
+                >
                   LEARN MORE <span aria-hidden="true">→</span>
                 </a>
               </div>

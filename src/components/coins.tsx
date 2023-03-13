@@ -6,10 +6,7 @@ import {
   Environment,
   Lightformer,
 } from '@react-three/drei';
-import {
-  EffectComposer,
-  DepthOfField,
-} from '@react-three/postprocessing';
+import { EffectComposer, DepthOfField } from '@react-three/postprocessing';
 import {
   Physics,
   RigidBody,
@@ -91,7 +88,7 @@ function Cylinders({ count = 7 }) {
   //   10 + i / 2,
   //   rand(2) + 3,
   // ]);
-  const positions:Vector3Array[] = [
+  const positions: Vector3Array[] = [
     [-1.5, 8, 7],
     [-3, 11, 6],
     [-5, 13, 6],
@@ -102,7 +99,7 @@ function Cylinders({ count = 7 }) {
     [-3, 25, 0],
   ];
 
-  const rotations:Vector3Array[] = Array.from({ length: count }, () => [
+  const rotations: Vector3Array[] = Array.from({ length: count }, () => [
     Math.random(),
     Math.random(),
     Math.random(),

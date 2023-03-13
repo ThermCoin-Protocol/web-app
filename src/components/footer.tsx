@@ -1,7 +1,7 @@
 import React from 'react';
 export default function Footer() {
   return (
-    <footer className="footer grid-flow-col border-2 border-black bg-black p-4 text-base-100">
+    <footer className="footer grid-flow-col border-2 border-gray-800 bg-gray-900 p-4 text-base-100">
       <div className="">
         <svg
           version="1.0"
