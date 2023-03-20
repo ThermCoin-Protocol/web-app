@@ -82,7 +82,7 @@ export default function Coins() {
 }
 
 function Cylinders({ count = 7 }) {
-  const colorMap = useTexture('IMG_2626.png');
+  const colorMap = useTexture('tex.png');
   // const positions = Array.from({ length: count }, (_, i) => [
   //   rand(2) - 1.5,
   //   10 + i / 2,
