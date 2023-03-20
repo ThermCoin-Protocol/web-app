@@ -8,14 +8,14 @@ import Stats from '@/components/stats';
 export default function TopPageView() {
 
   return (
-    <main className="flex h-screen flex-col items-center text-gray-800">
+    <div className="flex h-screen flex-col items-center text-gray-800">
       <Navbar />
-      <Hero />
+      <Hero/>
       <Stats />
       <Features />
       {/* <Action /> */}
       <Faq />
       <Footer />
-    </main>
+    </div>
   );
 }

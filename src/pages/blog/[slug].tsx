@@ -13,13 +13,15 @@ interface BlogProps {
 export default function BlogPostPage({ post }: BlogProps) {
   console.log(post);
   return (
-    <div>
+    <main className="flex h-screen flex-col items-center text-gray-800">
       <Navbar />
-      <h1>{post.title}</h1>
-      <Image src={urlFor(post.mainImage).url()} width={100} height={100}            
-      />
+      <div className="flex-grow">
+        <h1>{post.title}</h1>
+        <Image src={urlFor(post.mainImage).url()} width={100} height={100}            
+        />
+      </div>
       <Footer />
-    </div>
+    </main>
   );
 }
 

@@ -5,6 +5,7 @@ import { GetServerSideProps } from "next";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import Image from "next/image";
+import Link from "next/link";
 
 interface BlogProps {
   posts: [BlogPost];
@@ -13,16 +14,22 @@ interface BlogProps {
 export default function Blog({ posts }: BlogProps) {
   console.log(posts);
   return (
-    <div>
+    <div className="flex h-screen flex-col text-gray-800">
       <Navbar />
-      <h1>Blog</h1>
-      {posts.map((post) => (
-        <div key={post._id}>
-          <h2>{post.title}</h2>
-          <Image src={urlFor(post.mainImage).url()} width={100} height={100}            
-          />
-        </div>
-      ))}
+      <h1 className="text-7xl mx-20 text-left">Blog</h1>
+      <div className="flex-grow flex">
+        {posts.map((post) => (
+          <div className="hover:cursor-pointer hover:bg-gray-200 h-fit m-20">
+            <Link href={`/blog/${post.slug.current}`}>
+              <div key={post._id} className="flex flex-col w-fit">
+                <Image src={urlFor(post.mainImage).url()} width={300} height={300}            
+                />
+                <h2>{post.title}</h2>
+              </div>
+            </Link>
+          </div>
+        ))}
+      </div>
       <Footer />
     </div>
   );
