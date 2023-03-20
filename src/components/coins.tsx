@@ -47,10 +47,10 @@ export default function Coins() {
       {/* Soft shadows, they stop rendering after 1500 frames */}
       <AccumulativeShadows
         temporal
-        frames={Infinity}
+        frames={1500}
         alphaTest={1}
         blend={200}
-        scale={25}
+        scale={1}
         position={[0, -0.1, 0]}
       >
         <RandomizedLight
@@ -65,7 +65,7 @@ export default function Coins() {
       </AccumulativeShadows>
       {/* Effects */}
       <EffectComposer>
-        <DepthOfField target={[0, 0, 0]} bokehScale={6} />
+        <DepthOfField target={[0, 0, 0]} bokehScale={8} />
       </EffectComposer>
       {/* Controls */}
       <OrbitControls
