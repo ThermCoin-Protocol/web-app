@@ -31,14 +31,14 @@ export default function Coins() {
       >
         <orthographicCamera attach="shadow-camera" args={[-10, 10, -10, 10]} />
       </directionalLight>
-      <Environment resolution={24}>
+      <Environment resolution={32}>
         <Lightformer position={[10, 10, 10]} scale={10} intensity={2} />
         <Lightformer position={[10, 0, -10]} scale={10} intensity={3} />
         <Lightformer position={[-10, -10, -10]} scale={10} intensity={2} />
         <Lightformer position={[0, 10, 0]} scale={10} intensity={2} />
       </Environment>
       {/* Moon physics */}
-      <Physics gravity={[0, -1.5, 0]}>
+      <Physics gravity={[0, -1, 0]}>
         <Cylinders />
         <RigidBody position={[0, -1, 0]} type="fixed" colliders={false}>
           <CuboidCollider restitution={0.1} args={[1000, 1, 1000]} />
