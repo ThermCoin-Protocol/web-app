@@ -93,7 +93,7 @@ export default function Navbar() {
             {['Docs', 'Codebase', 'Blog', 'Forum'].map((item) => (
               <a
                 key={item}
-                className="before:left-50 btn-ghost btn relative text-lg text-gray-800 before:absolute before:bottom-0 before:block before:h-[1px] before:w-3/4 before:origin-top-left before:scale-x-0 before:bg-gray-800 before:transition before:duration-300 before:ease-in-out before:content-[''] hover:bg-transparent hover:bg-base-100 before:hover:scale-x-100"
+                className="before:left-50 btn-ghost btn relative text-lg text-gray-800 before:absolute before:bottom-0 before:block before:h-[2px] before:w-3/4 before:origin-top-left before:scale-x-0 before:bg-gray-800 before:transition before:duration-300 before:ease-in-out before:content-[''] hover:bg-transparent hover:bg-base-100 before:hover:scale-x-100"
               >
                 {item}
               </a>

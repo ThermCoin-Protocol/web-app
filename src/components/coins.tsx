@@ -31,17 +31,17 @@ export default function Coins() {
       >
         <orthographicCamera attach="shadow-camera" args={[-10, 10, -10, 10]} />
       </directionalLight>
-      <Environment resolution={32}>
+      <Environment resolution={24}>
         <Lightformer position={[10, 10, 10]} scale={10} intensity={2} />
         <Lightformer position={[10, 0, -10]} scale={10} intensity={3} />
         <Lightformer position={[-10, -10, -10]} scale={10} intensity={2} />
         <Lightformer position={[0, 10, 0]} scale={10} intensity={2} />
       </Environment>
       {/* Moon physics */}
-      <Physics gravity={[0, -1, 0]}>
+      <Physics gravity={[0, -1.5, 0]}>
         <Cylinders />
         <RigidBody position={[0, -1, 0]} type="fixed" colliders={false}>
-          <CuboidCollider restitution={0.2} args={[1000, 1, 1000]} />
+          <CuboidCollider restitution={0.1} args={[1000, 1, 1000]} />
         </RigidBody>
       </Physics>
       {/* Soft shadows, they stop rendering after 1500 frames */}
@@ -51,7 +51,7 @@ export default function Coins() {
         alphaTest={1}
         blend={200}
         scale={25}
-        position={[0, -0.05, 0]}
+        position={[0, -0.1, 0]}
       >
         <RandomizedLight
           amount={1}
@@ -65,7 +65,7 @@ export default function Coins() {
       </AccumulativeShadows>
       {/* Effects */}
       <EffectComposer>
-        <DepthOfField target={[0, 0, 0]} bokehScale={8} />
+        <DepthOfField target={[0, 0, 0]} bokehScale={6} />
       </EffectComposer>
       {/* Controls */}
       <OrbitControls
@@ -82,7 +82,7 @@ export default function Coins() {
 }
 
 function Cylinders({ count = 7 }) {
-  const colorMap = useTexture('https://i.ibb.co/4P9ttHZ/TEXTUREGOLD2.png');
+  const colorMap = useTexture('IMG_2626.png');
   // const positions = Array.from({ length: count }, (_, i) => [
   //   rand(2) - 1.5,
   //   10 + i / 2,
