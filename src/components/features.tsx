@@ -33,11 +33,14 @@ export default function Features() {
                     />
                   </svg>
                 </div>
-                Privacy and Anonymity
+                Energy Is Money
               </dt>
               <dd className="mt-2 text-base leading-7 text-gray-500">
-                Morbi viverra dui mi arcu sed. Tellus semper adipiscing
-                suspendisse semper morbi. Odio urna massa nunc massa.
+              ThermCoin measures global daily energy consumption periodically and updates 
+              its coin supply to match in a ratio of 100,000Btu to 1 coin, under the principle that
+              energy is money. Adjustments to coin supply are propagated throughout the 
+              entire ThermCoin monetary system, thus allowing holders to participate in coin 
+              inflation and deflation. See our whitepaper for more details.
               </dd>
             </div>
 
@@ -59,11 +62,14 @@ export default function Features() {
                     />
                   </svg>
                 </div>
-                Pegged to Energetic Value
+                Cooperative Mining
               </dt>
               <dd className="mt-2 text-base leading-7 text-gray-500">
-                Sit quis amet rutrum tellus ullamcorper ultricies libero dolor
-                eget. Sem sodales gravida quam turpis enim lacus amet.
+                Each node participates in a single mining pool, with rewards being divided 
+                amongst all participants equally. A floor on proof of work done ensures that every
+                node contributes meaningfully. ThermCoin uses the CryptoNight hashing 
+                algorithm, which discourages stacking of computing power and concentration of 
+                mining rewards into the hands of a few.
               </dd>
             </div>
 
@@ -88,8 +94,8 @@ export default function Features() {
                 Open Source
               </dt>
               <dd className="mt-2 text-base leading-7 text-gray-500">
-                Quisque est vel vulputate cursus. Risus proin diam nunc commodo.
-                Lobortis auctor congue commodo diam neque.
+                ThermCoin is open source and available on GitHub. We welcome contributions
+                from the community and are committed to transparency.
               </dd>
             </div>
 
@@ -114,8 +120,10 @@ export default function Features() {
                 Advanced Security
               </dt>
               <dd className="mt-2 text-base leading-7 text-gray-500">
-                Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis
-                aliquet hac quis. Id hac maecenas ac donec pharetra eget.
+                ThermCoin uses a novel approach to security, utilizing a Proof of Work
+                algorithm that is resistant to ASIC mining. This allows ThermCoin to be
+                mined by anyone with a computer, and prevents the concentration of mining
+                power into the hands of a few.
               </dd>
             </div>
           </dl>

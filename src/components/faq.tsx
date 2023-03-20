@@ -24,36 +24,35 @@ export default function Faq() {
           <div className="mb-6 md:mb-0">
             <div className="my-10 rounded-3xl p-10 transition-all sm:hover:scale-105 sm:hover:bg-[#FFFFFF] sm:hover:shadow-xl">
               <p className="mb-4 font-bold">
-                Anim pariatur cliche reprehenderit?
+                When will the ThermCoin mainnet go online?
               </p>
               <p className=" text-gray-500">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt
-                autem numquam dolore molestias aperiam culpa alias veritatis
-                architecto eos, molestiae vitae ex eligendi libero eveniet
-                dolorem, doloremque rem aliquid perferendis.
+                As soon as our roadmap is released, we will have a clearer idea
+                of when the mainnet will go online. Stay updated by getting involved
+                in our community. Join our Discord server and read our blog.
               </p>
             </div>
             <div className="my-10 rounded-3xl p-10 transition-all sm:hover:scale-105 sm:hover:bg-[#FFFFFF] sm:hover:shadow-xl">
               <p className="mb-4 font-bold">
-                Non cupidatat skateboard dolor brunch?
+                How can I start participate?
               </p>
               <p className=" text-gray-500">
-                Distinctio corporis, iure facere ducimus quos consectetur ipsa
-                ut magnam autem doloremque ex! Id, sequi. Voluptatum magnam sed
-                fugit iusto minus et suscipit? Minima sunt at nulla tenetur,
-                numquam unde quod modi magnam ab deserunt ipsam sint aliquid
-                dolores libero repellendus cupiditate mollitia quidem dolorem
-                odit
+                You can start participating in the ThermCoin ecosystem by
+                joining our Discord server and reading our blog. We will be
+                releasing more information about the mainnet launch soon.
+                Soon you will be able to run a node to earn rewards
+                and participate in the ThermCoin ecosystem.
               </p>
             </div>
             <div className="my-10 rounded-3xl p-10 transition-all sm:hover:scale-105 sm:hover:bg-[#FFFFFF] sm:hover:shadow-xl">
               <p className="mb-4 font-bold">
-                Praesentium voluptatibus temporibus consequatur non aspernatur?
+                How are miner nodes rewarded?
               </p>
               <p className="text-gray-500">
-                Minima sunt at nulla tenetur, numquam unde quod modi magnam ab
-                deserunt ipsam sint aliquid dolores libero repellendus
-                cupiditate mollitia quidem dolorem.
+                Miner nodes will be rewarded with ThermCoin through the mining pool.
+                The mining pool is the mechanism that will be used to distribute
+                rewards to miner nodes. More details about the mechanics can be found
+                in the ThermCoin whitepaper.
               </p>
             </div>
           </div>

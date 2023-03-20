@@ -12,7 +12,6 @@ interface BlogProps {
 }
 
 export default function Blog({ posts }: BlogProps) {
-  console.log(posts);
   return (
     <div className="flex h-screen flex-col text-gray-800">
       <Navbar />
