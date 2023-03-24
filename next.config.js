@@ -1,7 +1,7 @@
 const withTM = require('next-transpile-modules')(['three']);
 module.exports = withTM({
 
-  reactStrictMode: true,
+  // reactStrictMode: true,
   webpack: (config, { isServer }) => {
     if (!isServer) {
       config.resolve.fallback.fs = false;
@@ -13,10 +13,11 @@ module.exports = withTM({
       {
         protocol: 'https',
         hostname: "cdn.sanity.io",
-        port: '',
+        // port: '*',
         pathname: '/**',
       },
     ],
+    domains: ['cdn.sanity.io'],
   },
 });
 

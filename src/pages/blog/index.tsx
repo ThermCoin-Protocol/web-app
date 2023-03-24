@@ -17,8 +17,8 @@ export default function Blog({ posts }: BlogProps) {
       <Navbar />
       <h1 className="text-7xl mx-20 text-left">Blog</h1>
       <div className="flex-grow flex">
-        {posts.map((post) => (
-          <div className="hover:cursor-pointer hover:bg-gray-200 h-fit m-20">
+        {posts.map((post, index) => (
+          <div key={index} className="hover:cursor-pointer hover:bg-gray-200 h-fit m-20">
             <Link href={`/blog/${post.slug.current}`}>
               <div key={post._id} className="flex flex-col w-fit">
                 <Image src={urlFor(post.mainImage).url()} width={300} height={300}            
