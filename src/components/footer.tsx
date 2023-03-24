@@ -1,7 +1,10 @@
 import React from 'react';
-export default function Footer() {
+
+
+interface IFooter {};
+const Footer: React.FC<IFooter> = () => {
   return (
-    <footer className="footer grid-flow-col border-2 border-gray-800 bg-gray-900 p-4 text-base-100">
+    <footer className="footer border-2 border-gray-800 bg-gray-900 p-4 text-base-100">
       <div className="">
         <svg
           version="1.0"
@@ -124,3 +127,5 @@ export default function Footer() {
     </footer>
   );
 }
+
+export default Footer;

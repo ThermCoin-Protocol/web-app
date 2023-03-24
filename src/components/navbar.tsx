@@ -5,25 +5,9 @@ import VerginaSun from './img/VerginaSun.png';
 import Image from 'next/image';
 import Link from 'next/link';
 
-// const THEMES = [
-//   'cupcake',
-//   'bumblebee',
-//   'corporate',
-//   'synthwave',
-//   'retro',
-//   'cyberpunk',
-//   'lofi',
-//   'pastel',
-//   'fantasy',
-//   'cmyk',
-//   'autumn',
-//   'business',
-//   'coffee',
-//   'winter',
-//   'night',
-// ];
+export interface INavbar {}
 
-export default function Navbar() {
+const Navbar: React.FC<INavbar> = () => {
   const navbarNarrow = () => {
     return (
       <div>
@@ -89,7 +73,7 @@ export default function Navbar() {
           <span className="px-3 text-xl font-bold">ThermCoin</span>
         </div>
         <div className="navbar-end sm:flex">
-          <div className="x-10 flex justify-between">
+          <div className="flex justify-between">
             {['Docs', 'Codebase', 'Blog', 'Forum'].map((item) => (
               <a
                 key={item}
@@ -133,3 +117,5 @@ export default function Navbar() {
     // </div>
   );
 }
+
+export default Navbar;

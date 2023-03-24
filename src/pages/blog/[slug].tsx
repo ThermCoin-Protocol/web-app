@@ -2,25 +2,29 @@ import React from "react";
 import { sanityClient, urlFor } from "../../../sanity";
 import {BlogPost} from "../../typings";
 import { GetStaticPaths, GetStaticProps } from "next";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
 import Image from "next/image";
+import { NextPageWithLayout } from "../_app";
+import Layout from "@/components/Layout";
 
 interface BlogProps {
   post: BlogPost;
 }
 
-export default function BlogPostPage({ post }: BlogProps) {
+const BlogPostPage: NextPageWithLayout<BlogProps> = ({ post }: BlogProps) => {
   return (
-    <main className="flex h-screen flex-col items-center text-gray-800">
-      <Navbar />
-      <div className="flex-grow">
-        <h1>{post.title}</h1>
-        <Image src={urlFor(post.mainImage).url()} width={100} height={100}            
-        />
+    <div className="flex flex-col text-gray-800">
+      <h1 className="text-7xl mx-20 text-left">{post.title}</h1>
+      <div className="flex-grow flex">
+        <div className="hover:cursor-pointer hover:bg-gray-200 h-fit m-20">
+            <div key={post._id} className="flex flex-col w-fit">
+              <Image src={urlFor(post.mainImage).url()} width={1600} height={1000}        
+                className="absolute w-full object-cover"    
+              />
+              <h2>{post.title}</h2>
+            </div>
+        </div>
       </div>
-      <Footer />
-    </main>
+    </div>
   );
 }
 
@@ -71,3 +75,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     },
   };
 }
+
+export default BlogPostPage;
+
+BlogPostPage.getLayout = (page) => {
+  return <Layout>{page}</Layout>;
+};

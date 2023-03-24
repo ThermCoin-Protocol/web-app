@@ -1,21 +1,24 @@
-import Navbar from '../components/navbar';
-import Footer from '../components/footer';
 import Hero from '@/components/hero';
 import Features from '@/components/features';
 import Faq from '@/components/faq';
 import Stats from '@/components/stats';
+import Layout from '../components/Layout';
+import type { NextPageWithLayout } from './_app';
 
-export default function TopPageView() {
-
+const Home: NextPageWithLayout = () => {
   return (
-    <div className="flex h-screen flex-col items-center text-gray-800">
-      <Navbar />
+    <div className="flex flex-col items-center text-gray-800">
       <Hero/>
       <Stats />
       <Features />
       {/* <Action /> */}
       <Faq />
-      <Footer />
     </div>
   );
 }
+
+export default Home;
+
+Home.getLayout = (page) => {
+  return <Layout>{page}</Layout>;
+};
