@@ -7,9 +7,15 @@ export interface BlogPost {
     asset: {
       url: string;
     };
-  }
+  };
+  categories: [Category];
   slug: {
     current: string;
   };
   body: [object];
+}
+
+export interface Category {
+  _id: string;
+  title: string;
 }

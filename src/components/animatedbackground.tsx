@@ -10,7 +10,7 @@ export default function AnimatedBackground() {
           antialias: true,
         }}
         camera={{ position: [-30, 35, -15], near: 30, far: 55, fov: 12 }}
-        dpr={1}
+        dpr={0.8}
       >
         <Coins />
       </Canvas>

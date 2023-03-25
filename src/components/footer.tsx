@@ -4,7 +4,7 @@ import React from 'react';
 interface IFooter {};
 const Footer: React.FC<IFooter> = () => {
   return (
-    <footer className="footer border-2 border-gray-800 bg-gray-900 p-4 text-base-100">
+    <footer className="flex border-2 border-gray-800 bg-gray-900 p-4 text-base-100 justify-between">
       <div className="">
         <svg
           version="1.0"
@@ -100,7 +100,7 @@ const Footer: React.FC<IFooter> = () => {
           </g>
         </svg>
       </div>
-      <div className="m-2 grid-flow-col justify-self-end">
+      <div className="m-2 flex justify-self-end">
         <a className="mr-5" href="https://github.com/ThermCoin-Protocol">
           <svg
             xmlns="http://www.w3.org/2000/svg"

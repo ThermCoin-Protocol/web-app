@@ -61,8 +61,9 @@ const Navbar: React.FC<INavbar> = () => {
 
   return (
     <>
-      <div className="navbar z-20 hidden p-20 text-gray-800 md:flex">
-        <div className="navbar-start flex-shrink-0">
+      <div className="navbar z-20 hidden px-20 py-10 text-gray-800 md:flex">
+        <Link href="/">
+        <div className="navbar-start flex-shrink-0 hover:cursor-pointer">
           <Image
             src={VerginaSun}
             alt="Picture of the author"
@@ -72,14 +73,16 @@ const Navbar: React.FC<INavbar> = () => {
           />
           <span className="px-3 text-xl font-bold">ThermCoin</span>
         </div>
+        </Link>
         <div className="navbar-end sm:flex">
           <div className="flex justify-between">
-            {['Docs', 'Codebase', 'Blog', 'Forum'].map((item) => (
+            {[{title: 'Docs',link: '/docs'}, {title: 'Codebase', link: 'https://github.com/ThermCoin-Protocol'}, {title: 'Blog', link: '/blog'}, {title: 'Forum', link: 'https://discord.gg/evAR9ng8WR'}].map((item) => (
               <a
-                key={item}
+                key={item.title}
                 className="before:left-50 btn-ghost btn relative text-lg text-gray-800 before:absolute before:bottom-0 before:block before:h-[2px] before:w-3/4 before:origin-top-left before:scale-x-0 before:bg-gray-800 before:transition before:duration-300 before:ease-in-out before:content-[''] hover:bg-transparent hover:bg-base-100 before:hover:scale-x-100"
+                href={item.link}
               >
-                {item}
+                {item.title}
               </a>
             ))}
           </div>
@@ -87,9 +90,6 @@ const Navbar: React.FC<INavbar> = () => {
       </div>
       <div className="navbar z-20 mt-5 text-gray-800 md:hidden">
         <div className="navbar-start mx-2 p-4">
-          <span className="text-xl font-bold tracking-wide">ThermCoin</span>
-        </div>
-        <div className="navbar-center">
           <Image
             src={VerginaSun}
             alt="Picture of the author"
@@ -97,7 +97,17 @@ const Navbar: React.FC<INavbar> = () => {
             height={50}
             className="flex-shrink-0"
           />
+          <span className="text-xl font-bold tracking-wide">ThermCoin</span>
         </div>
+        {/* <div className="navbar-center">
+          <Image
+            src={VerginaSun}
+            alt="Picture of the author"
+            width={50}
+            height={50}
+            className="flex-shrink-0"
+          />
+        </div> */}
         <div className="navbar-end">{navbarNarrow()}</div>
       </div>
     </>
