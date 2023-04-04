@@ -119,7 +119,7 @@ function Cylinders({ count = 7 }) {
       >
         {/* Merging the hat into one clump bc instances need a single geometry to function */}
         <cylinderGeometry args={[1, 1, 0.1, 32]} />
-        <meshStandardMaterial map={colorMap} colorWrite={false} />
+        <meshStandardMaterial map={colorMap} />
       </instancedMesh>
     </InstancedRigidBodies>
   );

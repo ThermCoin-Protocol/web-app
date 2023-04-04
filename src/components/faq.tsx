@@ -22,7 +22,7 @@ export default function Faq() {
           </div>
 
           <div className="mb-6 md:mb-0">
-            <div className="my-10 rounded-3xl p-10 transition-all sm:hover:scale-105 sm:hover:bg-[#FFFFFF] sm:hover:shadow-xl">
+            <div className="my-10 rounded-3xl p-10 transition-all sm:hover:scale-105 sm:hover:bg-[#FFFFFF] sm:hover:border-black  border-base-100 border sm:hover:shadow-xl">
               <p className="mb-4 font-bold">
                 When will the ThermCoin mainnet go online?
               </p>
@@ -32,7 +32,7 @@ export default function Faq() {
                 in our community. Join our Discord server and read our blog.
               </p>
             </div>
-            <div className="my-10 rounded-3xl p-10 transition-all sm:hover:scale-105 sm:hover:bg-[#FFFFFF] sm:hover:shadow-xl">
+            <div className="my-10 rounded-3xl p-10 transition-all sm:hover:scale-105 sm:hover:bg-[#FFFFFF] sm:hover:border-black border-base-100 border sm:hover:shadow-xl">
               <p className="mb-4 font-bold">
                 How can I start participate?
               </p>
@@ -44,7 +44,7 @@ export default function Faq() {
                 and participate in the ThermCoin ecosystem.
               </p>
             </div>
-            <div className="my-10 rounded-3xl p-10 transition-all sm:hover:scale-105 sm:hover:bg-[#FFFFFF] sm:hover:shadow-xl">
+            <div className="my-10 rounded-3xl p-10 transition-all sm:hover:scale-105 sm:hover:bg-[#FFFFFF] sm:hover:border-black border-base-100 border sm:hover:shadow-xl">
               <p className="mb-4 font-bold">
                 How are miner nodes rewarded?
               </p>

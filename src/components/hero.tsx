@@ -3,7 +3,7 @@ import AnimatedBackground from './animatedbackground';
 
 export default function Hero() {
   return (
-    <div className="sm:mb-32">
+    <div className="sm:mb-40">
       <main>
         <div className="relative px-6 lg:px-8">
           <div className="mx-auto max-w-2xl py-24 md:py-12">
@@ -17,7 +17,7 @@ export default function Hero() {
                 community of people who are passionate about fair and
                 decentralized solutions to the problems of our time.
               </p>
-              <div className="mt-10 flex items-center gap-x-6 lg:justify-center">
+              {/* <div className="mt-10 flex items-center gap-x-6 lg:justify-center">
                 <a
                   href="#"
                   className="btn-md btn rounded-full border-2 border-gray-800 bg-gray-800 text-white hover:border-gray-800 hover:bg-base-100 hover:text-gray-800"
@@ -30,7 +30,7 @@ export default function Hero() {
                 >
                   LEARN MORE <span aria-hidden="true">→</span>
                 </a>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
