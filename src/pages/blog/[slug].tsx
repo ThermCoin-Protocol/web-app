@@ -2,6 +2,7 @@ import React from "react";
 import { sanityClient, urlFor } from "../../../sanity";
 import {BlogPost} from "../../typings";
 import { GetStaticPaths, GetStaticProps } from "next";
+import PortableText from 'react-portable-text';
 import Image from "next/image";
 import { NextPageWithLayout } from "../_app";
 import Layout from "@/components/Layout";
@@ -13,17 +14,49 @@ interface BlogProps {
 const BlogPostPage: NextPageWithLayout<BlogProps> = ({ post }: BlogProps) => {
   return (
     <div className="flex flex-col text-gray-800">
-      <h1 className="text-7xl mx-20 text-left">{post.title}</h1>
-      <div className="flex-grow flex">
-        <div className="hover:cursor-pointer hover:bg-gray-200 h-fit m-20">
-            <div key={post._id} className="flex flex-col w-fit">
-              <Image src={urlFor(post.mainImage).url()} width={1600} height={1000}        
-                className="absolute w-full object-cover"    
-              />
-              <h2>{post.title}</h2>
+      {post && (
+        <div className="max-w-4xl mx-auto lg:mt-4">
+          <Image
+            width="1600"
+            height="1000"
+            className="w-full h-full object-cover"
+            src={urlFor(post.mainImage).url()!}
+            alt="post photo"
+          />
+          <article className="p-4 xl:p-0">
+            <div className='grid grid-cols-2 mb-14'>
+              <h1 className="text-2xl text-left my-4 font-bold">{post.title}</h1>
+              <p className="my-4 text-right">
+                Published {new Date(post.publishedAt).toLocaleDateString()}
+              </p>
+              <div className="col-span-2 justify-self-initial flex justify-center items-center font-medium py-1 px-2 rounded-full text-gray-800 border border-gray-800 w-fit">
+                <div>{post.categories[0].title}</div>
+              </div>
             </div>
+            <div className="mb-20">
+              <PortableText
+                dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
+                projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
+                content={post.body}
+                serializers={{
+                  h1: (props: any) => (
+                    <h1 className="text-2xl font-bold my-5" {...props} />
+                  ),
+                  h2: (props: any) => (
+                    <h2 className="text-xl font-bold my-5" {...props} />
+                  ),
+                  h3: (props: any) => (
+                    <h3 className="text-lg font-bold my-5" {...props} />
+                  ),
+                  p: (props: any) => (
+                    <p className="text-lg text-left my-5" {...props} />
+                  ),
+                }}
+              />
+            </div>
+          </article>
         </div>
-      </div>
+      )}
     </div>
   );
 }
@@ -50,6 +83,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     _id,
     title,
     author,
+    categories[]->{
+      _id,
+      title
+    },
     slug {
       current
     },
@@ -73,6 +110,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       post,
     },
+    revalidate: 60,
   };
 }
 
