@@ -11,6 +11,8 @@ This repo is used for storage and documentation of the thermcoin web application
   - Used for simple and intuitive, inline styling
 - DaisyUI
   - Used side by side TailwindCSS with predefined classes and themes
+- Sanity.io
+  - Used for content management and storage
 
 ## Usage
 
@@ -26,6 +28,7 @@ cd <your-project-name>
 ### 2. Install Dependencies
 
 ```bash
+npm install
 yarn install
 ```
 
