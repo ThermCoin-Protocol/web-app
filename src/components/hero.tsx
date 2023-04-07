@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <div className="sm:mb-40">
       <main>
-        <div className="relative px-6 lg:px-8">
+        <div className="relative px-4 lg:px-10">
           <div className="mx-auto max-w-2xl py-24 md:py-12">
             <div className="lg:text-center">
               <h1 className="text-5xl font-bold tracking-wide text-gray-800 md:text-6xl lg:text-7xl">

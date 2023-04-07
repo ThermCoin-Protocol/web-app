@@ -5,9 +5,23 @@ import Faq from '@/components/faq';
 import Cards from '@/components/cards';
 import Layout from '../components/Layout';
 import type { NextPageWithLayout } from './_app';
+import Head from 'next/head';
 
 const Home: NextPageWithLayout = () => {
   return (
+    <>
+    <Head>
+      <title>ThermCoin</title>
+      <meta
+        property="title"
+        content="ThermCoin - The Future's Energy Based Digital Currency"
+        key="title" />
+      <meta
+        name="description"
+        content="The ThermCoin protocol is a decentralized, open-source, and community-driven project that aims to create a new digital currency that is backed by renewable energy."
+        key="desc" />
+      <link rel="Sun Icon" href="../../VerginaSun.ico" />
+    </Head>
     <div className="flex flex-col items-center text-gray-800">
       <Hero/>
       <Cards />
@@ -16,6 +30,7 @@ const Home: NextPageWithLayout = () => {
       {/* <Action /> */}
       <Faq />
     </div>
+    </>
   );
 }
 

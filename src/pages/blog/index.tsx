@@ -60,7 +60,7 @@ const BlogPage: NextPageWithLayout<BlogProps> = ({ posts, categories }: BlogProp
   }, [selectedCategories, change]);
 
   return (
-    <div className="flex flex-col text-gray-800 mx-10 lg:mx-20 md:mx-20">
+    <div className="flex flex-col text-gray-800 px-4 md:px-10">
       <div className="grid lg:grid-cols-5">
         <div className="border-b border-gray-800 lg:border-base-100 col-span-5 lg:col-span-1 sticky top-0 lg:top-20 z-10 bg-base-100 py-5 mb-5 lg:py-0 h-fit">
           <h2 className="text-3xl text-left">Categories</h2>
@@ -70,7 +70,7 @@ const BlogPage: NextPageWithLayout<BlogProps> = ({ posts, categories }: BlogProp
           {filteredPosts.map((post, index) => (
             <div key={index} className="cursor-pointer h-fit">
               <Link href={`/blog/${post.slug.current}`}>
-                <div key={post._id} className="flex flex-col w-full border border-gray-800 rounded-3xl p-10 h-80 hover:bg-[#F5F5F5] group">
+                <div key={post._id} className="flex flex-col w-full border border-gray-800 rounded-3xl p-5 md:p-10 h-80 hover:bg-[#F5F5F5] group">
                   {/* <Image src={urlFor(post.mainImage).url()} width={1600} height={1000}  
                     className="absolute w-full object-cover"          
                   /> */}

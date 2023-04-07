@@ -2,8 +2,8 @@ import React from 'react';
 
 export default function Features() {
   return (
-    <div className="-mt-40 py-24 sm:py-32 sm:mx-10 md:mx-20 xl:mx-40">
-      <div className="mx-2 max-w-full px-6 sm:px-8">
+    <div className="-mt-40 py-24 sm:py-32 mx-4 md:mx-10 lg:mx-20">
+      <div className="max-w-full">
         <div className="mx-auto max-w-3xl lg:text-center">
           {/* <h2 className="font-semibold leading-7 text-info">Lorem Ipsum</h2> */}
           <p className="mt-2 text-5xl font-bold text-gray-800 md:text-6xl lg:text-7xl tracking-wide">ThermCoin Features</p>

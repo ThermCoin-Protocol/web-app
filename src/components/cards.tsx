@@ -4,8 +4,8 @@ import { BsFillPinMapFill } from 'react-icons/bs';
 
 export default function Cards() {
   return (
-    <div className="m-0 w-screen justify-items-center border-t border-gray-800 bg-base-100 grid">
-      <div className="mx-2 -my-10 grid w-11/12 flex-col pb-40">
+    <div className="px-4 md:px-10 w-screen justify-items-center border-t border-gray-800 bg-base-100 grid">
+      <div className="-my-10 grid w-full flex-col pb-40">
         <div className="text-lg">
           <div className="rounded-3xl border border-gray-800 bg-base-100 text-gray-800">
             <div className="m-12 flex flex-col lg:flex-row justify-around">

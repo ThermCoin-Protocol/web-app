@@ -12,7 +12,7 @@ const Navbar: React.FC<INavbar> = () => {
     return (
       <div>
         <div className="dropdown-end dropdown visible md:invisible">
-          <label tabIndex={0} className="btn-ghost btn mx-2">
+          <label tabIndex={0} className="btn-ghost btn">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-8 w-8"
@@ -44,7 +44,7 @@ const Navbar: React.FC<INavbar> = () => {
               </a>
             </li>
             <li>
-              <Link href="/">
+              <Link href="/blog">
                 <a className="text-xl">Blog</a>
               </Link>
             </li>
@@ -61,18 +61,18 @@ const Navbar: React.FC<INavbar> = () => {
 
   return (
     <>
-      <div className="navbar z-20 hidden px-20 py-10 text-gray-800 md:flex">
+      <div className="navbar z-20 hidden p-10 text-gray-800 md:flex">
         <Link href="/">
-        <div className="navbar-start flex-shrink-0 hover:cursor-pointer">
-          <Image
-            src={VerginaSun}
-            alt="Picture of the author"
-            width={50}
-            height={50}
-            className="m-0"
-          />
-          <span className="px-3 text-xl font-bold">ThermCoin</span>
-        </div>
+          <div className="navbar-start flex-shrink-0 hover:cursor-pointer">
+            <Image
+              src={VerginaSun}
+              alt="Picture of the author"
+              width={50}
+              height={50}
+              className="m-0"
+            />
+            <span className="pl-3 text-xl font-bold">ThermCoin</span>
+          </div>
         </Link>
         <div className="navbar-end sm:flex">
           <div className="flex justify-between">
@@ -88,8 +88,8 @@ const Navbar: React.FC<INavbar> = () => {
           </div>
         </div>
       </div>
-      <div className="navbar z-20 mt-5 text-gray-800 md:hidden">
-        <div className="navbar-start mx-2 p-4">
+      <div className="navbar z-20 text-gray-800 md:hidden p-4">
+        <div className="navbar-start">
           <Image
             src={VerginaSun}
             alt="Picture of the author"
@@ -97,34 +97,13 @@ const Navbar: React.FC<INavbar> = () => {
             height={50}
             className="flex-shrink-0"
           />
-          <span className="text-xl font-bold tracking-wide">ThermCoin</span>
+          <Link href="/">
+            <span className="pl-3 text-xl font-bold tracking-wide">ThermCoin</span>
+          </Link>
         </div>
-        {/* <div className="navbar-center">
-          <Image
-            src={VerginaSun}
-            alt="Picture of the author"
-            width={50}
-            height={50}
-            className="flex-shrink-0"
-          />
-        </div> */}
         <div className="navbar-end">{navbarNarrow()}</div>
       </div>
     </>
-
-    // <div className="navbar fixed z-20 bg-neutral text-neutral-content">
-
-    //   {/* <div className="navbar-end invisible sm:visible text-base-content">
-    //     <select className="select-bordered select w-2/5">
-    //       <option defaultValue="light" selected>
-    //         Theme
-    //       </option>
-    //       {THEMES.map((themeName) => (
-    //         <option key={themeName}>{themeName}</option>
-    //       ))}
-    //     </select>
-    //   </div> */}
-    // </div>
   );
 }
 

@@ -1,12 +1,12 @@
 export default function Faq() {
   return (
     <div>
-    <div className="border-t border-gray-800 bg-base-100 mx-10 sm:mx-20">
+    <div className="border-t border-gray-800 bg-base-100 mx-4 sm:mx-10 md:mx-20">
       </div>
-    <div className="pt-20 sm:mx-10 md:mx-20 xl:mx-40">
+    <div className="pt-20 mx-4 sm:mx-10 md:mx-20">
       <div className="mb-32 text-gray-800">
         <div className="grid gap-4 lg:grid-cols-2">
-          <div className="mx-10 mb-0 self-center justify-self-center md:mb-0">
+          <div className="mb-0 lg:self-center lg:justify-self-center md:mb-0">
             <h2 className="mb-6 text-5xl font-bold text-gray-800 md:text-6xl lg:text-7xl tracking-wide">Frequently Asked Questions</h2>
 
             <p className="text-gray-500">
@@ -22,17 +22,17 @@ export default function Faq() {
           </div>
 
           <div className="mb-6 md:mb-0">
-            <div className="my-10 rounded-3xl p-10 transition-all sm:hover:scale-105 sm:hover:bg-[#FFFFFF] sm:hover:border-black  border-base-100 border sm:hover:shadow-xl">
+            <div className="my-10 rounded-3xl sm:p-10 transition-all sm:hover:scale-105 sm:hover:bg-[#FFFFFF] sm:hover:border-black  border-base-100 border sm:hover:shadow-xl">
               <p className="mb-4 font-bold">
                 When will the ThermCoin mainnet go online?
               </p>
-              <p className=" text-gray-500">
+              <p className="text-gray-500">
                 As soon as our roadmap is released, we will have a clearer idea
                 of when the mainnet will go online. Stay updated by getting involved
                 in our community. Join our Discord server and read our blog.
               </p>
             </div>
-            <div className="my-10 rounded-3xl p-10 transition-all sm:hover:scale-105 sm:hover:bg-[#FFFFFF] sm:hover:border-black border-base-100 border sm:hover:shadow-xl">
+            <div className="my-10 rounded-3xl sm:p-10 transition-all sm:hover:scale-105 sm:hover:bg-[#FFFFFF] sm:hover:border-black border-base-100 border sm:hover:shadow-xl">
               <p className="mb-4 font-bold">
                 How can I start participate?
               </p>
@@ -44,7 +44,7 @@ export default function Faq() {
                 and participate in the ThermCoin ecosystem.
               </p>
             </div>
-            <div className="my-10 rounded-3xl p-10 transition-all sm:hover:scale-105 sm:hover:bg-[#FFFFFF] sm:hover:border-black border-base-100 border sm:hover:shadow-xl">
+            <div className="my-10 rounded-3xl sm:p-10 transition-all sm:hover:scale-105 sm:hover:bg-[#FFFFFF] sm:hover:border-black border-base-100 border sm:hover:shadow-xl">
               <p className="mb-4 font-bold">
                 How are miner nodes rewarded?
               </p>
