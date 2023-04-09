@@ -76,7 +76,14 @@ const Navbar: React.FC<INavbar> = () => {
         </Link>
         <div className="navbar-end sm:flex">
           <div className="flex justify-between">
-            {[{title: 'Whitepaper',link: '/'}, {title: 'Codebase', link: 'https://github.com/ThermCoin-Protocol'}, {title: 'Blog', link: '/blog'}, {title: 'Forum', link: 'https://discord.gg/evAR9ng8WR'}].map((item) => (
+            <a 
+              href='/whitepaper.pdf'
+              className="before:left-50 btn-ghost btn relative text-lg text-gray-800 before:absolute before:bottom-0 before:block before:h-[2px] before:w-3/4 before:origin-top-left before:scale-x-0 before:bg-gray-800 before:transition before:duration-300 before:ease-in-out before:content-[''] hover:bg-transparent hover:bg-base-100 before:hover:scale-x-100"
+              download
+            >
+              Whitepaper
+            </a>
+            {[{title: 'Codebase', link: 'https://github.com/ThermCoin-Protocol'}, {title: 'Blog', link: '/blog'}, {title: 'Forum', link: 'https://discord.gg/evAR9ng8WR'}].map((item) => (
               <a
                 key={item.title}
                 className="before:left-50 btn-ghost btn relative text-lg text-gray-800 before:absolute before:bottom-0 before:block before:h-[2px] before:w-3/4 before:origin-top-left before:scale-x-0 before:bg-gray-800 before:transition before:duration-300 before:ease-in-out before:content-[''] hover:bg-transparent hover:bg-base-100 before:hover:scale-x-100"

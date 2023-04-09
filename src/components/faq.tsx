@@ -8,7 +8,6 @@ export default function Faq() {
         <div className="grid gap-4 lg:grid-cols-2">
           <div className="mb-0 lg:self-center lg:justify-self-center md:mb-0">
             <h2 className="mb-6 text-5xl font-bold text-gray-800 md:text-6xl lg:text-7xl tracking-wide">Frequently Asked Questions</h2>
-
             {/* <p className="text-gray-500">
               Didn't find your answer in the FAQ? <br />
               <a
