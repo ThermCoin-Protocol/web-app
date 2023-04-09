@@ -74,10 +74,9 @@ export default function Features() {
               </dt>
               <dd className="mt-2 text-base leading-7 text-gray-500">
                 Each node participates in a single mining pool, with rewards being divided 
-                amongst all participants equally. A floor on proof of work done ensures that every
-                node contributes meaningfully. ThermCoin uses the CryptoNight hashing 
-                algorithm, which discourages stacking of computing power and concentration of 
-                mining rewards into the hands of a few.
+                amongst all participants equally. A floor on proof of work ensures that every
+                node contributes meaningfully. This allows for a more equitable distribution of
+                rewards amongst all participants. 
               </dd>
             </div>
 
