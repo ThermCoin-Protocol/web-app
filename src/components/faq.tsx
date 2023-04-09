@@ -9,7 +9,7 @@ export default function Faq() {
           <div className="mb-0 lg:self-center lg:justify-self-center md:mb-0">
             <h2 className="mb-6 text-5xl font-bold text-gray-800 md:text-6xl lg:text-7xl tracking-wide">Frequently Asked Questions</h2>
 
-            <p className="text-gray-500">
+            {/* <p className="text-gray-500">
               Didn't find your answer in the FAQ? <br />
               <a
                 href="#!"
@@ -18,7 +18,7 @@ export default function Faq() {
                 Contact our dev team
               </a>
               .
-            </p>
+            </p> */}
           </div>
 
           <div className="mb-6 md:mb-0">

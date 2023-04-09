@@ -10,10 +10,12 @@ export default function Cards() {
           <div className="rounded-3xl border border-gray-800 bg-base-100 text-gray-800">
             <div className="m-12 flex flex-col lg:flex-row justify-around">
               <div className="flex flex-col rounded-3xl sm:p-10 lg:w-2/5 justify-between transition-all hover:scale-105 sm:hover:bg-[#FFFFFF] sm:hover:border-black border border-base-100 sm:hover:shadow-xl cursor-pointer">
-                <div className='mb-20'>
-                  <h2 className='text-3xl'>What is ThermCoin?</h2>
-                  <p className='text-lg'>Read our whitepaper to learn more about how it works.</p>
-                </div>
+                <a href="/whitepaper.pdf" download>
+                  <div className='mb-20'>
+                    <h2 className='text-3xl'>What is ThermCoin?</h2>
+                    <p className='text-lg'>Read our whitepaper to learn more about how it works.</p>
+                  </div>
+                </a>
                 <div className='flex'>
                   <p className='text-lg'>Download PDF</p>
                   <RiFilePaper2Fill className='text-3xl ml-4' />

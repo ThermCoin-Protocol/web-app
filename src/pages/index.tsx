@@ -18,7 +18,7 @@ const Home: NextPageWithLayout = () => {
         key="title" />
       <meta
         name="description"
-        content="The ThermCoin protocol is a decentralized, open-source, and community-driven project that aims to create a new digital currency that is backed by renewable energy."
+        content="The ThermCoin protocol is a decentralized, open-source, and community-driven project that aims to create a new digital currency that is based on energy economics."
         key="desc" />
       <link rel="Sun Icon" href="../../VerginaSun.ico" />
     </Head>

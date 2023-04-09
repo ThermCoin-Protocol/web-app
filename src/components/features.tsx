@@ -7,11 +7,11 @@ export default function Features() {
         <div className="mx-auto max-w-3xl lg:text-center">
           {/* <h2 className="font-semibold leading-7 text-info">Lorem Ipsum</h2> */}
           <p className="mt-2 text-5xl font-bold text-gray-800 md:text-6xl lg:text-7xl tracking-wide">ThermCoin Features</p>
-          <p className="text-lg mt-6 leading-8">
+          {/* <p className="text-lg mt-6 leading-8">
             Quis tellus eget adipiscing convallis sit sit eget aliquet quis.
             Suspendisse eget egestas a elementum pulvinar et feugiat blandit at.
             In mi viverra elit nunc.
-          </p>
+          </p> */}
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-5xl text-lg">
           <dl className="grid max-w-xl grid-cols-1 gap-y-10 gap-x-8 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">

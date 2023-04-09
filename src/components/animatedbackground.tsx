@@ -3,7 +3,7 @@ import { Canvas } from '@react-three/fiber';
 
 export default function AnimatedBackground() {
   return (
-    <div className="animatedbackground absolute top-0 right-0 -z-50">
+    <div className="animatedbackground absolute top-0 right-0 -z-50 max-h-screen">
       <Canvas
         shadows
         gl={{
