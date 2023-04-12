@@ -4,7 +4,6 @@ import VerginaSun from './img/VerginaSun.png';
 
 import Image from 'next/image';
 import Link from 'next/link';
-import cn from 'classnames';
 
 export interface INavbar {}
 
