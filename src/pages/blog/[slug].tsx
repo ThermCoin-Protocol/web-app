@@ -24,14 +24,21 @@ const BlogPostPage: NextPageWithLayout<BlogProps> = ({ post }: BlogProps) => {
             alt="post photo"
           />
           <article className="p-4 xl:p-0">
-            <div className='grid grid-cols-2 mb-14'>
+            <div className='grid grid-cols-2 mb-5'>
               <h1 className="text-2xl text-left my-4 font-bold">{post.title}</h1>
-              <p className="my-4 text-right">
+              <p className="my-4 text-right text-lg">
                 Published {new Date(post.publishedAt).toLocaleDateString()}
               </p>
-              <div className="col-span-2 justify-self-initial flex justify-center items-center font-medium py-1 px-2 rounded-full text-gray-800 border border-gray-800 w-fit">
+              {
+                post.categories.map((category) => (
+                  <div className="col-span-2 justify-self-initial justify-center items-center font-medium py-1 px-2 rounded-full text-gray-800 border border-gray-800 w-fit mb-2">
+                    <div>{category.title}</div>
+                  </div>
+                ))
+              }
+              {/* <div className="col-span-2 justify-self-initial flex justify-center items-center font-medium py-1 px-2 rounded-full text-gray-800 border border-gray-800 w-fit">
                 <div>{post.categories[0].title}</div>
-              </div>
+              </div> */}
             </div>
             <div className="mb-20">
               <PortableText
@@ -48,8 +55,14 @@ const BlogPostPage: NextPageWithLayout<BlogProps> = ({ post }: BlogProps) => {
                   h3: (props: any) => (
                     <h3 className="text-lg font-bold my-5" {...props} />
                   ),
-                  p: (props: any) => (
-                    <p className="text-lg text-left my-5" {...props} />
+                  normal: (props: any) => (
+                    <p className="text-lg my-5" {...props} />
+                  ),
+                  a: (props: any) => (
+                    <a className="text-blue-500" {...props} />
+                  ),
+                  blockquote: (props: any) => (
+                    <blockquote className="text-lg italic border-l-4 border-gray-300 pl-4" {...props} />
                   ),
                 }}
               />
