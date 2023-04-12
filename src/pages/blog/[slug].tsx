@@ -22,6 +22,7 @@ const BlogPostPage: NextPageWithLayout<BlogProps> = ({ post }: BlogProps) => {
             className="w-full h-full object-cover"
             src={urlFor(post.mainImage).url()!}
             alt="post photo"
+            priority
           />
           <article className="p-4 xl:p-0">
             <div className='grid grid-cols-2 mb-5'>
@@ -31,7 +32,7 @@ const BlogPostPage: NextPageWithLayout<BlogProps> = ({ post }: BlogProps) => {
               </p>
               {
                 post.categories.map((category) => (
-                  <div className="col-span-2 justify-self-initial justify-center items-center font-medium py-1 px-2 rounded-full text-gray-800 border border-gray-800 w-fit mb-2">
+                  <div key={category._id} className="col-span-2 justify-self-initial justify-center items-center font-medium py-1 px-2 rounded-full text-gray-800 border border-gray-800 w-fit mb-2">
                     <div>{category.title}</div>
                   </div>
                 ))

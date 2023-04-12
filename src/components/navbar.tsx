@@ -4,6 +4,7 @@ import VerginaSun from './img/VerginaSun.png';
 
 import Image from 'next/image';
 import Link from 'next/link';
+import cn from 'classnames';
 
 export interface INavbar {}
 
@@ -31,9 +32,10 @@ const Navbar: React.FC<INavbar> = () => {
           <ul
             tabIndex={0}
             className="dropdown-content menu rounded-box mt-7 w-60 border border-gray-800 bg-base-100 shadow-xl"
+
           >
             <li>
-              <a className="text-xl">Whitepaper</a>
+              <a className="text-xl" href='/whitepaper.pdf' download>Whitepaper</a>
             </li>
             <li>
               <a
