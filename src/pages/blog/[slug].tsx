@@ -16,14 +16,14 @@ const BlogPostPage: NextPageWithLayout<BlogProps> = ({ post }: BlogProps) => {
     <div className="flex flex-col text-gray-800">
       {post && (
         <div className="max-w-4xl mx-auto lg:mt-4">
-          <Image
+          {post.mainImage && <Image
             width="1600"
             height="1000"
             className="w-full h-full object-cover"
             src={urlFor(post.mainImage).url()!}
             alt="post photo"
             priority
-          />
+          />}
           <article className="p-4 xl:p-0">
             <div className='grid grid-cols-2 mb-5'>
               <h1 className="text-2xl text-left my-4 font-bold">{post.title}</h1>

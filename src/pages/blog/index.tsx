@@ -58,6 +58,7 @@ const BlogPage: NextPageWithLayout<BlogProps> = ({ posts, categories }: BlogProp
     }
     console.log("useEffect: ", selectedCategories);
   }, [selectedCategories, change]);
+  
 
   return (
     <div className="flex flex-col text-gray-800 px-4 md:px-10">
