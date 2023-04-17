@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { sanityClient } from "../../../sanity";
 import {BlogPost, Category} from "../../typings";
 import { GetServerSideProps } from "next";
-// import Image from "next/image";
 import Link from "next/link";
 import type { NextPageWithLayout } from "../_app";
 import Layout from "@/components/Layout";
@@ -128,16 +127,7 @@ const BlogPage: NextPageWithLayout<BlogProps> = ({ posts, categories }: BlogProp
                     })}
                   </div>
                   <div className="flex-grow flex place-items-center">
-                    {post.body.map((block: any, index: number) => {
-                        if (block._type === "block" && index === 0) {
-                          return (
-                            <p key={index} className="text-lg text-left">
-                              {block.children[0].text}
-                            </p>
-                          );
-                        }
-                      })
-                    }
+                    <p className="text-lg text-left">{post.description}</p>
                   </div>
                   <div className="flex justify-end">
                     <a href="#_" className="relative inline-flex items-center px-10 py-3 overflow-hidden text-lg font-medium text-gray-800 border border-gray-800 rounded-full">
@@ -174,6 +164,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
       alt
     },
     publishedAt,
+    description,
     body
   } | order(publishedAt desc)`;
   const categoryQuery = '*[_type == "category"]{title}';
