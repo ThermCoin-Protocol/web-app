@@ -7,6 +7,7 @@ import Link from "next/link";
 import type { NextPageWithLayout } from "../_app";
 import Layout from "@/components/Layout";
 import CategorySelect from "@/components/blog/category";
+import cn from "classnames";
 
 interface BlogProps {
   posts: BlogPost[];
@@ -17,6 +18,24 @@ const BlogPage: NextPageWithLayout<BlogProps> = ({ posts, categories }: BlogProp
   const [selectedCategories, setSelectedCategories] = useState<Category[]>([]);
   const [filteredPosts, setFilteredPosts] = useState<BlogPost[]>(posts);
   const [change, setChange] = useState<boolean>(false);
+  const [show, setShow] = useState<boolean>(false);
+  const [small, setSmall] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (window.innerWidth < 768) {
+      setSmall(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      if (window.innerWidth < 1024) {
+        setSmall(true);
+      } else {
+        setSmall(false);
+      }
+    });
+  }, []);
 
   const handleCategoryChange = (category: string) => {
     // check if category is already selected and remove it
@@ -37,6 +56,10 @@ const BlogPage: NextPageWithLayout<BlogProps> = ({ posts, categories }: BlogProp
     temp.push({title: category, _id: ""});
     setChange(!change);
     setSelectedCategories(temp);
+  };
+
+  const handleShow = () => {
+    setShow(!show);
   };
 
   useEffect(() => {
@@ -63,17 +86,23 @@ const BlogPage: NextPageWithLayout<BlogProps> = ({ posts, categories }: BlogProp
   return (
     <div className="flex flex-col text-gray-800 px-4 md:px-10">
       <div className="grid lg:grid-cols-5">
+        {small ? <div tabIndex={0} className={cn("border-b border-gray-800 lg:border-base-100 col-span-5 lg:col-span-1 sticky top-0 lg:top-20 z-10 bg-base-100 py-5 mb-5 lg:py-0 h-fit collapse collapse-arrow", {"collapse-close": !show}, {"collapse-open": show})}>
+          <h2 className="text-3xl text-left collapse-title" onClick={() => handleShow()}>Categories</h2>
+          <div className="collapse-content">
+            <CategorySelect categories={categories} handleCategoryChange={handleCategoryChange} />
+          </div>
+        </div> :
         <div className="border-b border-gray-800 lg:border-base-100 col-span-5 lg:col-span-1 sticky top-0 lg:top-20 z-10 bg-base-100 py-5 mb-5 lg:py-0 h-fit">
           <h2 className="text-3xl text-left">Categories</h2>
           <CategorySelect categories={categories} handleCategoryChange={handleCategoryChange} />
-        </div>
+        </div>}
         <div className="col-span-5 lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 gap-5 lg:gap-10 mb-10">
           {filteredPosts.map((post, index) => (
             <div key={index} className="cursor-pointer h-fit">
               <Link href={`/blog/${post.slug.current}`}>
                 <div key={post._id} className="flex flex-col w-full border border-gray-800 rounded-3xl p-5 md:p-10 h-80 hover:bg-[#F5F5F5] group">
-                  <div className="w-full relative flex justify-between">
-                    <h2 className="text-xl">{post.title}</h2>
+                  <div className="w-full relative flex justify-between flex-wrap">
+                    <h2 className="text-xl mb-2">{post.title}</h2>
                     <p className="text-lg text-left">{new Date(post.publishedAt).toLocaleDateString()}</p>
                   </div>
                   <div className="border-b border-gray-800 w-full my-5 flex flex-wrap">
@@ -146,7 +175,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
     },
     publishedAt,
     body
-  }`;
+  } | order(publishedAt desc)`;
   const categoryQuery = '*[_type == "category"]{title}';
   const posts = await sanityClient.fetch(query);
   const categories = await sanityClient.fetch(categoryQuery);

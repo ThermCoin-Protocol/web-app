@@ -26,18 +26,11 @@ const BlogPostPage: NextPageWithLayout<BlogProps> = ({ post }: BlogProps) => {
                 ))
               }
             </div>
-            <div className='grid grid-cols-1 sm:grid-cols-2 mb-5'>
-              <h1 className="text-5xl text-left my-4 font-bold">{post.title}</h1>
-              <p className="sm:my-4 text-xl sm:place-self-end">
+            <div className='flex flex-col sm:flex-row sm:justify-between mb-2 flex-wrap'>
+              <h1 className="text-5xl text-left font-bold sm:mb-5">{post.title}</h1>
+              <p className="text-xl mt-4">
                 Published {new Date(post.publishedAt).toLocaleDateString()}
               </p>
-              {/* {
-                post.categories.map((category) => (
-                  <div key={category._id} className="col-span-2 justify-self-initial justify-center items-center font-medium py-1 px-2 rounded-full text-gray-800 border border-gray-800 w-fit mb-2">
-                    <div>{category.title}</div>
-                  </div>
-                ))
-              } */}
             </div>
           </div>
           {post.mainImage && <Image
@@ -48,20 +41,7 @@ const BlogPostPage: NextPageWithLayout<BlogProps> = ({ post }: BlogProps) => {
             alt="post photo"
             priority
           />}
-          <article className="p-4 xl:p-0 mt-10">
-            {/* <div className='grid grid-cols-2 mb-5'>
-              <h1 className="text-2xl text-left my-4 font-bold">{post.title}</h1>
-              <p className="my-4 text-right text-lg">
-                Published {new Date(post.publishedAt).toLocaleDateString()}
-              </p>
-              {
-                post.categories.map((category) => (
-                  <div key={category._id} className="col-span-2 justify-self-initial justify-center items-center font-medium py-1 px-2 rounded-full text-gray-800 border border-gray-800 w-fit mb-2">
-                    <div>{category.title}</div>
-                  </div>
-                ))
-              }
-            </div> */}
+          <article className="p-4 xl:p-0 mt-6">
             <div className="mb-20">
               <PortableText
                 dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
