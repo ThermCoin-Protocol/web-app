@@ -16,6 +16,30 @@ const BlogPostPage: NextPageWithLayout<BlogProps> = ({ post }: BlogProps) => {
     <div className="flex flex-col text-gray-800">
       {post && (
         <div className="max-w-4xl mx-auto lg:mt-4">
+          <div className="p-4 xl:p-0">
+            <div className="flex flex-wrap justify-start items-center mb-5">
+              {
+                post.categories.map((category) => (
+                  <div key={category._id} className="col-span-2 justify-self-initial justify-center items-center font-medium py-1 px-2 rounded-full text-gray-800 border border-gray-800 w-fit mb-2 mr-2">
+                    <div>{category.title}</div>
+                  </div>
+                ))
+              }
+            </div>
+            <div className='grid grid-cols-1 sm:grid-cols-2 mb-5'>
+              <h1 className="text-5xl text-left my-4 font-bold">{post.title}</h1>
+              <p className="sm:my-4 text-xl sm:place-self-end">
+                Published {new Date(post.publishedAt).toLocaleDateString()}
+              </p>
+              {/* {
+                post.categories.map((category) => (
+                  <div key={category._id} className="col-span-2 justify-self-initial justify-center items-center font-medium py-1 px-2 rounded-full text-gray-800 border border-gray-800 w-fit mb-2">
+                    <div>{category.title}</div>
+                  </div>
+                ))
+              } */}
+            </div>
+          </div>
           {post.mainImage && <Image
             width="1600"
             height="1000"
@@ -24,8 +48,8 @@ const BlogPostPage: NextPageWithLayout<BlogProps> = ({ post }: BlogProps) => {
             alt="post photo"
             priority
           />}
-          <article className="p-4 xl:p-0">
-            <div className='grid grid-cols-2 mb-5'>
+          <article className="p-4 xl:p-0 mt-10">
+            {/* <div className='grid grid-cols-2 mb-5'>
               <h1 className="text-2xl text-left my-4 font-bold">{post.title}</h1>
               <p className="my-4 text-right text-lg">
                 Published {new Date(post.publishedAt).toLocaleDateString()}
@@ -37,10 +61,7 @@ const BlogPostPage: NextPageWithLayout<BlogProps> = ({ post }: BlogProps) => {
                   </div>
                 ))
               }
-              {/* <div className="col-span-2 justify-self-initial flex justify-center items-center font-medium py-1 px-2 rounded-full text-gray-800 border border-gray-800 w-fit">
-                <div>{post.categories[0].title}</div>
-              </div> */}
-            </div>
+            </div> */}
             <div className="mb-20">
               <PortableText
                 dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}

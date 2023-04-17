@@ -72,18 +72,31 @@ const BlogPage: NextPageWithLayout<BlogProps> = ({ posts, categories }: BlogProp
             <div key={index} className="cursor-pointer h-fit">
               <Link href={`/blog/${post.slug.current}`}>
                 <div key={post._id} className="flex flex-col w-full border border-gray-800 rounded-3xl p-5 md:p-10 h-80 hover:bg-[#F5F5F5] group">
-                  {/* <Image src={urlFor(post.mainImage).url()} width={1600} height={1000}  
-                    className="absolute w-full object-cover"          
-                  /> */}
                   <div className="w-full relative flex justify-between">
-
                     <h2 className="text-xl">{post.title}</h2>
                     <p className="text-lg text-left">{new Date(post.publishedAt).toLocaleDateString()}</p>
                   </div>
-                  <div className="border-b border-gray-800 w-full my-5">
-                    {post.categories.map((category: Category, index: number) => (
-                      <p key={index} className="text-lg text-left">{category.title}</p>
-                    ))}
+                  <div className="border-b border-gray-800 w-full my-5 flex flex-wrap">
+                    {post.categories.map((category: Category, index: number) => {
+                      if (index > 0) {
+                        return (
+                          <>
+                            <div key={index} className="justify-self-initial justify-center items-center font-medium py-1 rounded-full text-gray-800 w-fit mb-2 mr-2">
+                              /
+                            </div>
+                            <div key={index} className="justify-self-initial justify-center items-center font-medium py-1 rounded-full text-gray-800 w-fit mb-2 mr-2">
+                              {category.title}
+                            </div>
+                          </>
+                        );
+                      } else {
+                        return (
+                          <div key={index} className="justify-self-initial justify-center items-center font-medium py-1 rounded-full text-gray-800 w-fit mb-2 mr-4">
+                            {category.title}
+                          </div>
+                        );
+                      }
+                    })}
                   </div>
                   <div className="flex-grow flex place-items-center">
                     {post.body.map((block: any, index: number) => {
