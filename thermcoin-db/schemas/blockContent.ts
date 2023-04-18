@@ -63,5 +63,10 @@ export default defineType({
       type: 'image',
       options: {hotspot: true},
     }),
+    defineArrayMember({
+      title: 'YouTube URL',
+      type: 'youtube',
+      options: {hotspot: true},
+    }),
   ],
 })
