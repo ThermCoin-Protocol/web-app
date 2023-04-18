@@ -1,10 +1,9 @@
 import React from 'react';
 
-
-interface IFooter {};
+interface IFooter {}
 const Footer: React.FC<IFooter> = () => {
   return (
-    <footer className="flex border-2 border-gray-800 bg-gray-900 p-4 text-base-100 justify-between">
+    <footer className="flex justify-between border-2 border-gray-800 bg-gray-900 p-4 text-base-100">
       <div className="">
         <svg
           version="1.0"
@@ -126,6 +125,6 @@ const Footer: React.FC<IFooter> = () => {
       </div>
     </footer>
   );
-}
+};
 
 export default Footer;

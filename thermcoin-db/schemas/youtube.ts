@@ -1,4 +1,4 @@
-import { defineField } from "sanity";
+import {defineField} from 'sanity'
 
 export default {
   name: 'youtube',
@@ -9,6 +9,6 @@ export default {
       name: 'url',
       title: 'YouTube URL',
       type: 'url',
-    })
-  ]
+    }),
+  ],
 }

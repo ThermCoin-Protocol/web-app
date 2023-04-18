@@ -2,23 +2,25 @@ import React from 'react';
 
 export default function Features() {
   return (
-    <div className="-mt-40 py-24 sm:py-32 mx-4 md:mx-10 lg:mx-20">
+    <div className="mx-4 -mt-40 py-24 sm:py-32 md:mx-10 lg:mx-20">
       <div className="max-w-full">
         <div className="mx-auto max-w-3xl lg:text-center">
           {/* <h2 className="font-semibold leading-7 text-info">Lorem Ipsum</h2> */}
-          <p className="mt-2 text-5xl font-bold text-gray-800 md:text-6xl lg:text-7xl tracking-wide">ThermCoin Features</p>
+          <p className="mt-2 text-5xl font-bold tracking-wide text-gray-800 md:text-6xl lg:text-7xl">
+            ThermCoin Features
+          </p>
           {/* <p className="text-lg mt-6 leading-8">
             Quis tellus eget adipiscing convallis sit sit eget aliquet quis.
             Suspendisse eget egestas a elementum pulvinar et feugiat blandit at.
             In mi viverra elit nunc.
           </p> */}
         </div>
-        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-5xl text-lg">
+        <div className="mx-auto mt-16 max-w-2xl text-lg sm:mt-20 lg:mt-24 lg:max-w-5xl">
           <dl className="grid max-w-xl grid-cols-1 gap-y-10 gap-x-8 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
             <div className="relative pl-16">
               <dt className="font-semibold leading-7 text-gray-800">
                 <div className="absolute top-0 left-0 flex h-10 w-10 items-center justify-center rounded-lg bg-neutral">
-                <svg
+                  <svg
                     className="h-7 w-7 text-white"
                     fill="currentColor"
                     viewBox="0 0 24 24"
@@ -43,11 +45,12 @@ export default function Features() {
                 Energy Is Money
               </dt>
               <dd className="mt-2 text-base leading-7 text-gray-500">
-              ThermCoin measures global daily energy consumption periodically and updates 
-              its coin supply to match in a ratio of 100,000Btu to 1 coin, under the principle that
-              energy is money. Adjustments to coin supply are propagated throughout the 
-              entire ThermCoin monetary system, thus allowing holders to participate in coin 
-              inflation and deflation. See our whitepaper for more details.
+                ThermCoin measures global daily energy consumption periodically
+                and updates its coin supply to match in a ratio of 100,000Btu to
+                1 coin, under the principle that energy is money. Adjustments to
+                coin supply are propagated throughout the entire ThermCoin
+                monetary system, thus allowing holders to participate in coin
+                inflation and deflation. See our whitepaper for more details.
               </dd>
             </div>
 
@@ -73,10 +76,11 @@ export default function Features() {
                 Cooperative Mining
               </dt>
               <dd className="mt-2 text-base leading-7 text-gray-500">
-                Each node participates in a single mining pool, with rewards being divided 
-                amongst all participants equally. A floor on proof of work ensures that every
-                node contributes meaningfully. This allows for a more equitable distribution of
-                rewards amongst all participants. 
+                Each node participates in a single mining pool, with rewards
+                being divided amongst all participants equally. A floor on proof
+                of work ensures that every node contributes meaningfully. This
+                allows for a more equitable distribution of rewards amongst all
+                participants.
               </dd>
             </div>
 
@@ -102,8 +106,9 @@ export default function Features() {
                 Open Source
               </dt>
               <dd className="mt-2 text-base leading-7 text-gray-500">
-                ThermCoin is open source and available on GitHub. We welcome contributions
-                from the community and are committed to transparency.
+                ThermCoin is open source and available on GitHub. We welcome
+                contributions from the community and are committed to
+                transparency.
               </dd>
             </div>
 
@@ -129,10 +134,10 @@ export default function Features() {
                 Advanced Security
               </dt>
               <dd className="mt-2 text-base leading-7 text-gray-500">
-                ThermCoin uses a novel approach to security, utilizing a Proof of Work
-                algorithm that is resistant to ASIC mining. This allows ThermCoin to be
-                mined by anyone with a computer, and prevents the concentration of mining
-                power into the hands of a few.
+                ThermCoin uses a novel approach to security, utilizing a Proof
+                of Work algorithm that is resistant to ASIC mining. This allows
+                ThermCoin to be mined by anyone with a computer, and prevents
+                the concentration of mining power into the hands of a few.
               </dd>
             </div>
           </dl>

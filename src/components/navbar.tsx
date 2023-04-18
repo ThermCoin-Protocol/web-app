@@ -31,10 +31,11 @@ const Navbar: React.FC<INavbar> = () => {
           <ul
             tabIndex={0}
             className="dropdown-content menu rounded-box mt-7 w-60 border border-gray-800 bg-base-100 shadow-xl"
-
           >
             <li>
-              <a className="text-xl" href='/whitepaper.pdf' download>Whitepaper</a>
+              <a className="text-xl" href="/whitepaper.pdf" download>
+                Whitepaper
+              </a>
             </li>
             <li>
               <a
@@ -77,14 +78,21 @@ const Navbar: React.FC<INavbar> = () => {
         </Link>
         <div className="navbar-end sm:flex">
           <div className="flex justify-between">
-            <a 
-              href='/whitepaper.pdf'
+            <a
+              href="/whitepaper.pdf"
               className="before:left-50 btn-ghost btn relative text-lg text-gray-800 before:absolute before:bottom-0 before:block before:h-[2px] before:w-3/4 before:origin-top-left before:scale-x-0 before:bg-gray-800 before:transition before:duration-300 before:ease-in-out before:content-[''] hover:bg-transparent hover:bg-base-100 before:hover:scale-x-100"
               download
             >
               Whitepaper
             </a>
-            {[{title: 'Codebase', link: 'https://github.com/ThermCoin-Protocol'}, {title: 'Blog', link: '/blog'}, {title: 'Forum', link: 'https://discord.gg/evAR9ng8WR'}].map((item) => (
+            {[
+              {
+                title: 'Codebase',
+                link: 'https://github.com/ThermCoin-Protocol',
+              },
+              { title: 'Blog', link: '/blog' },
+              { title: 'Forum', link: 'https://discord.gg/evAR9ng8WR' },
+            ].map((item) => (
               <a
                 key={item.title}
                 className="before:left-50 btn-ghost btn relative text-lg text-gray-800 before:absolute before:bottom-0 before:block before:h-[2px] before:w-3/4 before:origin-top-left before:scale-x-0 before:bg-gray-800 before:transition before:duration-300 before:ease-in-out before:content-[''] hover:bg-transparent hover:bg-base-100 before:hover:scale-x-100"
@@ -96,7 +104,7 @@ const Navbar: React.FC<INavbar> = () => {
           </div>
         </div>
       </div>
-      <div className="navbar z-20 text-gray-800 md:hidden p-4">
+      <div className="navbar z-20 p-4 text-gray-800 md:hidden">
         <div className="navbar-start">
           <Image
             src={VerginaSun}
@@ -106,13 +114,15 @@ const Navbar: React.FC<INavbar> = () => {
             className="flex-shrink-0"
           />
           <Link href="/">
-            <span className="pl-3 text-xl font-bold tracking-wide">ThermCoin</span>
+            <span className="pl-3 text-xl font-bold tracking-wide">
+              ThermCoin
+            </span>
           </Link>
         </div>
         <div className="navbar-end">{navbarNarrow()}</div>
       </div>
     </>
   );
-}
+};
 
 export default Navbar;

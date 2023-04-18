@@ -1,19 +1,22 @@
-import React, { useEffect, useState } from "react";
-import { sanityClient } from "../../../sanity";
-import {BlogPost, Category} from "../../typings";
-import { GetServerSideProps } from "next";
-import Link from "next/link";
-import type { NextPageWithLayout } from "../_app";
-import Layout from "@/components/Layout";
-import CategorySelect from "@/components/blog/category";
-import cn from "classnames";
+import React, { useEffect, useState } from 'react';
+import { sanityClient } from '../../../sanity';
+import { BlogPost, Category } from '../../typings';
+import { GetServerSideProps } from 'next';
+import Link from 'next/link';
+import type { NextPageWithLayout } from '../_app';
+import Layout from '@/components/Layout';
+import CategorySelect from '@/components/blog/category';
+import cn from 'classnames';
 
 interface BlogProps {
   posts: BlogPost[];
   categories: Category[];
 }
 
-const BlogPage: NextPageWithLayout<BlogProps> = ({ posts, categories }: BlogProps) => {
+const BlogPage: NextPageWithLayout<BlogProps> = ({
+  posts,
+  categories,
+}: BlogProps) => {
   const [selectedCategories, setSelectedCategories] = useState<Category[]>([]);
   const [filteredPosts, setFilteredPosts] = useState<BlogPost[]>(posts);
   const [change, setChange] = useState<boolean>(false);
@@ -27,7 +30,7 @@ const BlogPage: NextPageWithLayout<BlogProps> = ({ posts, categories }: BlogProp
   }, []);
 
   useEffect(() => {
-    window.addEventListener("resize", () => {
+    window.addEventListener('resize', () => {
       if (window.innerWidth < 1024) {
         setSmall(true);
       } else {
@@ -52,7 +55,7 @@ const BlogPage: NextPageWithLayout<BlogProps> = ({ posts, categories }: BlogProp
       return;
     }
     const temp: Category[] = selectedCategories;
-    temp.push({title: category, _id: ""});
+    temp.push({ title: category, _id: '' });
     setChange(!change);
     setSelectedCategories(temp);
   };
@@ -78,62 +81,114 @@ const BlogPage: NextPageWithLayout<BlogProps> = ({ posts, categories }: BlogProp
       });
       setFilteredPosts(temp);
     }
-    console.log("useEffect: ", selectedCategories);
+    console.log('useEffect: ', selectedCategories);
   }, [selectedCategories, change]);
-  
 
   return (
-    <div className="flex flex-col text-gray-800 px-4 md:px-10">
+    <div className="flex flex-col px-4 text-gray-800 md:px-10">
       <div className="grid lg:grid-cols-5">
-        {small ? <div tabIndex={0} className={cn("border-b border-gray-800 lg:border-base-100 col-span-5 lg:col-span-1 sticky top-0 lg:top-20 z-10 bg-base-100 py-5 mb-5 lg:py-0 h-fit collapse collapse-arrow", {"collapse-close": !show}, {"collapse-open": show})}>
-          <h2 className="text-3xl text-left collapse-title" onClick={() => handleShow()}>Categories</h2>
-          <div className="collapse-content">
-            <CategorySelect categories={categories} handleCategoryChange={handleCategoryChange} />
+        {small ? (
+          <div
+            tabIndex={0}
+            className={cn(
+              'collapse-arrow collapse sticky top-0 z-10 col-span-5 mb-5 h-fit border-b border-gray-800 bg-base-100 py-5 lg:top-20 lg:col-span-1 lg:border-base-100 lg:py-0',
+              { 'collapse-close': !show },
+              { 'collapse-open': show },
+            )}
+          >
+            <h2
+              className="collapse-title text-left text-3xl"
+              onClick={() => handleShow()}
+            >
+              Categories
+            </h2>
+            <div className="collapse-content">
+              <CategorySelect
+                categories={categories}
+                handleCategoryChange={handleCategoryChange}
+              />
+            </div>
           </div>
-        </div> :
-        <div className="border-b border-gray-800 lg:border-base-100 col-span-5 lg:col-span-1 sticky top-0 lg:top-20 z-10 bg-base-100 py-5 mb-5 lg:py-0 h-fit">
-          <h2 className="text-3xl text-left">Categories</h2>
-          <CategorySelect categories={categories} handleCategoryChange={handleCategoryChange} />
-        </div>}
-        <div className="col-span-5 lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 gap-5 lg:gap-10 mb-10">
+        ) : (
+          <div className="sticky top-0 z-10 col-span-5 mb-5 h-fit border-b border-gray-800 bg-base-100 py-5 lg:top-20 lg:col-span-1 lg:border-base-100 lg:py-0">
+            <h2 className="text-left text-3xl">Categories</h2>
+            <CategorySelect
+              categories={categories}
+              handleCategoryChange={handleCategoryChange}
+            />
+          </div>
+        )}
+        <div className="col-span-5 mb-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:col-span-4 lg:gap-10">
           {filteredPosts.map((post, index) => (
-            <div key={index} className="cursor-pointer h-fit">
+            <div key={index} className="h-fit cursor-pointer">
               <Link href={`/blog/${post.slug.current}`}>
-                <div key={post._id} className="flex flex-col w-full border border-gray-800 rounded-3xl p-5 md:p-10 h-80 hover:bg-[#F5F5F5] group">
-                  <div className="w-full relative flex justify-between flex-wrap">
-                    <h2 className="text-xl mb-2">{post.title}</h2>
-                    <p className="text-lg text-left">{new Date(post.publishedAt).toLocaleDateString()}</p>
+                <div
+                  key={post._id}
+                  className="group flex h-80 w-full flex-col rounded-3xl border border-gray-800 p-5 hover:bg-[#F5F5F5] md:p-10"
+                >
+                  <div className="relative flex w-full flex-wrap justify-between">
+                    <h2 className="mb-2 text-xl">{post.title}</h2>
+                    <p className="text-left text-lg">
+                      {new Date(post.publishedAt).toLocaleDateString()}
+                    </p>
                   </div>
-                  <div className="border-b border-gray-800 w-full my-5 flex flex-wrap">
-                    {post.categories.map((category: Category, index: number) => {
-                      if (index > 0) {
-                        return (
-                          <>
-                            <div key={index} className="justify-self-initial justify-center items-center font-medium py-1 rounded-full text-gray-800 w-fit mb-2 mr-2">
-                              /
-                            </div>
-                            <div key={index} className="justify-self-initial justify-center items-center font-medium py-1 rounded-full text-gray-800 w-fit mb-2 mr-2">
+                  <div className="my-5 flex w-full flex-wrap border-b border-gray-800">
+                    {post.categories.map(
+                      (category: Category, index: number) => {
+                        if (index > 0) {
+                          return (
+                            <>
+                              <div
+                                key={index}
+                                className="justify-self-initial mb-2 mr-2 w-fit items-center justify-center rounded-full py-1 font-medium text-gray-800"
+                              >
+                                /
+                              </div>
+                              <div
+                                key={index}
+                                className="justify-self-initial mb-2 mr-2 w-fit items-center justify-center rounded-full py-1 font-medium text-gray-800"
+                              >
+                                {category.title}
+                              </div>
+                            </>
+                          );
+                        } else {
+                          return (
+                            <div
+                              key={index}
+                              className="justify-self-initial mb-2 mr-4 w-fit items-center justify-center rounded-full py-1 font-medium text-gray-800"
+                            >
                               {category.title}
                             </div>
-                          </>
-                        );
-                      } else {
-                        return (
-                          <div key={index} className="justify-self-initial justify-center items-center font-medium py-1 rounded-full text-gray-800 w-fit mb-2 mr-4">
-                            {category.title}
-                          </div>
-                        );
-                      }
-                    })}
+                          );
+                        }
+                      },
+                    )}
                   </div>
-                  <div className="flex-grow flex place-items-center">
-                    <p className="text-lg text-left">{post.description}</p>
+                  <div className="flex flex-grow place-items-center">
+                    <p className="text-left text-lg">{post.description}</p>
                   </div>
                   <div className="flex justify-end">
-                    <a href="#_" className="relative inline-flex items-center px-10 py-3 overflow-hidden text-lg font-medium text-gray-800 border border-gray-800 rounded-full">
-                      <span className="absolute left-0 block w-full h-0 transition-all bg-indigo-600 opacity-100 hover:h-full top-1/2 duration-400 ease"></span>
-                      <span className="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-2 ease">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    <a
+                      href="#_"
+                      className="relative inline-flex items-center overflow-hidden rounded-full border border-gray-800 px-10 py-3 text-lg font-medium text-gray-800"
+                    >
+                      <span className="duration-400 ease absolute left-0 top-1/2 block h-0 w-full bg-indigo-600 opacity-100 transition-all hover:h-full"></span>
+                      <span className="ease absolute right-0 flex h-10 w-10 translate-x-full transform items-center justify-start duration-300 group-hover:translate-x-2">
+                        <svg
+                          className="h-5 w-5"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"
+                          ></path>
+                        </svg>
                       </span>
                       <span className="relative">Read More</span>
                     </a>
@@ -146,7 +201,7 @@ const BlogPage: NextPageWithLayout<BlogProps> = ({ posts, categories }: BlogProp
       </div>
     </div>
   );
-}
+};
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const query = `*[_type == "post"]{
@@ -176,10 +231,10 @@ export const getServerSideProps: GetServerSideProps = async () => {
       categories,
     },
   };
-}
+};
 
 export default BlogPage;
 
 BlogPage.getLayout = (page) => {
   return <Layout>{page}</Layout>;
-}
+};

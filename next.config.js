@@ -1,6 +1,5 @@
 const withTM = require('next-transpile-modules')(['three']);
 module.exports = withTM({
-
   reactStrictMode: true,
   webpack: (config, { isServer }) => {
     if (!isServer) {
@@ -12,12 +11,10 @@ module.exports = withTM({
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: "cdn.sanity.io",
+        hostname: 'cdn.sanity.io',
         pathname: '/**',
       },
     ],
     domains: ['cdn.sanity.io'],
   },
 });
-
-

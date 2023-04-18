@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Stats() {
   return (
-    <div className="m-0 w-screen justify-items-center border-t border-gray-800 bg-base-100 grid">
+    <div className="m-0 grid w-screen justify-items-center border-t border-gray-800 bg-base-100">
       <div className="mx-2 -my-10 grid w-11/12 flex-col pb-40">
         <div className="text-lg">
           <div className="rounded-3xl border border-gray-800 bg-base-100 text-gray-800">

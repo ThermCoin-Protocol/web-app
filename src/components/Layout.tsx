@@ -11,7 +11,7 @@ const Layout: React.FC<ILayout> = ({ children }) => {
       <Head>
         <title>ThermCoin</title>
       </Head>
-      <div className="flex flex-col text-gray-800 min-h-screen">
+      <div className="flex min-h-screen flex-col text-gray-800">
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />
