@@ -3,6 +3,16 @@ import Layout from '../components/Layout';
 import type { NextPageWithLayout } from './_app';
 import Head from 'next/head';
 
+const items = [
+  '- ERC20 Token with variable supply mechanics ✅ (Finished)',
+  '- PoW and smart-contract compatible blockchain network + Testnet launch ☑️ (1 Week)',
+  '- Core mining pool with equitable reward system ☑️ (2-4 Weeks)',
+  '- Integrate chainlink to fetch global energy data and update supply ☑️ (5 Weeks)',
+  '- Launch ThermCoin protocol v1 ☑️ (6 Weeks)',
+  '- ThermCoin exchange / Fiat on-ramp ☑️ (TBA)',
+  '- Bitcoin bridge / tBTC launch ☑️ (TBA)',
+];
+
 const Roadmap: NextPageWithLayout = () => {
   return (
     <>
@@ -20,15 +30,16 @@ const Roadmap: NextPageWithLayout = () => {
         />
         <link rel="Sun Icon" href="../../VerginaSun.ico" />
       </Head>
-      <div className="m-4 flex h-full flex-grow flex-col justify-center text-gray-800 md:m-10">
-        <div className="flex flex-col items-center justify-center text-gray-800">
-          <h1 className="text-5xl font-bold tracking-wide text-gray-800 md:text-6xl lg:text-7xl">
-            Coming Soon
-          </h1>
-          <p className="mt-6 text-center text-xl leading-8 text-gray-800 md:text-2xl lg:text-3xl">
-            ThermCoin's roadmap outlines the project's goals and plans for the
-            future.
-          </p>
+      <div className="m-4 flex h-full max-w-4xl flex-grow flex-col items-center justify-center text-gray-800 md:m-10">
+        <div className="flex flex-col">
+          <h1 className="mb-4 text-4xl font-bold">Roadmap</h1>
+          <div className="flex flex-col space-y-4">
+            {items.map((item) => (
+              <div className="flex flex-row">
+                <p className="text-xl font-bold">{item}</p>
+              </div>
+            ))}
+          </div>
           <AnimatedBackground />
         </div>
       </div>

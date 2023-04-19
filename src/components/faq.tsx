@@ -9,16 +9,6 @@ export default function Faq() {
               <h2 className="mb-6 text-5xl font-bold tracking-wide text-gray-800 md:text-6xl lg:text-7xl">
                 Frequently Asked Questions
               </h2>
-              {/* <p className="text-gray-500">
-              Didn't find your answer in the FAQ? <br />
-              <a
-                href="#!"
-                className="text-blue-600 transition duration-300 hover:text-blue-700 focus:text-blue-700 active:text-blue-800"
-              >
-                Contact our dev team
-              </a>
-              .
-            </p> */}
             </div>
 
             <div className="mb-6 md:mb-0">
@@ -34,7 +24,7 @@ export default function Faq() {
                 </p>
               </div>
               <div className="my-10 rounded-3xl border border-base-100 transition-all sm:p-10 sm:hover:scale-105 sm:hover:border-black sm:hover:bg-[#FFFFFF] sm:hover:shadow-xl">
-                <p className="mb-4 font-bold">How can I start participate?</p>
+                <p className="mb-4 font-bold">How can I participate?</p>
                 <p className=" text-gray-500">
                   You can start participating in the ThermCoin ecosystem by
                   joining our Discord server and reading our blog. We will be
