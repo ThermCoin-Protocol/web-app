@@ -14,6 +14,35 @@ interface BlogProps {
   post: BlogPost;
 }
 
+const serializers = {
+  h1: (props: any) => <h1 className="my-5 text-2xl font-bold" {...props} />,
+  h2: (props: any) => <h2 className="my-5 text-xl font-bold" {...props} />,
+  h3: (props: any) => <h3 className="my-5 text-lg font-bold" {...props} />,
+  normal: (props: any) => <p className="my-5 text-lg" {...props} />,
+  a: (props: any) => <a className="text-blue-500" {...props} />,
+  blockquote: (props: any) => (
+    <blockquote
+      className="border-l-4 border-gray-300 pl-4 text-lg italic"
+      {...props}
+    />
+  ),
+  youtube: (props: any) => {
+    const { url } = props;
+    if (!url) {
+      return <div>Missing YouTube URL</div>;
+    }
+    const id = getYouTubeId(url);
+    if (!id) {
+      return <div>Missing YouTube ID</div>;
+    }
+    return (
+      <div>
+        <LiteYouTubeEmbed id={id} title="YouTube Embed" />
+      </div>
+    );
+  },
+};
+
 const BlogPostPage: NextPageWithLayout<BlogProps> = ({ post }: BlogProps) => {
   return (
     <div className="flex flex-col text-gray-800">
@@ -55,42 +84,7 @@ const BlogPostPage: NextPageWithLayout<BlogProps> = ({ post }: BlogProps) => {
                 dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
                 projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
                 content={post.body}
-                serializers={{
-                  h1: (props: any) => (
-                    <h1 className="my-5 text-2xl font-bold" {...props} />
-                  ),
-                  h2: (props: any) => (
-                    <h2 className="my-5 text-xl font-bold" {...props} />
-                  ),
-                  h3: (props: any) => (
-                    <h3 className="my-5 text-lg font-bold" {...props} />
-                  ),
-                  normal: (props: any) => (
-                    <p className="my-5 text-lg" {...props} />
-                  ),
-                  a: (props: any) => <a className="text-blue-500" {...props} />,
-                  blockquote: (props: any) => (
-                    <blockquote
-                      className="border-l-4 border-gray-300 pl-4 text-lg italic"
-                      {...props}
-                    />
-                  ),
-                  youtube: (props: any) => {
-                    const { url } = props;
-                    if (!url) {
-                      return <div>Missing YouTube URL</div>;
-                    }
-                    const id = getYouTubeId(url);
-                    if (!id) {
-                      return <div>Missing YouTube ID</div>;
-                    }
-                    return (
-                      <div>
-                        <LiteYouTubeEmbed id={id} title="YouTube Embed" />
-                      </div>
-                    );
-                  },
-                }}
+                serializers={serializers}
               />
             </div>
           </article>
