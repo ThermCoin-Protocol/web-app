@@ -30,11 +30,10 @@ export default function Document() {
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
-              function gtag(){window.dataLayer.push(arguments)}
+              function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
-                page_path: window.location.pathname,
-              });
+            
+              gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}');
             `,
           }}
         />

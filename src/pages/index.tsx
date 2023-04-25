@@ -23,22 +23,6 @@ const Home: NextPageWithLayout = () => {
           key="desc"
         />
         <link rel="Sun Icon" href="../../VerginaSun.ico" />
-        <script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){window.dataLayer.push(arguments)}
-              gtag('js', new Date());
-              gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
-                page_path: window.location.pathname,
-              });
-            `,
-          }}
-        />
       </Head>
       <div className="flex flex-col items-center text-gray-800">
         <Hero />
