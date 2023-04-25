@@ -120,11 +120,11 @@ const BlogPage: NextPageWithLayout<BlogProps> = ({
         )}
         <div className="col-span-5 mb-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:col-span-4 lg:gap-10">
           {filteredPosts.map((post, index) => (
-            <div key={index} className="h-fit cursor-pointer">
+            <div key={index} className="cursor-pointer">
               <Link href={`/blog/${post.slug.current}`}>
                 <div
                   key={post._id}
-                  className="group flex h-80 w-full flex-col rounded-3xl border border-gray-800 p-5 hover:bg-[#F5F5F5] md:p-10"
+                  className="group flex h-full w-full flex-col rounded-3xl border border-gray-800 p-5 hover:bg-[#F5F5F5] md:p-10"
                 >
                   <div className="relative flex w-full flex-wrap justify-between">
                     <h2 className="mb-2 text-xl">{post.title}</h2>
@@ -168,7 +168,7 @@ const BlogPage: NextPageWithLayout<BlogProps> = ({
                   <div className="flex flex-grow place-items-center">
                     <p className="text-left text-lg">{post.description}</p>
                   </div>
-                  <div className="flex justify-end">
+                  <div className="flex justify-end pt-5 sm:pt-0">
                     <a
                       href="#_"
                       className="relative inline-flex items-center overflow-hidden rounded-full border border-gray-800 px-10 py-3 text-lg font-medium text-gray-800"
