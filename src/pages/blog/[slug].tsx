@@ -15,9 +15,15 @@ interface BlogProps {
 }
 
 const serializers = {
-  h1: (props: any) => <h1 className="my-5 text-3xl font-bold" {...props} />,
-  h2: (props: any) => <h2 className="my-5 text-2xl font-bold" {...props} />,
-  h3: (props: any) => <h3 className="my-5 text-xl font-bold" {...props} />,
+  h1: (props: any) => (
+    <h1 className="my-5 text-2xl font-bold sm:text-3xl" {...props} />
+  ),
+  h2: (props: any) => (
+    <h2 className="my-5 text-xl font-bold sm:text-2xl" {...props} />
+  ),
+  h3: (props: any) => (
+    <h3 className="my-5 text-lg font-bold sm:text-xl" {...props} />
+  ),
   normal: (props: any) => <p className="my-5 text-lg" {...props} />,
   link: (props: any) => <a className="text-blue-500" {...props} />,
   underline: (props: any) => (
