@@ -70,7 +70,9 @@ const BlogPostPage: NextPageWithLayout<BlogProps> = ({ post }: BlogProps) => {
         />
         <meta
           property="og:image"
-          content={urlFor(post.mainImage).url() ?? './logo.png'}
+          content={
+            post.mainImage ? urlFor(post.mainImage).url()! : './logo.png'
+          }
         />
         <link rel="Sun Icon" href="../../VerginaSun.ico" />
       </Head>
