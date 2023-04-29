@@ -18,16 +18,13 @@ const Roadmap: NextPageWithLayout = () => {
     <>
       <Head>
         <title>ThermCoin - Roadmap</title>
-        <meta
-          property="title"
-          content="ThermCoin - The Future's Energy Based Digital Currency"
-          key="title"
-        />
+        <meta property="title" content="ThermCoin - Roadmap" key="title" />
         <meta
           name="description"
           content="ThermCoin's roadmap outlines the project's goals and plans for the future. Coming soon."
           key="desc"
         />
+        <meta property="og:image" content="./logo.png" />
         <link rel="Sun Icon" href="../../VerginaSun.ico" />
       </Head>
       <div className="m-4 flex h-full max-w-4xl flex-grow flex-col items-center justify-center text-gray-800 md:m-10">

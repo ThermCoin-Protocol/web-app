@@ -22,6 +22,7 @@ const Home: NextPageWithLayout = () => {
           content="The ThermCoin protocol is a decentralized, open-source, and community-driven project that aims to create a new digital currency that is based on energy economics."
           key="desc"
         />
+        <meta property="og:image" content="./logo.png" />
         <link rel="Sun Icon" href="../../VerginaSun.ico" />
       </Head>
       <div className="flex flex-col items-center text-gray-800">

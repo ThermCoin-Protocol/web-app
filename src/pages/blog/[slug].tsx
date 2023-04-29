@@ -9,6 +9,7 @@ import getYouTubeId from 'get-youtube-id';
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 import Layout from '@/components/Layout';
+import Head from 'next/head';
 
 interface BlogProps {
   post: BlogPost;
@@ -54,52 +55,72 @@ const serializers = {
 
 const BlogPostPage: NextPageWithLayout<BlogProps> = ({ post }: BlogProps) => {
   return (
-    <div className="flex flex-col text-gray-800">
-      {post && (
-        <div className="mx-auto max-w-4xl lg:mt-4">
-          <div className="p-4 xl:p-0">
-            <div className="mb-5 flex flex-wrap items-center justify-start">
-              {post.categories.map((category) => (
-                <div
-                  key={category._id}
-                  className="justify-self-initial col-span-2 mb-2 mr-2 w-fit items-center justify-center rounded-full border border-gray-800 py-1 px-2 font-medium text-gray-800"
-                >
-                  <div>{category.title}</div>
-                </div>
-              ))}
+    <>
+      <Head>
+        <title>ThermCoin - {post.title}</title>
+        <meta
+          property="title"
+          content={`ThermCoin - ${post.title}`}
+          key="title"
+        />
+        <meta
+          name="description"
+          content="The ThermCoin protocol is a decentralized, open-source, and community-driven project that aims to create a new digital currency that is based on energy economics."
+          key="desc"
+        />
+        <meta
+          property="og:image"
+          content={urlFor(post.mainImage).url() ?? './logo.png'}
+        />
+        <link rel="Sun Icon" href="../../VerginaSun.ico" />
+      </Head>
+      <div className="flex flex-col text-gray-800">
+        {post && (
+          <div className="mx-auto max-w-4xl lg:mt-4">
+            <div className="p-4 xl:p-0">
+              <div className="mb-5 flex flex-wrap items-center justify-start">
+                {post.categories.map((category) => (
+                  <div
+                    key={category._id}
+                    className="justify-self-initial col-span-2 mb-2 mr-2 w-fit items-center justify-center rounded-full border border-gray-800 py-1 px-2 font-medium text-gray-800"
+                  >
+                    <div>{category.title}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="mb-2 flex flex-col flex-wrap sm:flex-row sm:justify-between">
+                <h1 className="text-left text-5xl font-bold sm:mb-5">
+                  {post.title}
+                </h1>
+                <p className="mt-4 text-xl">
+                  Published {new Date(post.publishedAt).toLocaleDateString()}
+                </p>
+              </div>
             </div>
-            <div className="mb-2 flex flex-col flex-wrap sm:flex-row sm:justify-between">
-              <h1 className="text-left text-5xl font-bold sm:mb-5">
-                {post.title}
-              </h1>
-              <p className="mt-4 text-xl">
-                Published {new Date(post.publishedAt).toLocaleDateString()}
-              </p>
-            </div>
-          </div>
-          {post.mainImage && (
-            <Image
-              width="1600"
-              height="1000"
-              className="h-full w-full object-cover"
-              src={urlFor(post.mainImage).url()!}
-              alt="post photo"
-              priority
-            />
-          )}
-          <article className="mt-6 p-4 xl:p-0">
-            <div className="mb-20">
-              <PortableText
-                dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
-                projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
-                content={post.body}
-                serializers={serializers}
+            {post.mainImage && (
+              <Image
+                width="1600"
+                height="1000"
+                className="h-full w-full object-cover"
+                src={urlFor(post.mainImage).url()!}
+                alt="post photo"
+                priority
               />
-            </div>
-          </article>
-        </div>
-      )}
-    </div>
+            )}
+            <article className="mt-6 p-4 xl:p-0">
+              <div className="mb-20">
+                <PortableText
+                  dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
+                  projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
+                  content={post.body}
+                  serializers={serializers}
+                />
+              </div>
+            </article>
+          </div>
+        )}
+      </div>
+    </>
   );
 };
 
