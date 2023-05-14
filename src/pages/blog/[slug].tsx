@@ -11,7 +11,6 @@ import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 import Layout from '@/components/Layout';
 import Head from 'next/head';
 import CommentForm from '@/components/blog/commentForm';
-import comment from 'thermcoin-db/schemas/comment';
 
 interface BlogProps {
   post: BlogPost;

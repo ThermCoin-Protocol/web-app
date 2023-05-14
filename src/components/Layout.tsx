@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import Footer from './footer';
 import Navbar from './navbar';
 export interface ILayout {
