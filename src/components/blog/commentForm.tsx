@@ -16,10 +16,9 @@ export default function CommentForm({ _id }: CommentFormProps) {
   } = useForm();
   const onSubmit = async (data: any) => {
     setIsSubmitting(true);
-    let response;
     setFormData(data);
     try {
-      response = await fetch('/api/createComment', {
+      await fetch('/api/createComment', {
         method: 'POST',
         body: JSON.stringify({ ...data, _id }),
       });
