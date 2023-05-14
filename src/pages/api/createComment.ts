@@ -5,7 +5,7 @@ export default async function createComment(req: any, res: any) {
   console.log(name, comment, _id);
 
   sanityClient.config({
-    token: process.env.SANITY_COMMENT_API_TOKEN,
+    token: process.env.NEXT_PUBLIC_SANITY_COMMENT_API_TOKEN,
   });
   const result = await sanityClient.create({
     _type: "comment",
