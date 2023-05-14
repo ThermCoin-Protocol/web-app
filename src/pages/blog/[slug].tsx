@@ -10,9 +10,12 @@ import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 import Layout from '@/components/Layout';
 import Head from 'next/head';
+import CommentForm from '@/components/blog/commentForm';
+import comment from 'thermcoin-db/schemas/comment';
 
 interface BlogProps {
   post: BlogPost;
+  comments: any[];
 }
 
 const serializers = {
@@ -53,7 +56,10 @@ const serializers = {
   },
 };
 
-const BlogPostPage: NextPageWithLayout<BlogProps> = ({ post }: BlogProps) => {
+const BlogPostPage: NextPageWithLayout<BlogProps> = ({
+  post,
+  comments,
+}: BlogProps) => {
   return (
     <>
       <Head>
@@ -118,7 +124,29 @@ const BlogPostPage: NextPageWithLayout<BlogProps> = ({ post }: BlogProps) => {
                   serializers={serializers}
                 />
               </div>
+              <CommentForm _id={post._id} />
             </article>
+            {comments && comments.length > 0 && (
+              <div className="mx-auto my-10 flex w-full max-w-4xl flex-col border-t border-gray-800 pt-4">
+                <h2 className="text-2xl font-bold">Comments</h2>
+                {comments.map((comment) => (
+                  <div
+                    key={comment._id}
+                    className="mt-4 rounded border border-gray-800 p-4"
+                  >
+                    <div className="flex flex-col">
+                      <div className="flex justify-between">
+                        <p className="text-xl font-bold">{comment.name}</p>
+                        <p className="text-gray-500">
+                          {new Date(comment._createdAt).toLocaleDateString()}
+                        </p>
+                      </div>
+                    </div>
+                    <p className="mt-2">{comment.comment}</p>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         )}
       </div>
@@ -163,7 +191,17 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     publishedAt,
     body
   }`;
+
+  const query2 = `*[_type == "comment" && post._ref == $id]{
+    _id,
+    name,
+    comment,
+    _createdAt
+  } | order(_createdAt desc)`;
+
   const post = await sanityClient.fetch(query, { slug: params?.slug });
+
+  const comments = await sanityClient.fetch(query2, { id: post._id });
 
   if (!post) {
     return {
@@ -174,6 +212,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   return {
     props: {
       post,
+      comments,
     },
     revalidate: 60,
   };

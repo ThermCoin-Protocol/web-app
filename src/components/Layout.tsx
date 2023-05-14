@@ -8,9 +8,9 @@ export interface ILayout {
 const Layout: React.FC<ILayout> = ({ children }) => {
   return (
     <>
-      <Head>
+      {/* <Head>
         <title>ThermCoin</title>
-      </Head>
+      </Head> */}
       <div className="flex min-h-screen flex-col text-gray-800">
         <Navbar />
         <main className="flex-grow">{children}</main>
