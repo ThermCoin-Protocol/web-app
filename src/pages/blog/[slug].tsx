@@ -126,7 +126,7 @@ const BlogPostPage: NextPageWithLayout<BlogProps> = ({
               <CommentForm _id={post._id} />
             </article>
             {comments && comments.length > 0 && (
-              <div className="mx-auto my-10 flex w-full max-w-4xl flex-col border-t border-gray-800 pt-4">
+              <div className="mx-auto my-10 flex w-full max-w-4xl flex-col border-t border-gray-800 px-4 pt-4">
                 <h2 className="text-2xl font-bold">Comments</h2>
                 {comments.map((comment) => (
                   <div
