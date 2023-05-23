@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
+// import Link from 'next/link';
 import Wave from './img/wave';
 import { RiFilePaper2Fill } from 'react-icons/ri';
 import { BsFillPinMapFill } from 'react-icons/bs';

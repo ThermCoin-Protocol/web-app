@@ -1,5 +1,5 @@
 import React from 'react';
-import AnimatedBackground from './animatedbackground';
+// import AnimatedBackground from './animatedbackground';
 
 export default function Hero() {
   return (

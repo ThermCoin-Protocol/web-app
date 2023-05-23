@@ -1,4 +1,4 @@
-import AnimatedBackground from '@/components/animatedbackground';
+// import AnimatedBackground from '@/components/animatedbackground';
 import Layout from '../components/Layout';
 import type { NextPageWithLayout } from './_app';
 import Head from 'next/head';
@@ -37,7 +37,6 @@ const Roadmap: NextPageWithLayout = () => {
               </div>
             ))}
           </div>
-          {/* <AnimatedBackground /> */}
         </div>
       </div>
     </>
