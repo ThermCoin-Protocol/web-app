@@ -37,7 +37,7 @@ const Roadmap: NextPageWithLayout = () => {
               </div>
             ))}
           </div>
-          <AnimatedBackground />
+          {/* <AnimatedBackground /> */}
         </div>
       </div>
     </>

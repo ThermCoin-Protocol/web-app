@@ -9,7 +9,7 @@ export default function Document() {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Jost&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap"
           rel="stylesheet"
         />
         <link rel="Sun Icon" href="../../VerginaSun.ico" />
@@ -23,7 +23,7 @@ export default function Document() {
           content="The ThermCoin protocol is a decentralized, open-source, and community-driven project that aims to create a new digital currency that is backed by renewable energy."
           key="desc"
         />
-        <Script
+        {/* <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
           strategy="afterInteractive"
         />
@@ -35,7 +35,7 @@ export default function Document() {
 
           gtag('config', ${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID});
         `}
-        </Script>
+        </Script> */}
       </Head>
       <body>
         <Main />

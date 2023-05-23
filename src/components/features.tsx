@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Features() {
   return (
-    <div className="mx-4 -mt-40 py-24 sm:py-32 md:mx-10 lg:mx-20">
+    <div className="mx-4 py-24 sm:py-32 md:mx-10 lg:mx-20">
       <div className="max-w-full">
         <div className="mx-auto max-w-3xl lg:text-center">
           {/* <h2 className="font-semibold leading-7 text-info">Lorem Ipsum</h2> */}
