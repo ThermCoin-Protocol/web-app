@@ -8,10 +8,10 @@ export default function Hero() {
         <div className="relative px-4 lg:px-10">
           <div className="mx-auto max-w-2xl py-12">
             <div className="text-center">
-              <h1 className="text-5xl font-bold tracking-wide text-primary md:text-6xl lg:text-7xl">
+              <h1 className="text-5xl font-bold tracking-wide tracking-wider text-primary md:text-6xl lg:text-7xl">
                 ThermCoin
               </h1>
-              <p className="mt-6 text-3xl leading-8 text-primary">
+              <p className="mt-6 text-3xl leading-8 tracking-wide text-primary">
                 Energy Fuels the Future of Money
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-4 text-lg">

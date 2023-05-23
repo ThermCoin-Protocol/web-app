@@ -3,7 +3,7 @@ import React from 'react';
 interface IFooter {}
 const Footer: React.FC<IFooter> = () => {
   return (
-    <footer className="flex justify-between border-t-2 border-primary p-2 text-primary">
+    <footer className="flex justify-between p-2 text-primary">
       <div className="">
         <svg
           version="1.0"

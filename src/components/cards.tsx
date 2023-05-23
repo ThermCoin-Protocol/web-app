@@ -14,25 +14,25 @@ export default function Cards() {
         <div className="flex w-full items-center justify-center border-b-2 border-primary p-4">
           <Wave strokeWidth={4} />
         </div>
-        <div className="w-full border-b-2 border-primary p-4 text-3xl font-bold">
+        <div className="w-full border-b-2 border-primary p-4 text-3xl font-bold tracking-wider">
           What is ThermCoin?
         </div>
         <div className="grow p-4 text-xl">
-          <p className="mb-4">
-            ThermCoin is a cryptocurrency that is mined by using your computer's
-            processing power to help solve complex mathematical equations. The
-            more processing power you have, the more ThermCoin you can mine.
-          </p>
           <p>
-            ThermCoin is a decentralized currency, meaning that it is not
-            controlled by any one person or entity. It is also a deflationary
-            currency, meaning that the supply of ThermCoin will decrease over
-            time.
+            As energy is the most fundamental commodity in the world, we believe
+            that it is the best asset to base a currency on. The ThermCoin
+            protocol is a decentralized, open-source, and community-driven
+            project that aims to create a new digital currency that is based on
+            the principles of energy economics.
+          </p>
+          <p className="mt-4">
+            To learn more about the ThermCoin protocol, please read the
+            whitepaper.
           </p>
         </div>
         <div className="hover:primary flex w-full cursor-pointer flex-col items-center justify-center border-t-2 border-primary bg-base-100 p-4 text-xl transition-all hover:bg-accent hover:text-base-100">
-          <div className="flex items-center">
-            Download Whitepaper
+          <div className="flex items-center tracking-wider">
+            Download the Whitepaper
             <RiFilePaper2Fill className="ml-4 text-xl" />
           </div>
         </div>
@@ -41,15 +41,15 @@ export default function Cards() {
         <div className="flex flex-col items-center justify-center border-2 border-primary">
           <div className="flex flex-col sm:flex-row">
             <div className="flex flex-col border-r-0 border-b-2 border-primary sm:w-2/3 sm:border-b-0 sm:border-r-2">
-              <div className="w-full border-b-2 border-primary p-4 text-3xl font-bold">
+              <div className="w-full border-b-2 border-primary p-4 text-3xl font-bold tracking-wider">
                 Our Plans
               </div>
               <div className="p-4 text-xl">
                 <p className="mb-10">
-                  We are currently working on a web wallet that will allow you
-                  to store your ThermCoin in a secure location. We are also
-                  working on a mobile wallet that will allow you to store your
-                  ThermCoin on your phone.
+                  We are currently working on a number of projects to help
+                  improve the ThermCoin ecosystem. To learn more about our
+                  current focus, see where we are headed, and celebrate our
+                  successes, check out our roadmap.
                 </p>
               </div>
             </div>
@@ -58,8 +58,8 @@ export default function Cards() {
             </div>
           </div>
           <div className="flex w-full cursor-pointer flex-col items-center justify-center border-t-2 border-primary bg-base-100 p-4 text-xl transition-all hover:bg-accent hover:text-base-100">
-            <div className="flex items-center">
-              Checkout our Roadmap
+            <div className="flex items-center tracking-wider">
+              Checkout our roadmap
               <BsFillPinMapFill className="ml-4 text-xl" />
             </div>
           </div>
@@ -70,7 +70,7 @@ export default function Cards() {
               <Globe strokeWidth={2} />
             </div>
             <div className="flex flex-col sm:w-2/3">
-              <div className="w-full border-b-2 border-primary p-4 text-3xl font-bold">
+              <div className="w-full border-b-2 border-primary p-4 text-3xl font-bold tracking-wider">
                 Learn More
               </div>
               <div className="p-4 text-xl">
@@ -82,8 +82,8 @@ export default function Cards() {
               </div>
             </div>
           </div>
-          <div className="flex w-full cursor-pointer flex-col items-center justify-center border-t-2 border-primary bg-base-100 p-4 text-xl transition-all hover:bg-accent hover:text-primary hover:text-base-100">
-            <div className="flex items-center">
+          <div className="flex w-full cursor-pointer flex-col items-center justify-center border-t-2 border-primary bg-base-100 p-4 text-xl transition-all hover:bg-accent hover:text-base-100">
+            <div className="flex items-center tracking-wider">
               Get started today
               <MdOutlineChromeReaderMode className="ml-4 text-xl" />
             </div>
