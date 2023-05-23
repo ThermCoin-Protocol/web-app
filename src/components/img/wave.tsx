@@ -11,7 +11,7 @@ export default function Wave(props: WaveProps) {
       data-name="Layer 1"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1165 823.91"
-      className="w-2/3"
+      className="w-full sm:w-3/5"
       strokeWidth={props.strokeWidth}
     >
       <path

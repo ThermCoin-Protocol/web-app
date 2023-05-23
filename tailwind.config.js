@@ -13,16 +13,16 @@ module.exports = {
     themes: [
       {
         mytheme: {
-          primary: '#362706',
-
-          secondary: '#464E2E',
-
-          accent: '#ACB992',
-
+          // primary: '#362706',
+          primary: '#393646',
+          // secondary: '#464E2E',
+          secondary: '#4F4557',
+          // accent: '#ACB992',
+          accent: '#6D5D6E',
           neutral: '#524D3F',
 
-          'base-100': '#E9E5D6',
-
+          // 'base-100': '#E9E5D6',
+          'base-100': '#F4EEE0',
           'base-200': '#EDE5D1',
 
           'neutral-content': '#FEF7DB',

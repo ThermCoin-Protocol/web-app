@@ -6,6 +6,7 @@ import Cards from '@/components/cards';
 import Layout from '../components/Layout';
 import type { NextPageWithLayout } from './_app';
 import Head from 'next/head';
+import Resources from '@/components/resources';
 
 const Home: NextPageWithLayout = () => {
   return (
@@ -25,13 +26,14 @@ const Home: NextPageWithLayout = () => {
         <meta property="og:image" content="./logo.png" />
         <link rel="Sun Icon" href="../../VerginaSun.ico" />
       </Head>
-      <div className="flex flex-col items-center text-gray-800">
+      <div className="flex flex-col text-primary">
         <Hero />
         <Cards />
+        <Resources />
         {/* <Stats /> */}
-        <Features />
+        {/* <Features /> */}
         {/* <Action /> */}
-        <Faq />
+        {/* <Faq /> */}
       </div>
     </>
   );

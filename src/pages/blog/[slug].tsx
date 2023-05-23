@@ -11,6 +11,7 @@ import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 import Layout from '@/components/Layout';
 import Head from 'next/head';
 import CommentForm from '@/components/blog/commentForm';
+import { GoPrimitiveDot } from 'react-icons/go';
 
 interface BlogProps {
   post: BlogPost;
@@ -19,25 +20,33 @@ interface BlogProps {
 
 const serializers = {
   h1: (props: any) => (
-    <h1 className="my-5 text-2xl font-bold sm:text-3xl" {...props} />
+    <h1 className="my-5 text-4xl font-bold sm:text-4xl" {...props} />
   ),
   h2: (props: any) => (
-    <h2 className="my-5 text-xl font-bold sm:text-2xl" {...props} />
+    <h2 className="my-5 text-3xl font-bold sm:text-3xl" {...props} />
   ),
   h3: (props: any) => (
-    <h3 className="my-5 text-lg font-bold sm:text-xl" {...props} />
+    <h3 className="my-5 text-2xl font-bold sm:text-2xl" {...props} />
   ),
-  normal: (props: any) => <p className="my-5 text-lg" {...props} />,
+  normal: (props: any) => <p className="my-5 text-xl" {...props} />,
   link: (props: any) => <a className="text-blue-500" {...props} />,
   underline: (props: any) => (
     <span className="border-b-2 border-gray-800" {...props} />
   ),
   blockquote: (props: any) => (
     <blockquote
-      className="border-l-4 border-gray-300 pl-4 text-lg italic"
+      className="border-l-4 border-primary pl-4 text-xl italic"
       {...props}
     />
   ),
+  // i need to add the ul and ordered list styles
+  ul: (props: any) => (
+    <ul className="m-4 list-inside list-disc text-xl" {...props} />
+  ),
+  ol: (props: any) => (
+    <ol className="m-4 list-inside list-decimal text-xl" {...props} />
+  ),
+  li: (props: any) => <li className="m-4" {...props} />,
   youtube: (props: any) => {
     const { url } = props;
     if (!url) {
@@ -81,7 +90,7 @@ const BlogPostPage: NextPageWithLayout<BlogProps> = ({
         />
         <link rel="Sun Icon" href="../../VerginaSun.ico" />
       </Head>
-      <div className="flex flex-col text-gray-800">
+      <div className="flex flex-col text-primary">
         {post && (
           <div className="mx-auto max-w-4xl lg:mt-4">
             <div className="p-4 xl:p-0">
@@ -89,17 +98,17 @@ const BlogPostPage: NextPageWithLayout<BlogProps> = ({
                 {post.categories.map((category) => (
                   <div
                     key={category._id}
-                    className="justify-self-initial col-span-2 mb-2 mr-2 w-fit items-center justify-center rounded-full border border-gray-800 py-1 px-2 font-medium text-gray-800"
+                    className="justify-self-initial col-span-2 mb-2 mr-2 w-fit items-center justify-center rounded-md border-2 border-secondary py-1 px-2 text-lg font-bold text-secondary"
                   >
                     <div>{category.title}</div>
                   </div>
                 ))}
               </div>
               <div className="mb-2 flex flex-col flex-wrap sm:flex-row sm:justify-between">
-                <h1 className="text-left text-5xl font-bold sm:mb-5">
+                <h1 className="text-left text-5xl font-bold text-primary sm:mb-5">
                   {post.title}
                 </h1>
-                <p className="mt-4 text-xl">
+                <p className="mt-4 text-xl text-secondary">
                   Published {new Date(post.publishedAt).toLocaleDateString()}
                 </p>
               </div>
@@ -126,17 +135,17 @@ const BlogPostPage: NextPageWithLayout<BlogProps> = ({
               <CommentForm _id={post._id} />
             </article>
             {comments && comments.length > 0 && (
-              <div className="mx-auto my-10 flex w-full max-w-4xl flex-col border-t border-gray-800 px-4 pt-4">
+              <div className="mx-auto my-20 flex w-full max-w-4xl flex-col border-t-2 border-gray-800 px-4 pt-4">
                 <h2 className="text-2xl font-bold">Comments</h2>
                 {comments.map((comment) => (
                   <div
                     key={comment._id}
-                    className="mt-4 rounded border border-gray-800 p-4"
+                    className="mt-4 rounded border-2 border-primary p-4"
                   >
                     <div className="flex flex-col">
                       <div className="flex justify-between">
                         <p className="text-xl font-bold">{comment.name}</p>
-                        <p className="text-gray-500">
+                        <p className="text-secondary">
                           {new Date(comment._createdAt).toLocaleDateString()}
                         </p>
                       </div>

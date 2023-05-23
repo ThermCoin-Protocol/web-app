@@ -17,10 +17,10 @@ export default function CategorySelect({
             id="default-checkbox"
             type="checkbox"
             value={category.title}
-            className="h-6 w-6 rounded border-primary bg-primary focus:ring-primary"
+            className="h-5 w-5 cursor-pointer appearance-none rounded-md border-2 border-primary checked:border-transparent checked:bg-primary focus:outline-none"
             onClick={() => handleCategoryChange(category.title)}
           />
-          <label className="ml-2 text-lg">{category.title}</label>
+          <label className="ml-2 text-xl">{category.title}</label>
         </div>
       ))}
     </div>
