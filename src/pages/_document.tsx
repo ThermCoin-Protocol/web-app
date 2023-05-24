@@ -1,6 +1,6 @@
 // pages/_document.js
 import { Html, Head, Main, NextScript } from 'next/document';
-// import Script from 'next/script';
+import Script from 'next/script';
 
 export default function Document() {
   return (
@@ -23,7 +23,7 @@ export default function Document() {
           content="The ThermCoin protocol is a decentralized, open-source, and community-driven project that aims to create a new digital currency that is backed by renewable energy."
           key="desc"
         />
-        {/* <Script
+        <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
           strategy="afterInteractive"
         />
@@ -35,7 +35,7 @@ export default function Document() {
 
           gtag('config', ${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID});
         `}
-        </Script> */}
+        </Script>
       </Head>
       <body>
         <Main />

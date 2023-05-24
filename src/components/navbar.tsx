@@ -2,7 +2,6 @@ import React from 'react';
 
 import VerginaSun from './img/VerginaSun';
 
-import Image from 'next/image';
 import Link from 'next/link';
 
 export interface INavbar {}
@@ -66,15 +65,10 @@ const Navbar: React.FC<INavbar> = () => {
       <div className="navbar z-20 hidden p-10 text-primary md:flex">
         <Link href="/">
           <div className="navbar-start flex-shrink-0 hover:cursor-pointer">
-            {/* <Image
-              src={VerginaSun}
-              alt="Picture of the author"
-              width={50}
-              height={50}
-              className="m-0"
-            /> */}
             <VerginaSun />
-            <span className="pl-3 text-xl font-bold">ThermCoin</span>
+            <span className="btn-ghost btn pl-3 text-lg font-bold tracking-wider hover:bg-transparent">
+              Thermcoin
+            </span>
           </div>
         </Link>
         <div className="navbar-end sm:flex">

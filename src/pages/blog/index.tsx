@@ -110,7 +110,7 @@ const BlogPage: NextPageWithLayout<BlogProps> = ({
               )}
             >
               <h2
-                className="collapse-title text-left text-3xl"
+                className="collapse-title text-left text-3xl tracking-wider"
                 onClick={() => handleShow()}
               >
                 Categories
@@ -124,7 +124,7 @@ const BlogPage: NextPageWithLayout<BlogProps> = ({
             </div>
           ) : (
             <div className="sticky top-0 z-10 col-span-5 mb-5 h-fit border-b-2 border-primary bg-base-100 py-5 lg:top-20 lg:col-span-1 lg:border-base-100 lg:py-0">
-              <h2 className="text-left text-3xl">Categories</h2>
+              <h2 className="text-left text-3xl tracking-wider">Categories</h2>
               <CategorySelect
                 categories={categories}
                 handleCategoryChange={handleCategoryChange}

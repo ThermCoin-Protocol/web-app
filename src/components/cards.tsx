@@ -1,11 +1,11 @@
 import React from 'react';
-// import Link from 'next/link';
 import Wave from './img/wave';
 import { RiFilePaper2Fill } from 'react-icons/ri';
 import { BsFillPinMapFill } from 'react-icons/bs';
 import { MdOutlineChromeReaderMode } from 'react-icons/md';
 import Hole from './img/hole';
 import Globe from './img/globe';
+import Link from 'next/link';
 
 export default function Cards() {
   return (
@@ -15,27 +15,31 @@ export default function Cards() {
           <Wave strokeWidth={4} />
         </div>
         <div className="w-full border-b-2 border-primary p-4 text-3xl font-bold tracking-wider">
-          What is ThermCoin?
+          What is Thermcoin?
         </div>
         <div className="grow p-4 text-xl">
           <p>
             As energy is the most fundamental commodity in the world, we believe
-            that it is the best asset to base a currency on. The ThermCoin
+            that it is the best asset to base a currency on. The Thermcoin
             protocol is a decentralized, open-source, and community-driven
             project that aims to create a new digital currency that is based on
             the principles of energy economics.
           </p>
           <p className="mt-4">
-            To learn more about the ThermCoin protocol, please read the
+            To learn more about the Thermcoin protocol, please read the
             whitepaper.
           </p>
         </div>
-        <div className="hover:primary flex w-full cursor-pointer flex-col items-center justify-center border-t-2 border-primary bg-base-100 p-4 text-xl transition-all hover:bg-accent hover:text-base-100">
+        <a
+          href="/whitepaper.pdf"
+          download
+          className="hover:primary flex w-full cursor-pointer flex-col items-center justify-center border-t-2 border-primary bg-base-100 p-4 text-xl transition-all hover:bg-accent hover:text-base-100"
+        >
           <div className="flex items-center tracking-wider">
             Download the Whitepaper
             <RiFilePaper2Fill className="ml-4 text-xl" />
           </div>
-        </div>
+        </a>
       </div>
       <div className="flex flex-col gap-4">
         <div className="flex flex-col items-center justify-center border-2 border-primary">
@@ -47,7 +51,7 @@ export default function Cards() {
               <div className="p-4 text-xl">
                 <p className="mb-10">
                   We are currently working on a number of projects to help
-                  improve the ThermCoin ecosystem. To learn more about our
+                  improve the Thermcoin ecosystem. To learn more about our
                   current focus, see where we are headed, and celebrate our
                   successes, check out our roadmap.
                 </p>
@@ -57,12 +61,14 @@ export default function Cards() {
               <Hole strokeWidth={5} />
             </div>
           </div>
-          <div className="flex w-full cursor-pointer flex-col items-center justify-center border-t-2 border-primary bg-base-100 p-4 text-xl transition-all hover:bg-accent hover:text-base-100">
-            <div className="flex items-center tracking-wider">
-              Checkout our roadmap
-              <BsFillPinMapFill className="ml-4 text-xl" />
+          <Link href="/docs/roadmap">
+            <div className="flex w-full cursor-pointer flex-col items-center justify-center border-t-2 border-primary bg-base-100 p-4 text-xl transition-all hover:bg-accent hover:text-base-100">
+              <div className="flex items-center tracking-wider">
+                Checkout our roadmap
+                <BsFillPinMapFill className="ml-4 text-xl" />
+              </div>
             </div>
-          </div>
+          </Link>
         </div>
         <div className="flex flex-col items-center justify-center border-2 border-primary">
           <div className="flex flex-col sm:flex-row">
@@ -82,12 +88,14 @@ export default function Cards() {
               </div>
             </div>
           </div>
-          <div className="flex w-full cursor-pointer flex-col items-center justify-center border-t-2 border-primary bg-base-100 p-4 text-xl transition-all hover:bg-accent hover:text-base-100">
-            <div className="flex items-center tracking-wider">
-              Get started today
-              <MdOutlineChromeReaderMode className="ml-4 text-xl" />
+          <Link href="/docs/getting-started">
+            <div className="flex w-full cursor-pointer flex-col items-center justify-center border-t-2 border-primary bg-base-100 p-4 text-xl transition-all hover:bg-accent hover:text-base-100">
+              <div className="flex items-center tracking-wider">
+                Get started today
+                <MdOutlineChromeReaderMode className="ml-4 text-xl" />
+              </div>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
     </div>

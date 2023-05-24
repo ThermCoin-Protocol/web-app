@@ -4,13 +4,13 @@ import type { NextPageWithLayout } from './_app';
 import Head from 'next/head';
 
 const items = [
-  '- ERC20 Token with variable supply mechanics ✅ (Finished)',
-  '- PoW and smart-contract compatible blockchain network + Testnet launch ☑️ (1 Week)',
-  '- Core mining pool with equitable reward system ☑️ (2-4 Weeks)',
-  '- Integrate chainlink to fetch global energy data and update supply ☑️ (5 Weeks)',
-  '- Launch ThermCoin protocol v1 ☑️ (6 Weeks)',
-  '- ThermCoin exchange / Fiat on-ramp ☑️ (TBA)',
-  '- Bitcoin bridge / tBTC launch ☑️ (TBA)',
+  '- ERC20 Token with variable supply mechanics ✅',
+  '- PoW and smart-contract compatible blockchain network + Testnet launch ☑️',
+  '- Core mining pool with equitable reward system ☑️',
+  '- Integrate chainlink to fetch global energy data and update supply ☑️',
+  '- Launch ThermCoin protocol v1 ☑️',
+  '- ThermCoin exchange / Fiat on-ramp ☑️',
+  '- Bitcoin bridge / tBTC launch ☑️',
 ];
 
 const Roadmap: NextPageWithLayout = () => {
