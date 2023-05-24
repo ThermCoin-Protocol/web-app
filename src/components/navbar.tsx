@@ -1,8 +1,7 @@
 import React from 'react';
 
-import VerginaSun from './img/VerginaSun.png';
+import VerginaSun from './img/VerginaSun';
 
-import Image from 'next/image';
 import Link from 'next/link';
 
 export interface INavbar {}
@@ -30,7 +29,7 @@ const Navbar: React.FC<INavbar> = () => {
           </label>
           <ul
             tabIndex={0}
-            className="dropdown-content menu rounded-box mt-7 w-60 border border-gray-800 bg-base-100 shadow-xl"
+            className="dropdown-content menu rounded-box mt-7 w-60 border-2 border-primary bg-base-100 shadow-xl"
           >
             <li>
               <a className="text-xl" href="/whitepaper.pdf" download>
@@ -63,24 +62,20 @@ const Navbar: React.FC<INavbar> = () => {
 
   return (
     <>
-      <div className="navbar z-20 hidden p-10 text-gray-800 md:flex">
+      <div className="navbar z-20 hidden p-10 text-primary md:flex">
         <Link href="/">
           <div className="navbar-start flex-shrink-0 hover:cursor-pointer">
-            <Image
-              src={VerginaSun}
-              alt="Picture of the author"
-              width={50}
-              height={50}
-              className="m-0"
-            />
-            <span className="pl-3 text-xl font-bold">ThermCoin</span>
+            <VerginaSun />
+            <span className="btn-ghost btn pl-3 text-lg font-bold tracking-wider hover:bg-transparent">
+              Thermcoin
+            </span>
           </div>
         </Link>
         <div className="navbar-end sm:flex">
           <div className="flex justify-between">
             <a
               href="/whitepaper.pdf"
-              className="before:left-50 btn-ghost btn relative text-lg text-gray-800 before:absolute before:bottom-0 before:block before:h-[2px] before:w-3/4 before:origin-top-left before:scale-x-0 before:bg-gray-800 before:transition before:duration-300 before:ease-in-out before:content-[''] hover:bg-transparent hover:bg-base-100 before:hover:scale-x-100"
+              className="before:left-50 btn-ghost btn relative text-lg text-primary before:absolute before:bottom-0 before:block before:h-[2px] before:w-3/4 before:origin-top-left before:scale-x-0 before:bg-primary before:transition before:duration-300 before:ease-in-out before:content-[''] hover:bg-transparent hover:bg-base-100 before:hover:scale-x-100"
               download
             >
               Whitepaper
@@ -95,7 +90,7 @@ const Navbar: React.FC<INavbar> = () => {
             ].map((item) => (
               <a
                 key={item.title}
-                className="before:left-50 btn-ghost btn relative text-lg text-gray-800 before:absolute before:bottom-0 before:block before:h-[2px] before:w-3/4 before:origin-top-left before:scale-x-0 before:bg-gray-800 before:transition before:duration-300 before:ease-in-out before:content-[''] hover:bg-transparent hover:bg-base-100 before:hover:scale-x-100"
+                className="before:left-50 btn-ghost btn relative text-lg text-primary before:absolute before:bottom-0 before:block before:h-[2px] before:w-3/4 before:origin-top-left before:scale-x-0 before:bg-primary before:transition before:duration-300 before:ease-in-out before:content-[''] hover:bg-transparent hover:bg-base-100 before:hover:scale-x-100"
                 href={item.link}
               >
                 {item.title}
@@ -104,15 +99,9 @@ const Navbar: React.FC<INavbar> = () => {
           </div>
         </div>
       </div>
-      <div className="navbar z-20 p-4 text-gray-800 md:hidden">
+      <div className="navbar z-20 p-4 text-primary md:hidden">
         <div className="navbar-start">
-          <Image
-            src={VerginaSun}
-            alt="Picture of the author"
-            width={50}
-            height={50}
-            className="flex-shrink-0"
-          />
+          <VerginaSun />
           <Link href="/">
             <span className="pl-3 text-xl font-bold tracking-wide">
               ThermCoin

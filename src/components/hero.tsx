@@ -1,41 +1,41 @@
+import Link from 'next/link';
 import React from 'react';
-import AnimatedBackground from './animatedbackground';
+// import AnimatedBackground from './animatedbackground';
 
 export default function Hero() {
   return (
     <div className="sm:mb-40">
       <main>
         <div className="relative px-4 lg:px-10">
-          <div className="mx-auto max-w-2xl py-24 md:py-12">
-            <div className="lg:text-center">
-              <h1 className="text-5xl font-bold tracking-wide text-gray-800 md:text-6xl lg:text-7xl">
-                The Future's Energy-Based Digital Currency
+          <div className="mx-auto max-w-2xl py-12">
+            <div className="text-center">
+              <h1 className="text-5xl font-bold tracking-wider text-primary md:text-6xl lg:text-7xl">
+                Thermcoin
               </h1>
-              <p className="mt-6 text-lg leading-8 text-gray-800 ">
-                ThermCoin solves problems related to energy economics and
-                tackles our future of energy and transactions. We are a
-                community of people who are passionate about fair and
-                decentralized solutions to the problems of our time.
+              <p className="mt-6 text-3xl leading-8 tracking-wider text-primary">
+                Energy Fuels the Future of Money
               </p>
-              {/* <div className="mt-10 flex items-center gap-x-6 lg:justify-center">
+              <div className="mt-10 flex items-center justify-center gap-x-4 text-lg">
                 <a
-                  href="#"
-                  className="btn-md btn rounded-full border-2 border-gray-800 bg-gray-800 text-white hover:border-gray-800 hover:bg-base-100 hover:text-gray-800"
+                  href="https://github.com/ThermCoin-Protocol/go-thermcoin/releases"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-md btn rounded-full border-2 border-primary bg-primary text-lg text-base-100 hover:border-primary hover:bg-base-100 hover:text-primary"
                 >
-                  Get started
+                  Downloads
                 </a>
-                <a
-                  href="#"
-                  className="text-md font-semibold leading-6 text-gray-900"
-                >
-                  LEARN MORE <span aria-hidden="true">→</span>
-                </a>
-              </div> */}
+                <Link href="/docs/getting-started">
+                  <div className="before:left-50 group btn-ghost btn-md btn relative text-lg text-primary before:absolute before:bottom-0 before:block before:h-[2px] before:w-4/5 before:origin-top-left before:scale-x-0 before:bg-gray-800 before:transition before:duration-300 before:ease-in-out before:content-[''] hover:bg-transparent hover:bg-base-100 before:hover:scale-x-100">
+                    Documentation
+                    <span className="ml-2">→</span>
+                  </div>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
       </main>
-      <AnimatedBackground />
+      {/* <AnimatedBackground /> */}
     </div>
   );
 }

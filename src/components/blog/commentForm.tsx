@@ -34,7 +34,7 @@ export default function CommentForm({ _id }: CommentFormProps) {
   }
   if (hasSubmitted) {
     return (
-      <div className="mx-auto my-4 flex w-full max-w-4xl flex-col rounded-lg border border-gray-800 p-4 text-center">
+      <div className="mx-auto my-4 flex w-full max-w-4xl flex-col rounded-lg border-2 border-primary p-4 text-center">
         <h3 className="text-2xl font-bold">Thanks for your comment!</h3>
         <ul>
           <li className="my-2">
@@ -51,24 +51,24 @@ export default function CommentForm({ _id }: CommentFormProps) {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="mx-auto my-4 flex w-full max-w-4xl flex-col rounded-lg border border-gray-800 p-4"
+      className="mx-auto my-4 flex w-full max-w-4xl flex-col rounded-md border-2 border-primary p-4"
     >
       <h2 className="text-2xl font-bold">Leave a comment</h2>
       <input
         {...register('name', { required: true })}
-        className="my-2 rounded-lg border border-gray-800 p-2"
+        className="my-2 rounded-md border-2 border-primary bg-base-100 p-2 placeholder-secondary focus:outline-none"
         placeholder="Name"
       />
       {errors.name && <span>This field is required</span>}
       <textarea
         {...register('comment', { required: true })}
-        className="my-2 rounded-lg border border-gray-800 p-2"
+        className="my-2 rounded-md border-2 border-primary bg-base-100 p-2 placeholder-secondary focus:outline-none"
         placeholder="Comment"
       />
       {errors.comment && <span>This field is required</span>}
       <input
         type="submit"
-        className="my-2 cursor-pointer rounded-lg border border-gray-800 bg-gray-800 p-2 text-white transition duration-200 ease-in-out hover:border-gray-600 hover:bg-gray-600"
+        className="my-2 cursor-pointer rounded-md border-2 border-primary bg-primary p-2 text-white transition-all ease-in-out hover:border-secondary hover:bg-secondary hover:text-base-100 focus:outline-none"
       />
     </form>
   );

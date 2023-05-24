@@ -6,22 +6,23 @@ module.exports = {
     './index.html',
   ],
   theme: {
-    extend: {},
+    extend: {
+    },
   },
   daisyui: {
     themes: [
       {
         mytheme: {
-          primary: '#EF9995',
-
-          secondary: '#ECEDF3',
-
-          accent: '#FBF3DA',
-
+          // primary: '#362706',
+          primary: '#393646',
+          // secondary: '#464E2E',
+          secondary: '#4F4557',
+          // accent: '#ACB992',
+          accent: '#6D5D6E',
           neutral: '#524D3F',
 
-          'base-100': '#FFFDF7',
-
+          // 'base-100': '#E9E5D6',
+          'base-100': '#F4EEE0',
           'base-200': '#EDE5D1',
 
           'neutral-content': '#FEF7DB',

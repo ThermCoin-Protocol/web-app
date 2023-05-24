@@ -1,17 +1,15 @@
 import Hero from '@/components/hero';
-import Features from '@/components/features';
-import Faq from '@/components/faq';
-// import Stats from '@/components/stats';
 import Cards from '@/components/cards';
 import Layout from '../components/Layout';
 import type { NextPageWithLayout } from './_app';
 import Head from 'next/head';
+import Reference from '@/components/resources';
 
 const Home: NextPageWithLayout = () => {
   return (
     <>
       <Head>
-        <title>ThermCoin</title>
+        <title>Thermcoin</title>
         <meta
           property="title"
           content="ThermCoin - The Future's Energy Based Digital Currency"
@@ -25,13 +23,10 @@ const Home: NextPageWithLayout = () => {
         <meta property="og:image" content="./logo.png" />
         <link rel="Sun Icon" href="../../VerginaSun.ico" />
       </Head>
-      <div className="flex flex-col items-center text-gray-800">
+      <div className="flex flex-col text-primary">
         <Hero />
         <Cards />
-        {/* <Stats /> */}
-        <Features />
-        {/* <Action /> */}
-        <Faq />
+        <Reference />
       </div>
     </>
   );

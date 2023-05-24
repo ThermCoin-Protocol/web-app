@@ -10,17 +10,17 @@ export default function CategorySelect({
   handleCategoryChange,
 }: CategorySelectProps) {
   return (
-    <div className="mt-4 flex flex-col text-gray-800">
+    <div className="mt-4 flex flex-col text-primary">
       {categories.map((category, index) => (
         <div key={index} className="mb-4 flex items-center">
           <input
             id="default-checkbox"
             type="checkbox"
             value={category.title}
-            className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-0"
+            className="h-5 w-5 cursor-pointer appearance-none rounded-md border-2 border-primary checked:border-transparent checked:bg-primary focus:outline-none"
             onClick={() => handleCategoryChange(category.title)}
           />
-          <label className="ml-2 text-sm font-medium">{category.title}</label>
+          <label className="ml-2 text-xl">{category.title}</label>
         </div>
       ))}
     </div>
