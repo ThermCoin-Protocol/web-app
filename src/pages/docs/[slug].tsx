@@ -6,15 +6,16 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
+import BottomNav from '@/components/BottomNav';
 
 interface DocsPageProps {
   docs: any;
   currentDoc: string;
 }
 
-const markDownTailwindClasses = `
+const markDownTailwindClassNamees = `
+  grow
   max-w-4xl
-  mx-auto
   [&>br]:my-8
   [&>h1]:text-5xl font-bold tracking-wider
   [&>h2]:text-4xl font-bold tracking-wider
@@ -26,16 +27,54 @@ const markDownTailwindClasses = `
 const DocsPage: NextPageWithLayout<DocsPageProps> = ({ docs, currentDoc }) => {
   return (
     <DocsLayoutContext.Consumer>
-      {({ setCurrentDoc }) => {
+      {({ setCurrentDoc, setCurrentDocOrder }) => {
         setCurrentDoc(currentDoc);
+        setCurrentDocOrder(
+          docs.findIndex((doc: any) => doc.slug === currentDoc),
+        );
+        let roadmap: any;
+        if (currentDoc === 'roadmap') {
+          roadmap = docs.find((doc: any) => doc.slug === currentDoc).frontmatter
+            .phases;
+        }
+
         return (
-          <div
-            dangerouslySetInnerHTML={{
-              __html: docs.find((doc: any) => doc.slug === currentDoc)
-                .contentHtml,
-            }}
-            className={markDownTailwindClasses}
-          />
+          <>
+            {currentDoc === 'roadmap' && (
+              <div className="  max-w-4xl">
+                <h1 className="mb-8 text-5xl font-bold tracking-wider">
+                  Roadmap
+                </h1>
+                {roadmap.map((phase: any, index: number) => (
+                  <ol className="border-l-2 border-primary" key={index}>
+                    <li>
+                      <div className="flex-start flex items-center">
+                        <div className="-ml-[5px] mr-3 h-[9px] w-[9px] rounded-full bg-primary"></div>
+                        <p className="text-xl text-accent dark:text-primary">
+                          {phase.content.date}
+                        </p>
+                      </div>
+                      <div className="mb-6 ml-4 mt-2">
+                        <h4 className="mb-1.5 text-4xl font-semibold">
+                          {phase.content.title}
+                        </h4>
+                        <p className="mb-3 text-xl text-primary dark:text-primary">
+                          {phase.content.text}
+                        </p>
+                      </div>
+                    </li>
+                  </ol>
+                ))}
+              </div>
+            )}
+            <div
+              dangerouslySetInnerHTML={{
+                __html: docs.find((doc: any) => doc.slug === currentDoc)
+                  .contentHtml,
+              }}
+              className={markDownTailwindClassNamees}
+            />
+          </>
         );
       }}
     </DocsLayoutContext.Consumer>

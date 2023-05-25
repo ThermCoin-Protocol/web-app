@@ -1,7 +1,8 @@
 ---
 title: 'FAQ'
+slug: 'faq'
 date: 'Tue, 23 May 2023 10:01:58 PST'
-order: 3
+order: 2
 ---
 
 # FAQ
