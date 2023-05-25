@@ -100,7 +100,7 @@ const Navbar: React.FC<INavbar> = () => {
         </div>
       </div>
       <div className="navbar z-20 p-4 text-primary md:hidden">
-        <div className="navbar-start">
+        <div className="navbar-start hover:cursor-pointer">
           <VerginaSun />
           <Link href="/">
             <span className="pl-3 text-xl font-bold tracking-wide">

@@ -4,10 +4,10 @@ import React from 'react';
 
 export default function Hero() {
   return (
-    <div className="sm:mb-40">
+    <div className="relative">
       <main>
-        <div className="relative px-4 lg:px-10">
-          <div className="mx-auto max-w-2xl py-12">
+        <div className="relative mb-10 bg-base-100 p-4 md:mb-20 lg:mb-32">
+          <div className="mx-auto max-w-2xl">
             <div className="text-center">
               <h1 className="text-5xl font-bold tracking-wider text-primary md:text-6xl lg:text-7xl">
                 Thermcoin
@@ -15,12 +15,12 @@ export default function Hero() {
               <p className="mt-6 text-3xl leading-8 tracking-wider text-primary">
                 Energy Fuels the Future of Money
               </p>
-              <div className="mt-10 flex items-center justify-center gap-x-4 text-lg">
+              <div className="mt-10 flex items-center justify-center text-lg lg:gap-x-4">
                 <a
                   href="https://github.com/ThermCoin-Protocol/go-thermcoin/releases"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-md btn rounded-full border-2 border-primary bg-primary text-lg text-base-100 hover:border-primary hover:bg-base-100 hover:text-primary"
+                  className="btn-md btn rounded-md border-2 border-primary bg-primary text-lg text-base-100 hover:border-primary hover:bg-base-100 hover:text-primary"
                 >
                   Downloads
                 </a>
