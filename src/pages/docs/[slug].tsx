@@ -6,7 +6,6 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
-import BottomNav from '@/components/BottomNav';
 
 interface DocsPageProps {
   docs: any;

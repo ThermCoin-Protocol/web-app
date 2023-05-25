@@ -4,9 +4,6 @@ import SideNav from './SideNav';
 import Footer from './footer';
 import Navbar from './navbar';
 import BottomNav from './BottomNav';
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
 
 export interface IDocsLayout {
   children: any;
