@@ -3,7 +3,7 @@ import Cards from '@/components/cards';
 import Layout from '../components/Layout';
 import type { NextPageWithLayout } from './_app';
 import Head from 'next/head';
-import Reference from '@/components/resources';
+import Reference from '@/components/reference';
 
 const Home: NextPageWithLayout = () => {
   return (

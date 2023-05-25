@@ -43,7 +43,7 @@ const DocsLayout: React.FC<IDocsLayout> = ({ children, docs }) => {
       >
         <div className="flex min-h-screen flex-col text-primary">
           <Navbar />
-          <div className="m-4 flex flex-grow flex-col md:mx-8 lg:mx-10 lg:flex-row">
+          <div className="mx-4 flex flex-grow flex-col md:mx-8 lg:mx-10 lg:flex-row">
             <div className="z-10 mb-4 h-fit lg:sticky lg:top-10 lg:mr-10 lg:mb-0 lg:w-64">
               <SideNav />
             </div>
