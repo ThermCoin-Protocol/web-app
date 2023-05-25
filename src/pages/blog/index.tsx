@@ -135,7 +135,7 @@ const BlogPage: NextPageWithLayout<BlogProps> = ({
             {filteredPosts.map((post, index) => (
               <div key={post._id} className="cursor-pointer">
                 <Link href={`/blog/${post.slug.current}`}>
-                  <div className="group group flex h-full w-full flex-col rounded-lg border-2 border-primary p-5 md:p-10">
+                  <div className="group group flex h-full w-full flex-col rounded-md border-2 border-primary p-5 md:p-10">
                     <div className="relative flex w-full flex-wrap justify-between">
                       <h2 className="mb-2 text-xl">{post.title}</h2>
                       <p className="text-left text-xl">
@@ -156,7 +156,7 @@ const BlogPage: NextPageWithLayout<BlogProps> = ({
                                 </div>
                                 <div
                                   key={index}
-                                  className="justify-self-initial mb-2 mr-2 w-fit items-center justify-center rounded-full py-1 font-medium text-primary"
+                                  className="justify-self-initial mb-2 mr-2 w-fit items-center justify-center rounded-full py-1 text-lg text-primary"
                                 >
                                   {category.title}
                                 </div>
@@ -166,7 +166,7 @@ const BlogPage: NextPageWithLayout<BlogProps> = ({
                             return (
                               <div
                                 key={index}
-                                className="justify-self-initial mb-2 mr-2 w-fit items-center justify-center rounded-md py-1 font-medium text-primary"
+                                className="justify-self-initial font-xl mb-2 mr-2 w-fit items-center justify-center rounded-md py-1 text-primary"
                               >
                                 {category.title}
                               </div>
@@ -179,13 +179,13 @@ const BlogPage: NextPageWithLayout<BlogProps> = ({
                       className="flex flex-grow place-items-center"
                       key={post._id + '1'}
                     >
-                      <p className="text-left text-lg">{post.description}</p>
+                      <p className="text-left text-xl">{post.description}</p>
                     </div>
                     <div
                       className="flex justify-end pt-5 sm:pt-0"
                       key={index + '2'}
                     >
-                      <div className="relative mt-5 inline-flex items-center overflow-hidden rounded-md border-2 border-primary px-10 py-3 text-lg font-medium text-primary transition-all group-hover:bg-primary group-hover:text-base-100 group-hover:text-base-100">
+                      <div className="relative mt-5 inline-flex items-center overflow-hidden rounded-sm border-2 border-primary px-10 py-3 text-lg font-medium text-primary transition-all group-hover:bg-primary group-hover:text-base-100 group-hover:text-base-100">
                         <span className="ease absolute right-0 flex h-10 w-10 translate-x-full transform items-center justify-start text-base-100 duration-300 group-hover:translate-x-2">
                           <svg
                             className="h-5 w-5"

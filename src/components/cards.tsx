@@ -33,7 +33,7 @@ export default function Cards() {
         <a
           href="/whitepaper.pdf"
           download
-          className="hover:primary flex w-full cursor-pointer flex-col items-center justify-center border-t-2 border-primary bg-base-100 p-4 text-xl transition-all hover:bg-accent hover:text-base-100"
+          className="hover:primary flex w-full cursor-pointer flex-col items-center justify-center border-t-2 border-primary bg-base-100 p-4 text-xl transition-all hover:bg-primary hover:text-base-100"
         >
           <div className="flex items-center tracking-wider">
             Download the Whitepaper
@@ -62,7 +62,7 @@ export default function Cards() {
             </div>
           </div>
           <Link href="/docs/roadmap">
-            <div className="flex w-full cursor-pointer flex-col items-center justify-center border-t-2 border-primary bg-base-100 p-4 text-xl transition-all hover:bg-accent hover:text-base-100">
+            <div className="flex w-full cursor-pointer flex-col items-center justify-center border-t-2 border-primary bg-base-100 p-4 text-xl transition-all hover:bg-primary hover:text-base-100">
               <div className="flex items-center tracking-wider">
                 Checkout our roadmap
                 <BsFillPinMapFill className="ml-4 text-xl" />
@@ -89,7 +89,7 @@ export default function Cards() {
             </div>
           </div>
           <Link href="/docs/getting-started">
-            <div className="flex w-full cursor-pointer flex-col items-center justify-center border-t-2 border-primary bg-base-100 p-4 text-xl transition-all hover:bg-accent hover:text-base-100">
+            <div className="flex w-full cursor-pointer flex-col items-center justify-center border-t-2 border-primary bg-base-100 p-4 text-xl transition-all hover:bg-primary hover:text-base-100">
               <div className="flex items-center tracking-wider">
                 Get started today
                 <MdOutlineChromeReaderMode className="ml-4 text-xl" />

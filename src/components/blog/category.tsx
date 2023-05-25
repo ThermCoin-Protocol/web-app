@@ -17,7 +17,7 @@ export default function CategorySelect({
             id="default-checkbox"
             type="checkbox"
             value={category.title}
-            className="h-5 w-5 cursor-pointer appearance-none rounded-md border-2 border-primary checked:border-transparent checked:bg-primary focus:outline-none"
+            className="h-5 w-5 cursor-pointer appearance-none rounded-sm border-2 border-primary checked:border-transparent checked:bg-primary focus:outline-none"
             onClick={() => handleCategoryChange(category.title)}
           />
           <label className="ml-2 text-xl">{category.title}</label>
