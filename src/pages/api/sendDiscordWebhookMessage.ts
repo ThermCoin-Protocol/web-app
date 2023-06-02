@@ -11,7 +11,7 @@ export default async function sendDiscordWebhookMessage(_req: NextApiRequest, re
 //   }
 
   // get the body of the request
-  const body: any = await readBody(_req);
+  const body: any = _req.body;
   // parse the body of the request
   const bodyJson = JSON.parse(body);
 
@@ -28,19 +28,5 @@ export default async function sendDiscordWebhookMessage(_req: NextApiRequest, re
     }),
   }); 
   res.status(200).json({ message: 'Message sent' });
-}
-function readBody(req: any) {
-  return new Promise((resolve, reject) => {
-    let body = '';
-    req.on('data', (chunk: any) => {
-      body += chunk.toString();
-    });
-    req.on('end', () => {
-      resolve(body);
-    });
-    req.on('error', (err: any) => {
-      reject(err);
-    });
-  });
 }
 
