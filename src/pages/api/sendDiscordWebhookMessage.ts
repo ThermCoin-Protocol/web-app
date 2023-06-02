@@ -6,14 +6,16 @@ export default async function sendDiscordWebhookMessage(_req: NextApiRequest, re
 
   // check if the request is valid
   const secret = process.env.NEXT_PUBLIC_MY_WEBHOOK_SECRET || '';
-  const headers = _req.headers[SIGNATURE_HEADER_NAME] as string;
-  if (!isValidSignature(_req.body, secret, headers)) {
-    return res.status(403).json({ message: 'Invalid request' });
-  } 
+  const signature = _req.headers[SIGNATURE_HEADER_NAME] as string;
+  const body = await readBody(_req) // Read the body into a string
+  if (!isValidSignature(body, signature, secret)) {
+    res.status(401).json({success: false, message: 'Invalid signature'})
+    return
+  } else {
+    res.status(200).json({success: true, message: 'Valid signature'})
+  }
   // get the signature from the request headers
-  const signature = _req.headers[SIGNATURE_HEADER_NAME] || '';
   // get the body from the request
-  const body = _req.body;
   // get the event type from the request headers
   const eventType = _req.headers['x-sanity-event-type'] || '';
   // get the document id from the request headers
@@ -50,5 +52,13 @@ export default async function sendDiscordWebhookMessage(_req: NextApiRequest, re
     }),
   }); 
   res.status(200).json({ message: 'Message sent' });
+}
+
+async function readBody(readable: NextApiRequest) {
+  const chunks = []
+  for await (const chunk of readable) {
+    chunks.push(typeof chunk === 'string' ? Buffer.from(chunk) : chunk)
+  }
+  return Buffer.concat(chunks).toString('utf8')
 }
 
