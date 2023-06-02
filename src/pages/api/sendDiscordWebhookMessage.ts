@@ -5,10 +5,10 @@ import {isValidRequest} from '@sanity/webhook'
 export default async function sendDiscordWebhookMessage(_req: NextApiRequest, res: NextApiResponse) {
 
   // check if the request is valid
-  const secret = process.env.NEXT_PUBLIC_MY_WEBHOOK_SECRET || '';
-  if (!isValidRequest(_req, secret)) {
-    return res.status(403).json({ message: 'Invalid request' });
-  }
+//   const secret = process.env.NEXT_PUBLIC_MY_WEBHOOK_SECRET || '';
+//   if (!isValidRequest(_req, secret)) {
+//     return res.status(403).json({ message: 'Invalid request' });
+//   }
 
   // get the body of the request
   const body: any = await readBody(_req);
