@@ -1,12 +1,13 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import {isValidRequest, SIGNATURE_HEADER_NAME} from '@sanity/webhook';
+import {isValidSignature, SIGNATURE_HEADER_NAME} from '@sanity/webhook';
 // I am trying to make an API endpoint that will send a message to a discord webhook
 // I have a webhook setup with sanity and discord but I need to make an API endpoint that will send a message to the webhook
 export default async function sendDiscordWebhookMessage(_req: NextApiRequest, res: NextApiResponse) {
 
   // check if the request is valid
   const secret = process.env.NEXT_PUBLIC_MY_WEBHOOK_SECRET || '';
-  if (!isValidRequest(_req.body, secret)) {
+  const headers = _req.headers[SIGNATURE_HEADER_NAME] as string;
+  if (!isValidSignature(_req.body, secret, headers)) {
     return res.status(403).json({ message: 'Invalid request' });
   } 
   // get the signature from the request headers
