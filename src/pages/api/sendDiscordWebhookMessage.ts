@@ -24,8 +24,7 @@ export default async function sendDiscordWebhookMessage(_req: NextApiRequest, re
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      content: bodyJson.message,
-      username: bodyJson.name,
+      content: bodyJson,
     }),
   }); 
   res.status(200).json({ message: 'Message sent' });
