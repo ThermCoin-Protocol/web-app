@@ -17,6 +17,8 @@ export default async function sendDiscordWebhookMessage(_req: NextApiRequest, re
   // get the webhook url from the environment variables
   const webhookUrl = process.env.NEXT_PUBLIC_DISCORD_WEBHOOK_URL || '';
 
+  const title = JSON.parse(body).title;
+
   // make a post request to the webhook url
   fetch(webhookUrl, {
     method: 'POST',
@@ -25,7 +27,7 @@ export default async function sendDiscordWebhookMessage(_req: NextApiRequest, re
     },
     body: JSON.stringify({
       username: 'Sanity Bot',
-      content: `A new update to post ${_req.body.title} has been made!`,
+      content: `A new update to post ${title} has been made!`,
     }),
   }); 
   res.status(200).json({ message: 'Message sent' });
