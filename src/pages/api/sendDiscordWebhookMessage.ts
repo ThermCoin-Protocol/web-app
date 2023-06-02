@@ -18,6 +18,8 @@ export default async function sendDiscordWebhookMessage(_req: NextApiRequest, re
   const webhookUrl = process.env.NEXT_PUBLIC_DISCORD_WEBHOOK_URL || '';
 
   const title = JSON.parse(body).title;
+  console.log('title', title);
+  console.log(body);
 
   // make a post request to the webhook url
   fetch(webhookUrl, {
