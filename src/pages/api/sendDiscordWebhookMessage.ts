@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import {isValidRequest} from '@sanity/webhook'
+// import {isValidRequest} from '@sanity/webhook'
 // I am trying to make an API endpoint that will send a message to a discord webhook
 // I have a webhook setup with sanity and discord but I need to make an API endpoint that will send a message to the webhook
 export default async function sendDiscordWebhookMessage(_req: NextApiRequest, res: NextApiResponse) {
