@@ -12,7 +12,8 @@ export default function sendDiscordWebhookMessage(_req: NextApiRequest, res: Nex
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      content: _req.body,
+      username: 'Sanity Updates',
+      content: 'This is a test message from the Sanity API',
     }),
   }); 
   res.status(200).json({ message: 'Message sent' });
