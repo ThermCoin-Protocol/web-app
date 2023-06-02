@@ -12,7 +12,7 @@ export default function sendDiscordWebhookMessage(_req: NextApiRequest, res: Nex
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      content: _req.body,
+      content: 'Hello, World!',
     }),
   }); 
   res.status(200).json({ message: 'Message sent' });
