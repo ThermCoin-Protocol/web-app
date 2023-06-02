@@ -12,15 +12,7 @@ export default async function sendDiscordWebhookMessage(_req: NextApiRequest, re
   if (!isValidSignature(body, signature, secret)) {
     res.status(401).json({success: false, message: 'Invalid signature'})
     return
-  } else {
-    res.status(200).json({success: true, message: 'Valid signature'})
   }
-
-  // log the request details
-  console.log('signature', signature);
-  console.log('body', body);
-  console.log('header', _req.headers);
-
 
   // get the webhook url from the environment variables
   const webhookUrl = process.env.NEXT_PUBLIC_DISCORD_WEBHOOK_URL || '';
@@ -33,7 +25,7 @@ export default async function sendDiscordWebhookMessage(_req: NextApiRequest, re
     },
     body: JSON.stringify({
       username: 'Sanity Bot',
-      content: `A new update to post was made`,
+      content: `A new update to post ${_req.body.title} has been made!`,
     }),
   }); 
   res.status(200).json({ message: 'Message sent' });
