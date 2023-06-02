@@ -6,7 +6,7 @@ export default async function sendDiscordWebhookMessage(_req: NextApiRequest, re
 
   // check if the request is valid
   const secret = process.env.NEXT_PUBLIC_MY_WEBHOOK_SECRET || '';
-  if (!isValidRequest(_req, secret)) {
+  if (!isValidRequest(_req.body, secret)) {
     return res.status(403).json({ message: 'Invalid request' });
   } 
   // get the signature from the request headers
