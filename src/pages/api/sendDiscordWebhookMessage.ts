@@ -7,6 +7,7 @@ export default async function sendDiscordWebhookMessage(_req: NextApiRequest, re
   // check if the request is valid
   const secret = process.env.NEXT_PUBLIC_MY_WEBHOOK_SECRET || '';
   const signature = _req.headers[SIGNATURE_HEADER_NAME] as string;
+  console.log('signature', signature);
   const body = await readBody(_req) // Read the body into a string
   if (!isValidSignature(body, signature, secret)) {
     res.status(401).json({success: false, message: 'Invalid signature'})
@@ -52,6 +53,12 @@ export default async function sendDiscordWebhookMessage(_req: NextApiRequest, re
     }),
   }); 
   res.status(200).json({ message: 'Message sent' });
+}
+
+export const config = {
+  api: {
+    bodyParser: false,
+  },
 }
 
 async function readBody(readable: NextApiRequest) {
