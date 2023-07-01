@@ -7,7 +7,7 @@ export default defineConfig({
   name: 'default',
   title: 'thermcoin-db',
 
-  projectId: 'b2ez6grj',
+  projectId: 't3emkmpu',
   dataset: 'production',
 
   plugins: [deskTool(), visionTool()],
