@@ -1,6 +1,6 @@
 # Thermcoin Web Application
 
-This repo is used for storage and documentation of the thermcoin web application source code.
+This repo is used for storage and documentation of the thermcoin web application source code. A fun and well designed app that allows users to interact with the thermcoin protocol.
 
 ## Tools Used
 
